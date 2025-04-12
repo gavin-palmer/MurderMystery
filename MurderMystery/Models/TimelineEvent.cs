@@ -7,6 +7,7 @@ namespace MurderMystery.Models
         public Person Person { get; set; }
         public string Location { get; set; }
         public string Action { get; set; }
-        public bool IsSecret { get; set; } = false;  // Add this property
+        public bool IsSecret { get; set; } = false;
+        public bool IsLie { get; set; } = false;
     }
 }

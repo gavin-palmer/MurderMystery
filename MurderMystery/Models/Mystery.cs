@@ -18,21 +18,24 @@ namespace MurderMystery.Models
         public List<Clue> Clues { get; set; }
         public Dictionary<(Person, Person), RelationshipType> Relationships { get; set; }
 
-        public void PrintSummary()
+        public void PrintSummary(bool spoilers = true)
         {
             Console.WriteLine("🎭 Mystery Generated:");
-            Console.WriteLine($"Victim: {Victim.Name}");
-            Console.WriteLine($"Murderer: {Murderer.Name}");
-            Console.WriteLine($"Weapon: {Weapon}");
-            Console.WriteLine($"Room: {Room}");
-            Console.WriteLine($"Motive: {Motive}");
+            if (spoilers)
+            {
+                Console.WriteLine($"Victim: {Victim.Name}");
+                Console.WriteLine($"Murderer: {Murderer.Name}");
+                Console.WriteLine($"Weapon: {Weapon}");
+                Console.WriteLine($"Room: {Room}");
+                Console.WriteLine($"Motive: {Motive}");
+            }
             Console.WriteLine($"Number of Characters: {People.Count}");
             Console.WriteLine($"Number of Clues: {Clues?.Count ?? 0}");
             Console.WriteLine($"Timeline Events: {Timeline?.Count ?? 0}");
             Console.WriteLine();
         }
 
-        public void PrintTimeline()
+        public void PrintTimeline(bool spoilers = true)
         {
             if (Timeline == null || !Timeline.Any())
             {
@@ -53,15 +56,17 @@ namespace MurderMystery.Models
 
                 foreach (var evt in timeGroup)
                 {
-                    string secretMarker = evt.IsSecret ? " [SECRET]" : "";
-                    Console.WriteLine($"{evt.Person.Name} in {evt.Location}: {evt.Action}{secretMarker}");
+                    string secretMarker = spoilers && evt.IsSecret ? " [SECRET]" : "";
+                    var lieMarker = spoilers && evt.IsLie ? " [LIE]" : "";
+                    Console.WriteLine($"{evt.Person.Name} in {evt.Location}: {evt.Action}{secretMarker}{lieMarker}");
+                        
                 }
             }
 
             Console.WriteLine();
         }
 
-        public void PrintClues()
+        public void PrintClues(bool spoilers = true)
         {
             if (Clues == null || !Clues.Any())
             {
@@ -81,7 +86,7 @@ namespace MurderMystery.Models
 
                 foreach (var clue in clueGroup)
                 {
-                    string redHerringMarker = clue.IsRedHerring ? " [RED HERRING]" : "";
+                    string redHerringMarker = spoilers && clue.IsRedHerring ? " [RED HERRING]" : "";
                     Console.WriteLine($"- {clue.Description} (Found in: {clue.Location}){redHerringMarker}");
                 }
             }
@@ -171,13 +176,15 @@ namespace MurderMystery.Models
             }
         }
 
-        public void PrintAll()
+
+        public void PrintAll(bool spoilers = true)
         {
-            PrintSummary();
-            PrintTimeline();
-            PrintClues();
+            PrintSummary(spoilers);
+            PrintTimeline(spoilers);
+            PrintClues(spoilers);
             PrintRelationships();
             PrintNPCStatements();
+
         }
     }
 }

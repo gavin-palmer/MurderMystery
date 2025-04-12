@@ -10,10 +10,7 @@ namespace MurderMystery.Data.Providers
         {
             return new List<string>
             {
-                // Original names
                 "Alice", "Bob", "Clara", "David", "Eve", "Frank",
-                
-                // Additional names
                 "George", "Hannah", "Isaac", "Julia", "Kenneth", "Laura",
                 "Michael", "Natalie", "Oliver", "Penelope", "Quentin", "Rose",
                 "Samuel", "Tiffany", "Ulysses", "Victoria", "William", "Xenia",

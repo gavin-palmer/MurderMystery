@@ -68,16 +68,13 @@ namespace MurderMystery.MurderMystery.Generators
 
         public void GenerateTimeline()
         {
-            // 1. Generate initial locations
             GenerateLocations();
 
-            // 2. Process each time slot
             foreach (var time in TimeSlots)
             {
                 ProcessTimeSlot(time);
             }
 
-            // 3. Add some red herrings and final touches
             AddRedHerrings();
         }
 
@@ -237,18 +234,15 @@ namespace MurderMystery.MurderMystery.Generators
 
         private void GenerateEvents(string time)
         {
-            // Get action providers
             var actionProvider = DataProviderFactory.Actions;
 
             foreach (var person in People)
             {
-                // Skip the victim after murder time
                 if (person == Victim && IsPastMurder(time))
                     continue;
 
                 string location = LocationsByTime[time][person];
 
-                // If this is the murder happening
                 if (person == Murderer && IsAtMurder(time) && location == Room)
                 {
                     Events.Add(new TimelineEvent
@@ -257,35 +251,44 @@ namespace MurderMystery.MurderMystery.Generators
                         Person = person,
                         Location = location,
                         Action = $"killed {Victim.Name} using the {Weapon}",
-                        IsSecret = true
+                        IsSecret = true,
+                        IsLie = false
+                    }) ;
+                    var availableRooms = DataProviderFactory.Rooms.GetAll().Select(r => r.Name).ToList();
+
+                    var emptyRoom = availableRooms.FirstOrDefault(room => !LocationsByTime[time].Select(x => x.Value).Contains(room));
+  
+                    var actionData = actionProvider.GetRandomSoloAction();
+                    var action = actionData.Description;
+                    Events.Add(new TimelineEvent
+                    {
+                        Time = time,
+                        Person = person,
+                        Location = emptyRoom,
+                        Action = action,
+                        IsSecret = true,
+                        IsLie = true
                     });
                 }
-                // Regular event
                 else
                 {
-                    // Check if others are in the same room
                     var othersInRoom = People
                         .Where(p => p != person && p != Victim && LocationsByTime[time][p] == location)
                         .ToList();
 
-                    // Determine the action
                     string action;
 
                     if (othersInRoom.Any() && _random.NextDouble() < 0.5)
                     {
-                        // Social interaction
                         var otherPerson = RandomHelper.PickRandom(othersInRoom);
 
-                        // Get relationship
                         var relationship = Relationships[(person, otherPerson)];
 
-                        // Get appropriate action for this relationship
                         var actionData = actionProvider.GetActionForRelationship(relationship);
                         action = string.Format(actionData.Description, otherPerson.Name);
                     }
                     else
                     {
-                        // Solo activity
                         var actionData = actionProvider.GetRandomSoloAction();
                         action = actionData.Description;
                     }
@@ -296,7 +299,8 @@ namespace MurderMystery.MurderMystery.Generators
                         Person = person,
                         Location = location,
                         Action = action,
-                        IsSecret = false
+                        IsSecret = false,
+                        IsLie = false
                     });
                 }
             }
@@ -435,60 +439,5 @@ namespace MurderMystery.MurderMystery.Generators
             return TimeSlots.IndexOf(time) > TimeSlots.IndexOf(murderTime);
         }
 
-        public void PrintMysteryDetails()
-        {
-            // Print core mystery info
-            Console.WriteLine("=== MYSTERY DETAILS ===");
-            Console.WriteLine($"Victim: {Victim.Name}");
-            Console.WriteLine($"Murderer: {Murderer.Name}");
-            Console.WriteLine($"Weapon: {Weapon}");
-            Console.WriteLine($"Location: {Room}");
-            Console.WriteLine($"Motive: {Motive}");
-            Console.WriteLine();
-
-            // Print timeline chronologically
-            Console.WriteLine("=== TIMELINE ===");
-            foreach (var time in TimeSlots)
-            {
-                Console.WriteLine($"\n--- {time} ---");
-
-                // Get events for this time slot
-                var eventsAtTime = Events.Where(e => e.Time == time).ToList();
-
-                foreach (var evt in eventsAtTime)
-                {
-                    // Mark secret events specially
-                    string secretMarker = evt.IsSecret ? " [SECRET]" : "";
-                    Console.WriteLine($"{evt.Person.Name} in {evt.Location}: {evt.Action}{secretMarker}");
-                }
-            }
-            Console.WriteLine();
-
-            // Print clues
-            Console.WriteLine("=== CLUES ===");
-            foreach (var clue in Clues)
-            {
-                string redHerringMarker = clue.IsRedHerring ? " [RED HERRING]" : "";
-                Console.WriteLine($"- {clue.Description} (Found in: {clue.Location}){redHerringMarker}");
-            }
-            Console.WriteLine();
-
-            // Print relationships
-            Console.WriteLine("=== RELATIONSHIPS ===");
-            foreach (var person1 in People)
-            {
-                foreach (var person2 in People)
-                {
-                    if (person1 != person2 && Relationships.ContainsKey((person1, person2)))
-                    {
-                        var relationship = Relationships[(person1, person2)];
-                        if (relationship != RelationshipType.Unknown)
-                        {
-                            Console.WriteLine($"{person1.Name} → {person2.Name}: {relationship}");
-                        }
-                    }
-                }
-            }
-        }
-    }
+   }
 }

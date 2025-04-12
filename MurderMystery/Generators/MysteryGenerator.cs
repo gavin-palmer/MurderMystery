@@ -11,7 +11,7 @@ namespace MurderMystery.Generators
     public static class MysteryGenerator
     {
         private static Random _random = new Random();
-
+        public static TimelineContext context;
         public static void GenerateMystery()
         {
             // Get time slots
@@ -37,13 +37,12 @@ namespace MurderMystery.Generators
             string motive = motiveData.Name;
 
             // Create your context
-            var context = new TimelineContext(people, victim, murderer, weapon, room, motive, timeSlots);
+            context = new TimelineContext(people, victim, murderer, weapon, room, motive, timeSlots);
 
             // Generate the timeline
             context.GenerateTimeline();
 
-            // Print the mystery details to console
-            context.PrintMysteryDetails();
+
         }
 
         /// <summary>

@@ -15,14 +15,28 @@ namespace MysteryGame
             Console.WriteLine("🔍 MURDER MYSTERY GENERATOR 🔍");
             Console.WriteLine("==================================\n");
 
-            // Generate a mystery using our new approach
             var mystery = MysteryGenerator.CreateMystery();
 
-            // Print all the details
-            mystery.PrintAll();
+            CheckForSolved(mystery);
 
             Console.WriteLine("\nPress any key to exit...");
             Console.ReadKey();
+        }
+
+        private static void CheckForSolved(Mystery mystery)
+        {
+            mystery.PrintAll(false);
+
+            Console.WriteLine("Have you solved it? Enter Y or N");
+            var solved = Console.ReadLine();
+            if (solved == "Y")
+            {
+                mystery.PrintAll(true);
+            }
+            else
+            {
+                CheckForSolved(mystery);
+            }
         }
     }
 }
