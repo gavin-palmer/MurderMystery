@@ -1,10 +1,8 @@
 ﻿using System;
-namespace MurderMystery
+namespace MurderMystery.Models
 {
     public class Person
     {
-        public Person()
-        {
-        }
+        public string Name;
     }
 }

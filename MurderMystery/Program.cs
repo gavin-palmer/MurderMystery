@@ -1,12 +1,28 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using MurderMystery;
+using MurderMystery.Generators;
 
-namespace MurderMystery
+namespace MysteryGame
 {
     class Program
     {
+        static Random rng = new Random();
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var mystery = MysteryGenerator.GenerateMystery();
+            mystery.PrintSummary();
+            mystery.PrintNPCStatements();
         }
     }
+
+
+
+
+
+
+
+
 }
