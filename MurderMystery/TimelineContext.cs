@@ -277,11 +277,11 @@ namespace MurderMystery.MurderMystery.Generators
                         .ToList();
 
                     string action;
-
+                    Proof proof = Proof.None;
                     if (othersInRoom.Any() && _random.NextDouble() < 0.5)
                     {
                         var otherPerson = RandomHelper.PickRandom(othersInRoom);
-
+                        proof = Proof.Alibi;
                         var relationship = Relationships[(person, otherPerson)];
 
                         var actionData = actionProvider.GetActionForRelationship(relationship);
@@ -291,6 +291,10 @@ namespace MurderMystery.MurderMystery.Generators
                     {
                         var actionData = actionProvider.GetRandomSoloAction();
                         action = actionData.Description;
+                        if (IsAtMurder(time) || _random.NextDouble() < 0.1)
+                        {
+                            GenerateProof();
+                        }
                     }
 
                     Events.Add(new TimelineEvent
@@ -300,12 +304,17 @@ namespace MurderMystery.MurderMystery.Generators
                         Location = location,
                         Action = action,
                         IsSecret = false,
-                        IsLie = false
+                        IsLie = false,
+                        Proof = proof
                     });
                 }
             }
         }
 
+        private void GenerateProof()
+        {
+
+        }
         private void GenerateClues(string time)
         {
             // Get clue provider
@@ -417,6 +426,7 @@ namespace MurderMystery.MurderMystery.Generators
                    LocationsByTime[time][Murderer] == Room &&
                    !IsPastMurder(time);
         }
+
 
         private bool IsPastMurder(string time)
         {

@@ -1,4 +1,6 @@
 ﻿    using System;
+using MurderMystery.Enums;
+
 namespace MurderMystery.Models
 {
     public class TimelineEvent
@@ -7,7 +9,13 @@ namespace MurderMystery.Models
         public Person Person { get; set; }
         public string Location { get; set; }
         public string Action { get; set; }
-        public bool IsSecret { get; set; } = false;
-        public bool IsLie { get; set; } = false;
+        public bool IsSecret { get; set; }
+        public bool IsLie { get; set; }
+        public Proof Proof { get; set; } = Proof.None;
+
+        public bool HasProof => Proof != Proof.None;
+
     }
+
+
 }
