@@ -56,10 +56,13 @@ namespace MurderMystery.Models
 
                 foreach (var evt in timeGroup)
                 {
-                    string secretMarker = spoilers && evt.IsSecret ? " [SECRET]" : "";
-                    var lieMarker = spoilers && evt.IsLie ? " [LIE]" : "";
-                    Console.WriteLine($"{evt.Person.Name} in {evt.Location}: {evt.Action}{secretMarker}{lieMarker}");
-                        
+                    if (spoilers || !evt.IsSecret)
+                    {
+                        var lieMarker = spoilers && evt.IsLie ? " [LIE]" : "";
+                        string secretMarker = spoilers && evt.IsSecret ? " [SECRET]" : "";
+                        Console.WriteLine($"{evt.Person.Name} in {evt.Location}: {evt.Action}{secretMarker}{lieMarker}");
+                    }
+                    
                 }
             }
 
