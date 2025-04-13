@@ -12,15 +12,39 @@ namespace MysteryGame
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("🔍 MURDER MYSTERY GENERATOR 🔍");
-            Console.WriteLine("==================================\n");
+            Console.WriteLine("Welcome to Murder Mystery!");
+            Console.WriteLine("=========================\n");
+            Console.WriteLine("Press any key to start a new game...");
+            Console.ReadKey(true);
 
+            // Start a new game
+            StartNewGame();
+        }
+
+        static void StartNewGame()
+        {
+            // 1. Generate the mystery (murderer, victim, etc.)
+            Console.WriteLine("Generating mystery...");
             var mystery = MysteryGenerator.CreateMystery();
 
-            CheckForSolved(mystery);
+            // 2. Generate the mansion layout
+            Console.WriteLine("Creating mansion layout...");
+            var mansionGenerator = new MansionGenerator();
+            var mansion = mansionGenerator.GenerateMansionLayout();
 
-            Console.WriteLine("\nPress any key to exit...");
-            Console.ReadKey();
+            // 3. Place clues and people in the mansion
+            Console.WriteLine("Placing clues and characters...");
+            mansionGenerator.DistributeClues(mystery.Clues);
+            mansionGenerator.PlacePeople(mystery.People, mystery.Timeline);
+
+            // 4. Create the game state
+            var gameState = new GameState(mystery, mansion);
+
+            // 5. Create the game controller
+            var gameController = new GameController(gameState);
+
+            // 6. Start the game loop
+            gameController.StartGame();
         }
 
         private static void CheckForSolved(Mystery mystery)
@@ -38,5 +62,7 @@ namespace MysteryGame
                 CheckForSolved(mystery);
             }
         }
+
+   
     }
 }

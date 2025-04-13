@@ -14,18 +14,15 @@ namespace MurderMystery.Generators
         public static TimelineContext context;
         public static void GenerateMystery()
         {
-            // Get time slots
             var timeSlots = TimeFrames.GetTimeFrames("6:00pm", "9:00pm", 15);
 
-            // Generate between 5-8 characters
             int characterCount = _random.Next(5, 9);
             var names = DataProviderFactory.Names.GetRandomSelection(characterCount);
 
-            // Create people
             var people = names.Select(n => new Person { Name = n }).ToList();
 
-            // Randomly select victim, murderer, weapon, room, and motive
             var victim = RandomHelper.PickRandom(people);
+            victim.IsVictim = true;
             var murderer = RandomHelper.PickRandom(people.Where(p => p != victim).ToList());
 
             var weaponData = DataProviderFactory.Weapons.GetRandom();
@@ -36,10 +33,8 @@ namespace MurderMystery.Generators
             string room = roomData.Name;
             string motive = motiveData.Name;
 
-            // Create your context
             context = new TimelineContext(people, victim, murderer, weapon, room, motive, timeSlots);
 
-            // Generate the timeline
             context.GenerateTimeline();
 
 

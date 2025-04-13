@@ -15,6 +15,8 @@ namespace MurderMystery.Models
 
         public bool HasProof => Proof != Proof.None;
 
+
+
     }
 
 

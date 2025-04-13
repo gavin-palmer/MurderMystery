@@ -7,6 +7,7 @@ using Action = MurderMystery.Models.Action;
 
 namespace MurderMystery.Data.Providers
 {
+
     public class ActionProvider : BaseDataProvider<Action>
     {
         protected override List<Action> LoadItems()
@@ -14,22 +15,22 @@ namespace MurderMystery.Data.Providers
             return new List<Action>
             {
                 // Solo actions
-                new Action("was reading a book"),
-                new Action("was having a drink"),
+                new Action("was reading a book", false, PhysicalObject.Book),
+                new Action("was having a drink", false, PhysicalObject.Drink),
                 new Action("was examining a painting"),
                 new Action("was looking out the window"),
-                new Action("was writing a letter"),
-                new Action("was playing cards"),
+                new Action("was writing a letter", false, PhysicalObject.Letter),
+                new Action("was playing cards", false, PhysicalObject.Cards),
                 new Action("was pacing nervously"),
                 new Action("was admiring the decor"),
                 new Action("was checking their watch repeatedly"),
-                new Action("was flipping through a magazine"),
+                new Action("was flipping through a magazine", false, PhysicalObject.Magazine),
                 new Action("was cleaning their glasses"),
-                new Action("was making notes in a small notebook"),
+                new Action("was making notes in a small notebook", false, PhysicalObject.Notebook),
                 new Action("was adjusting their clothing"),
                 new Action("was examining the furniture"),
                 new Action("was humming softly to themselves"),
-                new Action("was lighting a cigarette"),
+                new Action("was lighting a cigarette", false, PhysicalObject.CigarettePack),
                 new Action("was gazing thoughtfully at nothing in particular"),
                 new Action("was checking their reflection"),
                 

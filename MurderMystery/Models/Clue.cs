@@ -15,7 +15,8 @@ namespace MurderMystery.Models
         public string Description { get; set; }
         public ClueType Type { get; set; }
         public string RelatedTo { get; set; }
-        public string Location { get; set; } 
+        public string Location { get; set; }
+        public bool IsHidden { get; set; } = false;
         public bool IsFound { get; set; } = false; 
         public bool IsRedHerring { get; set; } = false; 
     }

@@ -11,5 +11,12 @@ namespace MurderMystery
             return list[rng.Next(list.Count)];
         }
 
+        public static T GetRandomEnumValue<T>() where T : Enum
+        {
+            Array values = Enum.GetValues(typeof(T));
+            Random random = new Random();
+            return (T)values.GetValue(random.Next(values.Length));
+        }
+
     }
 }

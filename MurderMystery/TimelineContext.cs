@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MurderMystery.Data;
 using MurderMystery.Enums;
+using MurderMystery.Helpers;
 using MurderMystery.Models;
 
 namespace MurderMystery.MurderMystery.Generators
@@ -254,7 +255,7 @@ namespace MurderMystery.MurderMystery.Generators
                         IsSecret = true,
                         IsLie = false
                     }) ;
-                    var availableRooms = DataProviderFactory.Rooms.GetAll().Select(r => r.Name).ToList();
+                    var availableRooms = DataProviderFactory.Rooms.GetAll().OrderBy(r => Guid.NewGuid()).Take(10).Select(r => r.Name).ToList();
 
                     var emptyRoom = availableRooms.FirstOrDefault(room => !LocationsByTime[time].Select(x => x.Value).Contains(room));
   
@@ -293,7 +294,7 @@ namespace MurderMystery.MurderMystery.Generators
                         action = actionData.Description;
                         if (IsAtMurder(time) || _random.NextDouble() < 0.1)
                         {
-                            GenerateProof();
+                            proof = GenerateProof(location, person, actionData);
                         }
                     }
 
@@ -311,9 +312,31 @@ namespace MurderMystery.MurderMystery.Generators
             }
         }
 
-        private void GenerateProof()
+        private Proof GenerateProof(string location, Person person, Models.Action action)
         {
+            if(ProofHelper.RoomHasSecurityCameraFootage(location)) {
+                    var clue = new Clue($"The security cameras show {person.Name} in {location}.", ClueType.Alibi);
+                clue.Location = "Security Room";
+                Clues.Add(clue);
 
+                return Proof.Surveillance;
+            }
+            else if (ProofHelper.IsOutside(location))
+            {
+                var clue = new Clue($"Footprints in the mud. It looks like someone wearing {person.Footwear.ToString()} walked through {location}", ClueType.Physical);
+                clue.Location = location;
+                Clues.Add(clue);
+                return Proof.PhysicalEvidence;
+            }
+            else if (ProofHelper.LeftPhysicalEvidence(action))
+            {
+                var clue = new Clue($"a {action.PhysicalObject} was found in {location}", ClueType.Physical);
+                clue.Location = location;
+                Clues.Add(clue);
+                return Proof.PhysicalEvidence;
+
+            }
+            return Proof.None;
         }
         private void GenerateClues(string time)
         {
