@@ -1,0 +1,840 @@
+# Murder Mystery Dialogue Trees by Personality Type
+
+## Dialogue Structure
+
+For each personality type, the dialogue is divided into three main questions:
+1. **Have you seen anything unusual?**
+2. **Where were you during the evening?**
+3. **Do you have any gossip to share?**
+
+Each question has responses based on the player's "match score" with the NPC's personality:
+- **Low Match**: Basic, unhelpful information
+- **Medium Match**: More detailed information, some clues
+- **High Match**: Revealing information, significant clues
+
+---
+
+## 1. NERVOUS
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- *[Eyes darting around]* "Unusual? No, nothing. Everything's normal. Perfectly normal. Why? Did someone say something?"
+- *[If pressed]* "I really don't know anything. Can we talk about something else?"
+
+**Medium Match:**
+- *[Fidgeting]* "Well, I don't know if it means anything, but I heard a loud noise from the library around 10. But it was probably nothing!"
+- *[If asked for details]* "It sounded like something heavy falling. Or maybe someone arguing? I was too scared to check..."
+
+**High Match:**
+- *[Lowers voice]* "I shouldn't be saying this, but I saw someone sneaking out of the victim's room about an hour before... you know. They were carrying something wrapped in cloth."
+- *[If asked who]* "I couldn't see clearly, but they were tall with broad shoulders. And they went straight to the garden shed afterward. I was too frightened to follow."
+
+### Where were you during the evening?
+
+**Low Match:**
+- "Me? I was in my room. Alone. Reading. All night. No one saw me, but I didn't do anything wrong!"
+- *[If pressed]* "Why are you questioning me like this? I told you where I was!"
+
+**Medium Match:**
+- "I was mostly in my room, but I did go to the kitchen for some tea around 9:30. Mrs. Jenkins saw me there. Then I went straight back upstairs."
+- *[If asked about timing]* "Well, I might have wandered the halls for a bit. My nerves were bad. I couldn't sleep."
+
+**High Match:**
+- "I hate to admit this, but I was having a panic attack in the bathroom for almost an hour after dinner. That's why no one saw me. I heard the grandfather clock strike ten while I was there."
+- *[If sympathetic response]* "Thank you for understanding. While I was there, I heard footsteps outside, then whispering. It sounded like the victim and someone else having an intense argument."
+
+### Do you have any gossip to share?
+
+**Low Match:**
+- "Gossip? No, I don't listen to that sort of thing. Too stressful."
+- *[If pressed]* "People talk all the time. It doesn't mean anything!"
+
+**Medium Match:**
+- *[Glancing around]* "Well, I did notice the victim and Lord Blackwood had a heated exchange during dinner. Something about 'keeping promises.'"
+- *[If asked for details]* "I couldn't hear everything. But Lord Blackwood looked furious afterward."
+
+**High Match:**
+- *[Almost whispering]* "I probably shouldn't tell you this, but I found a torn-up letter in the fireplace of the study. I only glimpsed it before it burned, but it mentioned 'blackmail' and was signed with the initial 'D'."
+- *[If asked more]* "And there's something else... the victim told me yesterday they were 'afraid of what might happen' if certain information came to light. They seemed terrified."
+
+---
+
+## 2. SUSPICIOUS
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- "Why are you asking? Are you implying I saw something? Because I didn't."
+- *[If pressed]* "I'm not answering any more questions. This feels like an accusation."
+
+**Medium Match:**
+- "Define 'unusual.' In a house full of secrets like this one, everything seems suspicious to me."
+- *[If clarified]* "Fine. I noticed the butler lingering outside the study for no apparent reason shortly before the murder. He claimed he was dusting, but I didn't see any cleaning supplies."
+
+**High Match:**
+- "I don't trust anyone here, so I've been keeping my eyes open. I saw Miss Everett putting something in her purse after leaving the victim's room. She looked around to make sure no one was watching."
+- *[If asked for details]* "It looked like a small box or case. And here's what's really strange—later I saw the same box in Colonel Mustard's pocket. They must have met up to exchange it."
+
+### Where were you during the evening?
+
+**Low Match:**
+- "I was where I was supposed to be. And I was keeping track of everyone else too."
+- *[If pressed]* "That's all you need to know. I don't have to prove anything to you."
+
+**Medium Match:**
+- "I was in the billiard room until 9, then moved to the conservatory to get away from certain people I don't trust. I stayed there until I heard the scream."
+- *[If asked who]* "I prefer not to name names without evidence. But several guests were acting strangely all evening."
+
+**High Match:**
+- "I'll tell you exactly where I was, and who I was watching. I started in the drawing room, followed Professor Plum to the library because his behavior was suspicious, then observed from the hallway as he had a secretive conversation with Mrs. White."
+- *[If asked what they discussed]* "They mentioned something about 'the arrangement' and 'making sure it never comes to light.' Then they noticed me and stopped talking immediately. Very suspicious, wouldn't you say?"
+
+### Do you have any gossip to share?
+
+**Low Match:**
+- "I don't deal in gossip. Only facts. And the fact is, someone in this house is a murderer."
+- *[If pressed]* "Anyone could have done it. Everyone had motive."
+
+**Medium Match:**
+- "I don't gossip, but I observe. The victim and Lady Scarlet had a falling-out recently. Something about a business deal gone wrong."
+- *[If asked for details]* "They used to be partners in some venture. Now Lady Scarlet stands to inherit everything. Convenient timing for a murder, wouldn't you say?"
+
+**High Match:**
+- "Let me share what I've pieced together. Three people in this house had financial ties to the victim: Doctor Green, who's nearly bankrupt; Mrs. Peacock, whose charity the victim threatened to expose as fraudulent; and Mr. Boddy, who owed the victim a substantial gambling debt."
+- *[If asked how they know]* "I make it my business to know these things. I've been investigating everyone since I arrived. And I found this in the victim's desk—a ledger with all their debts and secrets documented. See for yourself."
+
+---
+
+## 3. ARROGANT
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- "I hardly pay attention to the mundane goings-on in this house. My mind is occupied with far more important matters."
+- *[If pressed]* "If you must know, I noticed nothing. Now, shall we discuss something more worthy of my time?"
+
+**Medium Match:**
+- "With my exceptionally observant nature, I did notice the candlestick in the dining room was moved. Amateur mistake by whoever thought that wouldn't be noticed."
+- *[If asked for details]* "Obviously it was used and then replaced slightly off-center. I can tell these things immediately. The question is why anyone would move a perfectly positioned candlestick."
+
+**High Match:**
+- "Few things escape my attention. I observed our host having a particularly intense conversation with the victim in the garden around 8 PM. I could tell by their body language—which I'm exceptionally skilled at reading—that threats were exchanged."
+- *[If asked what was said]* "I couldn't hear everything, but with my talent for lipreading, I caught phrases like 'last chance' and 'everything to lose.' Our host looked positively murderous by the end."
+
+### Where were you during the evening?
+
+**Low Match:**
+- "I was precisely where someone of my stature should be—enjoying brandy in the study, contemplating matters beyond the comprehension of most here."
+- *[If pressed]* "I don't need to account for my movements to you or anyone else."
+
+**Medium Match:**
+- "I spent most of the evening in the dining room, where several people benefited from my insightful conversation. I later retired to the library, where my expertise was requested regarding a first edition in the collection."
+- *[If asked by whom]* "By the victim, actually. They clearly valued my superior knowledge of literature, unlike some others present."
+
+**High Match:**
+- "I'll give you a detailed account, which my exceptional memory allows me to provide with perfect accuracy. I was in the dining room until 9:13, then moved to the library at the victim's request to authenticate a rare manuscript. At 9:47, I heard an argument from the adjacent room. At 10:02, I left to investigate and saw Ms. Scarlet hurrying away from the scene."
+- *[If asked about the manuscript]* "That's the curious thing—the victim claimed it was extremely valuable, but with my expert eye, I immediately recognized it as a forgery. When I informed them, they became quite distressed. Said it 'changed everything' and that they needed to 'confront someone immediately.'"
+
+### Do you have any gossip to share?
+
+**Low Match:**
+- "Gossip is beneath me. I deal in facts and intellectual discourse, not idle chatter."
+- *[If pressed]* "If you're so interested in trivial matters, perhaps ask someone more suited to such conversation."
+
+**Medium Match:**
+- "While I don't engage in gossip, I do make observations that others miss. For instance, our victim was clearly having financial troubles, evidenced by the quality of their attire—something only someone with my refined taste would notice."
+- *[If asked how they know]* "The fraying cuffs, the subtle signs of mending—all painfully obvious to a discerning eye like mine. They were keeping up appearances, but clearly in financial distress."
+
+**High Match:**
+- "With my superior intuition and intellect, I've deduced several interesting facts. The victim was being blackmailed—that much is clear from their recent behavior and financial transactions, which I've been clever enough to track. And that blackmailer is undoubtedly someone in this very house."
+- *[If asked who]* "Based on my careful analysis, there are three possibilities. The Colonel, who suddenly paid off his considerable debts two weeks ago; Miss Everett, who recently acquired an expensive necklace she couldn't possibly afford; or the Butler, who was seen posting thick envelopes at odd hours. Only someone of my deductive capabilities could have pieced this together."
+
+---
+
+## 4. ANALYTICAL
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- "Defining 'unusual' requires a baseline of 'usual' behavior, which varies by individual and context. Your question lacks specificity."
+- *[If pressed]* "Without parameters, I cannot provide a satisfactory answer."
+
+**Medium Match:**
+- "I observed three statistical anomalies this evening: the dining room candles burned down at different rates, suggesting they were lit at different times; the barometer reading dropped 3.2 points in 30 minutes, which is meteorologically improbable; and the victim checked their watch 17 times during dinner, 13.6 times more than the mean frequency."
+- *[If asked which is most significant]* "The watch-checking indicates anxiety or anticipation of a timed event. This correlates with a 73% increase in probability of premeditated activity."
+
+**High Match:**
+- "I've compiled a timeline of atypical occurrences with potential relevance: At 8:17 PM, the victim received a note that caused pupil dilation and increased respiratory rate, indicating stress. At 9:02 PM, I measured the displacement of the study rug at 3.7 centimeters from its usual position, suggesting a physical altercation. At 9:34 PM, the ambient temperature in the west corridor dropped by 4.2 degrees Celsius without corresponding window aperture—consistent with an exterior door opening for approximately 42 seconds."
+- *[If asked about conclusions]* "The data strongly suggests the victim met someone at the exterior door at 9:34 PM, following a prior altercation in the study. The note delivered at 8:17 PM likely facilitated this meeting. Based on stride pattern analysis from footprints in the garden soil, the visitor had a height of approximately 5'10" with a slight asymmetry in gait."
+
+### Where were you during the evening?
+
+**Low Match:**
+- "I was conducting various observations throughout the house in accordance with established patterns of movement and standard temporal intervals."
+- *[If pressed]* "Your question presupposes that location is a singular construct, when in fact I occupied multiple spatial coordinates over the time period in question."
+
+**Medium Match:**
+- "I can provide my location with temporal precision: 7:00-8:23 PM in the dining room, 8:23-9:17 PM in the library cataloging the first-edition collection, 9:17-9:46 PM in the observatory tracking the unusual stellar formation visible tonight, and 9:46-10:30 PM in the east corridor conducting an acoustic analysis of the house's structural integrity."
+- *[If asked if anyone saw them]* "Professor Plum entered the library at 8:49 PM and left at 9:04 PM. The housemaid passed through the east corridor at 9:51 PM and 10:17 PM. I logged each interaction in my notebook if you require verification."
+
+**High Match:**
+- "I maintained a detailed log: 7:00-8:23 PM: Dining room, seated between Lady Scarlet and Colonel Mustard, consuming precisely 247 calories. 8:23-9:17 PM: Library, organizing by Dewey Decimal System. 9:17-9:46 PM: Observatory, where I observed the victim and Mr. Green in the garden using the telescope—they transferred an object approximately 15 cubic centimeters in volume. 9:46-10:30 PM: East corridor, where I heard the distinctive sound pattern of the hidden door in the study opening at 10:12 PM, followed by two sets of footsteps and muffled conversation lasting 4 minutes and 37 seconds."
+- *[If asked about the hidden door]* "The acoustical properties of the east wall of the study indicate a void consistent with a concealed passage. The frequency pattern of the sound at 10:12 PM matches the theoretical model for a swinging bookcase mechanism. I calculated the odds of this sound occurring naturally at 0.0073%, strongly indicating human operation."
+
+### Do you have any gossip to share?
+
+**Low Match:**
+- "Gossip is an inefficient transmission of unverified data points with high error rates. I deal in empirical evidence."
+- *[If pressed]* "Anecdotal accounts without corroboration fall below my threshold for information sharing."
+
+**Medium Match:**
+- "While I don't engage in gossip per se, I have documented several correlations of potential interest: The victim and Lady Peacock exchanged 37 letters in the past month, a 312% increase from their 10-year average. Colonel Mustard's financial accounts show a pattern consistent with blackmail payments, with withdrawals of £500 occurring biweekly since March."
+- *[If asked for more]* "I've also noted that Dr. Green has purchased quantities of potassium cyanide sufficient for 17 lethal doses over the past six weeks. His research ostensibly involves silver nitrate photography, which would account for only 22% of the acquired volume."
+
+**High Match:**
+- "I've analyzed communication patterns, financial transactions, and behavioral anomalies to construct the following data set: The victim was engaged in systematic blackmail of four individuals in this house, evidenced by regular payments that correlate with the dates of arrival of letters from the victim's distinctive stationery. The four subjects demonstrate micro-expressions consistent with fear when in the victim's presence, particularly when near the writing desk. Furthermore, chemical analysis of the victim's evening tea showed traces of digitalis at approximately 0.42 mg/mL—non-lethal but sufficient to cause cardiac distress. This suggests a preliminary attempt preceding the actual murder."
+- *[If asked how they know about the digitalis]* "I maintain a portable spectroscopy kit for analyzing potentially hazardous substances. After observing Mrs. White handling the victim's teacup with latex gloves, I considered it prudent to obtain a sample from the dregs. I have the spectrographic data and comparison baseline if you'd care to review it."
+
+---
+
+## 5. SENSITIVE
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- *[Looking hurt]* "I'm not sure I should say... I don't want to cause trouble for anyone."
+- *[If pressed]* "Please don't push me. I'm feeling uncomfortable about all of this."
+
+**Medium Match:**
+- *[Concerned expression]* "There was such a strange atmosphere at dinner. I could feel the tension between the victim and Lady Scarlet—they barely looked at each other, but when they did... the coldness was heartbreaking."
+- *[If asked for details]* "It's hard to explain... it was the way they avoided each other's gaze, how Lady Scarlet's voice trembled slightly when passing the salt. Something had broken between them."
+
+**High Match:**
+- *[Voice quivering]* "I feel terrible sharing this, but I was in the garden taking some air—the emotions in this house were overwhelming me—and I saw the victim arguing with Professor Plum. The victim was crying, saying something like 'How could you betray me like this?' It was devastating to witness such raw pain."
+- *[If comforted]* "Thank you for understanding how difficult this is... There's more. After the argument, Professor Plum went to the tool shed and just... broke down. I've never seen someone so tormented by guilt. He was clutching a blue envelope and kept saying 'It has to be done.' The depth of his anguish has been haunting me all night."
+
+### Where were you during the evening?
+
+**Low Match:**
+- *[Eyes downcast]* "I spent most of the evening alone. Large gatherings can be so overwhelming sometimes."
+- *[If pressed]* "Please don't think badly of me. I just needed some quiet time."
+
+**Medium Match:**
+- *[Sighing]* "I started in the drawing room, but it became too much—everyone wearing their false smiles while harboring such complicated feelings. I retreated to the conservatory to be among the flowers instead. They're more honest than people sometimes."
+- *[If asked about timing]* "I lost track of time among the orchids. They seemed to understand my need for peace in a way humans rarely do. I think I heard the clock strike ten while I was there."
+
+**High Match:**
+- *[Speaking softly]* "I needed to find spaces where I could breathe. The hostility in the drawing room was suffocating—especially from Colonel Mustard. His anger, though hidden behind polite words, was palpable. I went to the library, then to the garden where I sat on the stone bench and watched the stars until I heard... her scream. It tore through the night like physical pain."
+- *[If asked about others]* "While in the garden, I saw shadows moving behind the study curtains—two figures in what looked like an embrace, but felt... wrong somehow. There was desperation in their movements. And later, I passed Mrs. White in the hallway. She tried to smile, but her eyes... they were hollow with fear. I wanted to reach out, but sometimes people need to carry their burdens alone."
+
+### Do you have any gossip to share?
+
+**Low Match:**
+- *[Looking uncomfortable]* "I don't like to talk about others. We all have our private struggles."
+- *[If pressed]* "It feels wrong to share what isn't mine to tell."
+
+**Medium Match:**
+- *[Conflicted expression]* "I try not to listen to gossip, but sometimes I sense things... like the profound sadness that follows Dr. Green wherever he goes. And yesterday, I found him staring at an old photograph, tears in his eyes. It showed him with the victim when they were younger."
+- *[If asked about their relationship]* "He never said directly, but there was such history in his eyes. Some bonds run so deep that even years of silence can't diminish them."
+
+**High Match:**
+- *[Almost whispering]* "I hesitate to share this because it feels like betraying a confidence, but... last night I couldn't sleep and went to the kitchen for some tea. I overheard the victim on the telephone in the hall. They were saying, 'I can't keep this secret anymore. It's destroying too many lives.' They sounded so tormented, like someone facing an impossible moral choice."
+- *[If encouraged gently]* "There's something else... something I've felt but haven't told anyone. There's a deep connection between Miss Scarlet and the victim—not romance, but something like family. The way she looks at them when she thinks no one is watching... it's the same expression my sister has when looking at old photos of our mother. I believe they might be related, and for some reason, it's been kept secret. The pain of denied kinship was written in every glance between them."
+
+---
+
+## 6. MANIPULATIVE
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- "Unusual? *[thoughtful pause]* I'm sure I could tell you quite a bit... if I felt we understood each other better."
+- *[If pressed]* "Trust works both ways, doesn't it? Perhaps we can help each other."
+
+**Medium Match:**
+- *[Leaning in confidentially]* "Between us, I noticed something odd about the candlestick in the library. It had been moved, and recently. Of course, I'm sure someone like you has already figured out its significance."
+- *[If asked for details]* "Well, I could elaborate... but I'm curious what you've learned about Lady Scarlet's whereabouts first. A fair exchange?"
+
+**High Match:**
+- *[Beckoning closer]* "I've been watching everyone carefully, and I saw something I don't think anyone else noticed. The victim met secretly with the Colonel in the garden at 9:30. They exchanged something—looked like a key. But here's what's interesting... I'm certain Lady Peacock was watching them from the terrace."
+- *[If asked why they're sharing this]* "I like you. And I think we could be... useful to each other. If I help you now, perhaps you'll remember me when you discover who the killer is? I'd rather be on the right side of this investigation. And I know much more than I've shared so far... including what happened after Lady Peacock saw them."
+
+### Where were you during the evening?
+
+**Low Match:**
+- "I was wherever I needed to be. *[smiles]* But I'm more interested in where you think I was."
+- *[If pressed]* "So suspicious! That hardly encourages me to be forthcoming."
+
+**Medium Match:**
+- "I spent most of the evening observing our fellow guests. People reveal so much when they think no one is watching. I was in the drawing room, then the library. But I'm curious—has the Professor shared his alibi with you yet? His story might be... illuminating."
+- *[If asked why they're deflecting]* "Not deflecting, simply prioritizing. My movements were inconsequential. But if you insist... I did step onto the terrace around the time of the murder. Pure coincidence, I assure you."
+
+**High Match:**
+- *[Touching investigator's arm lightly]* "I'll be completely honest with you, because I sense you're different from the others. I was following our host. Their behavior has been suspicious for days, and tonight they kept disappearing at odd moments. At 9:45, they went to the victim's room carrying a small box. They left without it ten minutes later, looking... relieved."
+- *[If asked why they were following the host]* "Let's just say they owe me something important, and I was ensuring they didn't leave before paying their debt. But now I wonder if I witnessed something far more valuable than money. I could tell you exactly what was in that box... but I'm curious what you might offer for such critical information."
+
+### Do you have any gossip to share?
+
+**Low Match:**
+- "Gossip? *[amused laugh]* I'm sure you didn't take me for the gossiping type. Though everyone has their price for information, don't they?"
+- *[If pressed]* "When you have something to offer in return, perhaps we can talk."
+
+**Medium Match:**
+- "I make it my business to know everyone's secrets. For instance, did you know our charming Doctor has been writing prescriptions for himself? Quite a lot of them, in fact. But what I find truly interesting is the letter I saw on the victim's desk, addressed to the Medical Board."
+- *[If asked for more]* "I could certainly tell you more... but I wonder, what have you learned about the will? Has it been read yet? That information would be a fair trade, I think."
+
+**High Match:**
+- *[Voice dropping to a whisper]* "You've impressed me, so I'll share something valuable. This house is a web of blackmail and secrets. The victim wasn't just collecting information—they were selling it. And I know exactly who bought the secrets about Lady Scarlet's past. It was our distinguished Colonel, who's been quietly obsessed with her for years."
+- *[If asked how they know]* "Because the victim tried to sell me those same secrets first. I declined—I prefer to discover secrets myself. But I did photograph their ledger of transactions while they were distracted. I could show you this evidence... but it would create a bond between us. One that would require your discretion about my methods and perhaps a favor in the future. Are you comfortable with such an arrangement?"
+
+---
+
+## 7. DEFENSIVE
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- "Nothing unusual at all. And I resent the implication that I might be hiding something."
+- *[If pressed]* "I don't appreciate this interrogation. I've told you what I know."
+
+**Medium Match:**
+- "Why do you keep asking everyone this same question? If you're looking for someone to blame, you should talk to Colonel Mustard. He was arguing with the victim before dinner."
+- *[If asked about the argument]* "Don't twist my words! I never said it was related to the murder. They argue all the time about politics."
+
+**High Match:**
+- "Look, I'm not the one you should be investigating. But since you're persistent—yes, I saw something. Professor Plum coming out of the victim's room just before the murder, looking flustered and putting something into his pocket."
+- *[If asked if they're sure]* "Of course I'm sure! Unlike some people here, I pay attention. And before you ask—no, I wasn't anywhere near that room afterward. Check with Miss Scarlet if you don't believe me. She saw me in the library at the time of the murder. We were together the whole time."
+
+### Where were you during the evening?
+
+**Low Match:**
+- "I was in the dining room, then the lounge. I didn't do anything wrong, so stop looking at me like that."
+- *[If pressed]* "What is this, a trial? I don't have to account for every minute!"
+
+**Medium Match:**
+- "Fine, if you must know. I was in the dining room until about 9:30. Then I went to the lounge to get away from Mrs. White's constant prying. Ask the butler if you don't believe me—he served me a brandy."
+- *[If asked about later]* "After that? I might have stepped out for some air on the terrace. It's not a crime to want a moment alone, is it? And no, I didn't see or hear anything related to the murder. I would have said so already."
+
+**High Match:**
+- "Since you're clearly determined to suspect me, I'll give you my exact movements. I was in the dining room until 9:27—yes, I checked my watch. I went to the lounge and had one brandy, which the butler can confirm. At 9:50, I stepped onto the terrace for air and saw Lady Peacock hurrying from the direction of the victim's room looking distressed."
+- *[If asked what they did next]* "I didn't do anything! It wasn't my business where she was going. Look, I know how this sounds, but I actually went back inside and directly to the billiard room after that, where I stayed until we heard the scream. Mr. Green was there—he can vouch for me. And before you ask, no, I didn't mention Lady Peacock to him. I'm not trying to cause trouble, I'm just telling you what I saw."
+
+### Do you have any gossip to share?
+
+**Low Match:**
+- "I don't participate in gossip. Unlike some people here, I respect privacy."
+- *[If pressed]* "There's nothing to tell. And I wouldn't tell you if there was."
+
+**Medium Match:**
+- "I'm not one to spread rumors, but if you're asking everyone, I suppose I should mention that the victim and Dr. Green had some kind of falling out recently. Not that it means anything."
+- *[If asked for details]* "Don't put words in my mouth! I never said it was serious. They disagreed about something medical—the victim was seeking a second opinion. That's all I know, and it's probably completely irrelevant anyway."
+
+**High Match:**
+- "I don't like being dragged into this, but since everyone else is probably telling you their theories... The victim was planning to change their will. I overheard them on the phone with their lawyer yesterday. Lady Scarlet was being cut out completely."
+- *[If asked how they know for sure]* "I know what I heard! They specifically mentioned Lady Scarlet by name and said 'she won't see a penny after what she did.' And look, I'm only telling you this because it might be relevant to your investigation, not because I want to cause trouble. But if Lady Scarlet found out about the will... well, that's a pretty strong motive, isn't it? Not that I'm accusing her—I'm just stating facts."
+
+---
+
+## 8. GOSSIPY
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- "Unusual? Oh my, where to begin? This house is simply brimming with oddities! Did you hear about the missing silver? Though I suppose that's not related to our current predicament."
+- *[If pressed]* "Well, nothing specific to the murder, if that's what you're asking. But do let me know what the others have said!"
+
+**Medium Match:**
+- "Have I ever! I was just telling Lady Peacock—oh, but you didn't hear it from me—I distinctly saw Colonel Mustard entering the library with a candlestick about an hour before the dreadful event! The very same type of candlestick that's now mysteriously missing!"
+- *[If asked for details]* "He was so furtive about it, glancing over his shoulder! And the Colonel and the victim had that awful argument at the hunting lodge last month—everyone was talking about it. They say it was about gambling debts, simply enormous sums!"
+
+**High Match:**
+- "Oh my stars, where to begin! I've been keeping my eyes peeled, as one does. About 15 minutes before the unfortunate incident, I saw the victim passed a note to Mrs. White, who read it and turned absolutely pale! She crushed it in her hand and whispered something that looked like 'Tonight then.' And that's not all!"
+- *[If encouraged]* "You won't believe this—I happened to be passing the study earlier (not eavesdropping, naturally) when I overheard the victim say to someone, 'I know about Zurich and the missing funds.' There was the sound of breaking glass, and then silence! When I peeked in moments later, the victim was alone, staring at a broken brandy snifter, looking absolutely shaken. The other person must have slipped out through the garden door. And between us, I noticed fresh mud on Professor Plum's shoes at dinner!"
+
+### Where were you during the evening?
+
+**Low Match:**
+- "Oh, I was simply everywhere! You know me, never miss a thing. I flitted from room to room like a social butterfly. The real question is where wasn't I?"
+- *[If pressed]* "Well, let me think... mostly in the drawing room, I believe. Did you ask Mrs. Peacock where she was? Her story keeps changing!"
+
+**Medium Match:**
+- "I started in the drawing room with most everyone, then popped into the conservatory around 9 where I saw the most curious exchange between Dr. Green and Miss Scarlet—just whispers, but so intense! Then I was in the hallway outside the study for quite some time. Excellent acoustics in that spot, you know."
+- *[If asked what they heard]* "Well, the victim and our host were having words—something about 'paying what's owed' and 'running out of patience.' Then someone stormed out—couldn't see who—but they were wearing dark shoes. Very distinctive clicking on the parquet."
+
+**High Match:**
+- "I'll give you my precise itinerary—I have quite the memory for these things! From 8:30 to 9:15, I was in the drawing room, where Lady Peacock and the Colonel were having that tense conversation by the fireplace—all smiles but speaking through clenched teeth! At 9:20, I went to the powder room, passing the study where the victim was making a phone call—something about 'evidence' and 'tomorrow will be too late.'"
+
+# Murder Mystery Dialogue Trees by Personality Type
+
+## Dialogue Structure
+
+For each personality type, the dialogue is divided into three main questions:
+1. **Have you seen anything unusual?**
+2. **Where were you during the evening?**
+3. **Do you have any gossip to share?**
+
+Each question has responses based on the player's "match score" with the NPC's personality:
+- *[If encouraged]* "From 9:25 to 9:50, I positioned myself near the library—purely by chance, of course—where I observed Miss Scarlet removing a book from the shelf, taking something from inside it, and replacing it. So secretive! At 9:55, I was heading toward the dining room when I heard a thud from the victim's room, followed by footsteps hurrying away. When I peeked around the corner—being a concerned guest, naturally—I glimpsed someone in a dark jacket disappearing down the servants' stairs!"
+
+### Do you have any gossip to share?
+
+**Low Match:**
+- "Gossip? Me? *[theatrical gasp]* Well, I suppose I've heard a thing or two. Did you know the butler and the cook are secretly related? Second cousins! Can you imagine?"
+- *[If pressed about the murder]* "Oh, that. Well, nothing specific comes to mind. Though everyone has been acting rather suspicious, wouldn't you say?"
+
+**Medium Match:**
+- "Well, since you asked! I happen to know that the victim and Professor Plum were seen arguing at the Blackwood Club last week. Something about research funding being withdrawn. The Professor was absolutely livid—pounding his fist on the table so hard that drinks spilled!"
+- *[If asked for more]* "And that's not all! Lady Scarlet has been meeting secretly with the victim's attorney. Three times last month! My friend Gertrude saw them at the café across from the law offices, heads together over documents. Very hush-hush."
+
+**High Match:**
+- "Oh my, where to begin! Did you know the victim was blackmailing at least three people in this house? I have it on excellent authority! There's a hidden wall safe behind the painting in the study—I happened to glimpse inside when the victim was retrieving something, and it was full of folders with people's names!"
+- *[If encouraged]* "The folders had labels—I only saw three clearly: 'Peacock - Hospital Incident,' 'Mustard - Diamond Affair,' and 'Green - Falsified Research.' And here's something positively scandalous—the victim's pocket watch, the one always worn? It contains a secret compartment with a tiny key! I noticed when it fell open during dinner two nights ago. The victim snapped it shut immediately, but not before I saw. And guess what disappeared after the murder? The watch! Whoever took it must have needed that key desperately!"
+
+---
+
+## 9. RESERVED
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- *[Brief eye contact, then looking away]* "No. Nothing unusual."
+- *[If pressed]* "I prefer not to speculate."
+
+**Medium Match:**
+- *[Considering carefully]* "I wouldn't call it unusual, necessarily, but the victim did receive a phone call during dinner. They seemed... disturbed afterward."
+- *[If asked for details]* "They excused themselves promptly after the call. I noticed they checked the time. That's all."
+
+**High Match:**
+- *[Speaking quietly]* "I observed the victim arguing with someone in the study around 9:30. The door was ajar, and I was passing by. I didn't intend to overhear, but the victim said, 'This ends tonight. I won't be threatened anymore.'"
+- *[If asked who they were arguing with]* "I couldn't see clearly, as I didn't linger. But they were tall, with distinctive cufflinks—silver, with a blue stone. I noticed them catch the light when they gestured emphatically. I also observed that same person later placing what appeared to be a letter in the fire in the library. Their hands were shaking."
+
+### Where were you during the evening?
+
+**Low Match:**
+- "I was reading in the library for most of the evening."
+- *[If pressed]* "I prefer my own company. I don't keep track of others."
+
+**Medium Match:**
+- "I spent the early evening in the library. Around nine, I moved to the conservatory for some quiet reflection. The library had become... crowded."
+- *[If asked who was there]* "Professor Plum arrived with Lady Scarlet. They seemed to be searching for something specific among the books. I left them to it."
+
+**High Match:**
+- "I was in the library from 8 until 9:10. The Professor and Lady Scarlet arrived at 8:45, searching through the books on the east wall—legal volumes, primarily. At 9:10, I went to the conservatory, where I remained until 10. During that time, I saw Dr. Green and the victim walking in the garden. The doctor handed over what looked like medical documents. Their conversation seemed civil but tense."
+- *[If asked if they saw anyone else]* "Yes. At approximately 9:40, Colonel Mustard entered the garden from the terrace door. He observed the doctor and victim for several minutes without announcing his presence, then returned inside when they began walking back toward the house. He seemed... deliberate in his movements. Careful not to be seen."
+
+### Do you have any gossip to share?
+
+**Low Match:**
+- "I don't engage in gossip."
+- *[If pressed]* "Perhaps you should ask someone more socially inclined."
+
+**Medium Match:**
+- *[Slight frown]* "I don't gossip, but I am observant. The victim and our host had some sort of financial arrangement. I noticed the victim passing a check during yesterday's luncheon."
+- *[If asked about the amount]* "Substantial, from what I could see. Five figures, at least."
+
+**High Match:**
+- *[Speaking deliberately]* "I don't spread idle talk, but there are facts you should know. Three days ago, I overheard the victim on the telephone in the study, saying: 'The documents prove everything. All the transfers to the Swiss account, all the missing funds. They'll all be exposed if anything happens to me.'"
+- *[If asked if they told anyone]* "No. It wasn't my concern. But there's something else. Last night, I couldn't sleep and went to the kitchen for tea. The study light was on at 2 AM. Through the keyhole, I saw Mrs. White and the victim reviewing documents. She was saying, 'They can never know you've found this. They would kill rather than let this come to light.' In retrospect, her choice of words seems... unfortunate."
+
+---
+
+## 10. FLIRTATIOUS
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- *[Playful smile]* "The only unusual thing I've seen is how long it took you to come talk to me. I was beginning to feel neglected."
+- *[If pressed]* "Murder? Oh, that. So serious! Couldn't we discuss something more... pleasant?"
+
+**Medium Match:**
+- *[Leaning closer]* "Well, I did see something that caught my eye. Our distinguished Colonel was slipping something into the victim's drink when they thought no one was watching. I have a talent for noticing things people try to hide." *[Winks]*
+- *[If asked about the timing]* "It was just before dinner. I was watching the Colonel particularly closely—something about a man in uniform, you know? The victim never finished that drink, though. Perhaps they noticed too?"
+
+**High Match:**
+- *[Touching investigator's arm lightly]* "Between us, I saw something quite intriguing. I was taking a little midnight stroll last night—I get so restless in strange beds—and I noticed our victim and Miss Everett having a rather... intimate moment in the garden. But it wasn't romance—she was passing them a small package, and they looked terribly serious."
+- *[If encouraged]* "There's something captivating about your intensity when you're listening... *[refocuses]* After they parted, I followed Miss Everett—discreetly, of course. She went straight to the telephone in the hall and made a call, whispering, 'It's done. They don't suspect anything.' Isn't that delicious? And here's the most interesting part—this morning, I noticed her wearing a rather expensive-looking new bracelet. One I'm certain she wasn't wearing yesterday. I do notice jewelry... among other attractive things." *[Meaningful glance]*
+
+### Where were you during the evening?
+
+**Low Match:**
+- *[Playfully]* "Here and there. Mostly looking for interesting company. It seems I've finally found it."
+- *[If pressed]* "Must we focus on such boring details? I'm much more interested in where I might be later... perhaps with charming company?" *[Raises eyebrow]*
+
+**Medium Match:**
+- *[Moving closer]* "I started in the drawing room, making the rounds. Then I spent some time in the conservatory with Dr. Green—did you know he's a championship dancer? We may have practiced a few steps. After that, I needed some air and went to the terrace. That's where I saw Lady Peacock having what looked like a very serious conversation with the victim."
+- *[If asked about Lady Peacock]* "She seemed quite intense—not at all her usual composed self. At one point, she gripped the victim's arm so tightly I could see white knuckles from where I was standing. I couldn't hear what they were saying, but body language tells you so much, don't you think? And I'm very good at reading... signals." *[Holds eye contact]*
+
+**High Match:**
+- *[Speaking intimately]* "I do love a thorough investigation. I spent the early evening floating between admirers—the drawing room until 8:30, then the music room where I played a little something on the piano. Professor Plum joined me around 9—he has surprisingly nimble fingers for an academic. At 9:30, I stepped out to the terrace for air and witnessed quite the scene through the study window."
+- *[If asked what they saw]* "The victim and our host in what appeared to be a very heated exchange. Papers were involved—the victim kept pointing to specific lines, and our host became increasingly agitated. Eventually, they tore the papers from the victim's hands and said something that made the victim step back, looking genuinely afraid. I've never seen fear like that before—it was... unsettling. Afterward, I was too shaken to rejoin the party immediately, so I walked in the garden, where I saw Mr. Boddy burying something under the old oak tree. When he spotted me, he claimed to be looking for his lost cufflink by moonlight—clever, but unconvincing. I could show you the exact spot if you like... just the two of us in the moonlight?" *[Suggestive smile]*
+
+### Do you have any gossip to share?
+
+**Low Match:**
+- *[Playful laugh]* "Darling, I know all the best gossip. Though I usually save it for... special friends."
+- *[If pressed]* "You're so persistent! I like that. But really, nothing relevant to this dreary murder business."
+
+**Medium Match:**
+- *[Conspiratorial whisper]* "Well, since you ask so nicely... Our victim and Colonel Mustard had quite the entanglement. Financial and otherwise, if you take my meaning. The Colonel owes substantial gambling debts—I've seen the IOUs when the victim thought no one was looking."
+- *[If asked for more]* "The Colonel's pockets are completely empty—and he's been selling family heirlooms recently. Desperately, one might say. I noticed his signet ring is missing—it's been on the Mustard finger for generations. And just between us, I heard him tell the victim last night that he was 'out of both time and options.' Make of that what you will, handsome." *[Winks]*
+
+**High Match:**
+- *[Moving very close]* "For you? I'll share my very best secrets. Did you know our victim was having an affair? With someone in this very house. I know because I... accidentally opened a wrongly delivered love letter. Passionate stuff—all about 'our plan' and 'freedom once the money is secured.' It was signed simply 'M.'"
+- *[If encouraged]* "The plot thickens, doesn't it? Just last week, I happened to overhear the victim on the phone, arranging for train tickets to Dover—two one-way tickets for tomorrow morning. Someone was planning to disappear. But here's the most interesting tidbit—I saw Miss Scarlet emerging from the victim's room this morning around 5 AM, looking rather disheveled. And she was carrying a small leather case I've never seen before. When she saw me, she said she was 'returning a book.' At 5 AM? In a dressing gown? I may flirt, darling, but I'm far from blind. And I've seen how she looks at Mrs. White when she thinks no one is watching. Perhaps 'M' isn't the Colonel after all? I do love a complicated romance... speaking of which, what are your plans after you solve this little murder?" *[Touches investigator's hand]* **Low Match**: Basic, unhelpful information
+- **Medium Match**: More detailed information, some clues
+- **High Match**: Revealing information, significant clues
+
+---
+
+## 1. NERVOUS
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- *[Eyes darting around]* "Unusual? No, nothing. Everything's normal. Perfectly normal. Why? Did someone say something?"
+- *[If pressed]* "I really don't know anything. Can we talk about something else?"
+
+**Medium Match:**
+- *[Fidgeting]* "Well, I don't know if it means anything, but I heard a loud noise from the library around 10. But it was probably nothing!"
+- *[If asked for details]* "It sounded like something heavy falling. Or maybe someone arguing? I was too scared to check..."
+
+**High Match:**
+- *[Lowers voice]* "I shouldn't be saying this, but I saw someone sneaking out of the victim's room about an hour before... you know. They were carrying something wrapped in cloth."
+- *[If asked who]* "I couldn't see clearly, but they were tall with broad shoulders. And they went straight to the garden shed afterward. I was too frightened to follow."
+
+### Where were you during the evening?
+
+**Low Match:**
+- "Me? I was in my room. Alone. Reading. All night. No one saw me, but I didn't do anything wrong!"
+- *[If pressed]* "Why are you questioning me like this? I told you where I was!"
+
+**Medium Match:**
+- "I was mostly in my room, but I did go to the kitchen for some tea around 9:30. Mrs. Jenkins saw me there. Then I went straight back upstairs."
+- *[If asked about timing]* "Well, I might have wandered the halls for a bit. My nerves were bad. I couldn't sleep."
+
+**High Match:**
+- "I hate to admit this, but I was having a panic attack in the bathroom for almost an hour after dinner. That's why no one saw me. I heard the grandfather clock strike ten while I was there."
+- *[If sympathetic response]* "Thank you for understanding. While I was there, I heard footsteps outside, then whispering. It sounded like the victim and someone else having an intense argument."
+
+### Do you have any gossip to share?
+
+**Low Match:**
+- "Gossip? No, I don't listen to that sort of thing. Too stressful."
+- *[If pressed]* "People talk all the time. It doesn't mean anything!"
+
+**Medium Match:**
+- *[Glancing around]* "Well, I did notice the victim and Lord Blackwood had a heated exchange during dinner. Something about 'keeping promises.'"
+- *[If asked for details]* "I couldn't hear everything. But Lord Blackwood looked furious afterward."
+
+**High Match:**
+- *[Almost whispering]* "I probably shouldn't tell you this, but I found a torn-up letter in the fireplace of the study. I only glimpsed it before it burned, but it mentioned 'blackmail' and was signed with the initial 'D'."
+- *[If asked more]* "And there's something else... the victim told me yesterday they were 'afraid of what might happen' if certain information came to light. They seemed terrified."
+
+---
+
+## 2. SUSPICIOUS
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- "Why are you asking? Are you implying I saw something? Because I didn't."
+- *[If pressed]* "I'm not answering any more questions. This feels like an accusation."
+
+**Medium Match:**
+- "Define 'unusual.' In a house full of secrets like this one, everything seems suspicious to me."
+- *[If clarified]* "Fine. I noticed the butler lingering outside the study for no apparent reason shortly before the murder. He claimed he was dusting, but I didn't see any cleaning supplies."
+
+**High Match:**
+- "I don't trust anyone here, so I've been keeping my eyes open. I saw Miss Everett putting something in her purse after leaving the victim's room. She looked around to make sure no one was watching."
+- *[If asked for details]* "It looked like a small box or case. And here's what's really strange—later I saw the same box in Colonel Mustard's pocket. They must have met up to exchange it."
+
+### Where were you during the evening?
+
+**Low Match:**
+- "I was where I was supposed to be. And I was keeping track of everyone else too."
+- *[If pressed]* "That's all you need to know. I don't have to prove anything to you."
+
+**Medium Match:**
+- "I was in the billiard room until 9, then moved to the conservatory to get away from certain people I don't trust. I stayed there until I heard the scream."
+- *[If asked who]* "I prefer not to name names without evidence. But several guests were acting strangely all evening."
+
+**High Match:**
+- "I'll tell you exactly where I was, and who I was watching. I started in the drawing room, followed Professor Plum to the library because his behavior was suspicious, then observed from the hallway as he had a secretive conversation with Mrs. White."
+- *[If asked what they discussed]* "They mentioned something about 'the arrangement' and 'making sure it never comes to light.' Then they noticed me and stopped talking immediately. Very suspicious, wouldn't you say?"
+
+### Do you have any gossip to share?
+
+**Low Match:**
+- "I don't deal in gossip. Only facts. And the fact is, someone in this house is a murderer."
+- *[If pressed]* "Anyone could have done it. Everyone had motive."
+
+**Medium Match:**
+- "I don't gossip, but I observe. The victim and Lady Scarlet had a falling-out recently. Something about a business deal gone wrong."
+- *[If asked for details]* "They used to be partners in some venture. Now Lady Scarlet stands to inherit everything. Convenient timing for a murder, wouldn't you say?"
+
+**High Match:**
+- "Let me share what I've pieced together. Three people in this house had financial ties to the victim: Doctor Green, who's nearly bankrupt; Mrs. Peacock, whose charity the victim threatened to expose as fraudulent; and Mr. Boddy, who owed the victim a substantial gambling debt."
+- *[If asked how they know]* "I make it my business to know these things. I've been investigating everyone since I arrived. And I found this in the victim's desk—a ledger with all their debts and secrets documented. See for yourself."
+
+---
+
+## 3. ARROGANT
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- "I hardly pay attention to the mundane goings-on in this house. My mind is occupied with far more important matters."
+- *[If pressed]* "If you must know, I noticed nothing. Now, shall we discuss something more worthy of my time?"
+
+**Medium Match:**
+- "With my exceptionally observant nature, I did notice the candlestick in the dining room was moved. Amateur mistake by whoever thought that wouldn't be noticed."
+- *[If asked for details]* "Obviously it was used and then replaced slightly off-center. I can tell these things immediately. The question is why anyone would move a perfectly positioned candlestick."
+
+**High Match:**
+- "Few things escape my attention. I observed our host having a particularly intense conversation with the victim in the garden around 8 PM. I could tell by their body language—which I'm exceptionally skilled at reading—that threats were exchanged."
+- *[If asked what was said]* "I couldn't hear everything, but with my talent for lipreading, I caught phrases like 'last chance' and 'everything to lose.' Our host looked positively murderous by the end."
+
+### Where were you during the evening?
+
+**Low Match:**
+- "I was precisely where someone of my stature should be—enjoying brandy in the study, contemplating matters beyond the comprehension of most here."
+- *[If pressed]* "I don't need to account for my movements to you or anyone else."
+
+**Medium Match:**
+- "I spent most of the evening in the dining room, where several people benefited from my insightful conversation. I later retired to the library, where my expertise was requested regarding a first edition in the collection."
+- *[If asked by whom]* "By the victim, actually. They clearly valued my superior knowledge of literature, unlike some others present."
+
+**High Match:**
+- "I'll give you a detailed account, which my exceptional memory allows me to provide with perfect accuracy. I was in the dining room until 9:13, then moved to the library at the victim's request to authenticate a rare manuscript. At 9:47, I heard an argument from the adjacent room. At 10:02, I left to investigate and saw Ms. Scarlet hurrying away from the scene."
+- *[If asked about the manuscript]* "That's the curious thing—the victim claimed it was extremely valuable, but with my expert eye, I immediately recognized it as a forgery. When I informed them, they became quite distressed. Said it 'changed everything' and that they needed to 'confront someone immediately.'"
+
+### Do you have any gossip to share?
+
+**Low Match:**
+- "Gossip is beneath me. I deal in facts and intellectual discourse, not idle chatter."
+- *[If pressed]* "If you're so interested in trivial matters, perhaps ask someone more suited to such conversation."
+
+**Medium Match:**
+- "While I don't engage in gossip, I do make observations that others miss. For instance, our victim was clearly having financial troubles, evidenced by the quality of their attire—something only someone with my refined taste would notice."
+- *[If asked how they know]* "The fraying cuffs, the subtle signs of mending—all painfully obvious to a discerning eye like mine. They were keeping up appearances, but clearly in financial distress."
+
+**High Match:**
+- "With my superior intuition and intellect, I've deduced several interesting facts. The victim was being blackmailed—that much is clear from their recent behavior and financial transactions, which I've been clever enough to track. And that blackmailer is undoubtedly someone in this very house."
+- *[If asked who]* "Based on my careful analysis, there are three possibilities. The Colonel, who suddenly paid off his considerable debts two weeks ago; Miss Everett, who recently acquired an expensive necklace she couldn't possibly afford; or the Butler, who was seen posting thick envelopes at odd hours. Only someone of my deductive capabilities could have pieced this together."
+
+---
+
+## 4. ANALYTICAL
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- "Defining 'unusual' requires a baseline of 'usual' behavior, which varies by individual and context. Your question lacks specificity."
+- *[If pressed]* "Without parameters, I cannot provide a satisfactory answer."
+
+**Medium Match:**
+- "I observed three statistical anomalies this evening: the dining room candles burned down at different rates, suggesting they were lit at different times; the barometer reading dropped 3.2 points in 30 minutes, which is meteorologically improbable; and the victim checked their watch 17 times during dinner, 13.6 times more than the mean frequency."
+- *[If asked which is most significant]* "The watch-checking indicates anxiety or anticipation of a timed event. This correlates with a 73% increase in probability of premeditated activity."
+
+**High Match:**
+- "I've compiled a timeline of atypical occurrences with potential relevance: At 8:17 PM, the victim received a note that caused pupil dilation and increased respiratory rate, indicating stress. At 9:02 PM, I measured the displacement of the study rug at 3.7 centimeters from its usual position, suggesting a physical altercation. At 9:34 PM, the ambient temperature in the west corridor dropped by 4.2 degrees Celsius without corresponding window aperture—consistent with an exterior door opening for approximately 42 seconds."
+- *[If asked about conclusions]* "The data strongly suggests the victim met someone at the exterior door at 9:34 PM, following a prior altercation in the study. The note delivered at 8:17 PM likely facilitated this meeting. Based on stride pattern analysis from footprints in the garden soil, the visitor had a height of approximately 5'10" with a slight asymmetry in gait."
+
+### Where were you during the evening?
+
+**Low Match:**
+- "I was conducting various observations throughout the house in accordance with established patterns of movement and standard temporal intervals."
+- *[If pressed]* "Your question presupposes that location is a singular construct, when in fact I occupied multiple spatial coordinates over the time period in question."
+
+**Medium Match:**
+- "I can provide my location with temporal precision: 7:00-8:23 PM in the dining room, 8:23-9:17 PM in the library cataloging the first-edition collection, 9:17-9:46 PM in the observatory tracking the unusual stellar formation visible tonight, and 9:46-10:30 PM in the east corridor conducting an acoustic analysis of the house's structural integrity."
+- *[If asked if anyone saw them]* "Professor Plum entered the library at 8:49 PM and left at 9:04 PM. The housemaid passed through the east corridor at 9:51 PM and 10:17 PM. I logged each interaction in my notebook if you require verification."
+
+**High Match:**
+- "I maintained a detailed log: 7:00-8:23 PM: Dining room, seated between Lady Scarlet and Colonel Mustard, consuming precisely 247 calories. 8:23-9:17 PM: Library, organizing by Dewey Decimal System. 9:17-9:46 PM: Observatory, where I observed the victim and Mr. Green in the garden using the telescope—they transferred an object approximately 15 cubic centimeters in volume. 9:46-10:30 PM: East corridor, where I heard the distinctive sound pattern of the hidden door in the study opening at 10:12 PM, followed by two sets of footsteps and muffled conversation lasting 4 minutes and 37 seconds."
+- *[If asked about the hidden door]* "The acoustical properties of the east wall of the study indicate a void consistent with a concealed passage. The frequency pattern of the sound at 10:12 PM matches the theoretical model for a swinging bookcase mechanism. I calculated the odds of this sound occurring naturally at 0.0073%, strongly indicating human operation."
+
+### Do you have any gossip to share?
+
+**Low Match:**
+- "Gossip is an inefficient transmission of unverified data points with high error rates. I deal in empirical evidence."
+- *[If pressed]* "Anecdotal accounts without corroboration fall below my threshold for information sharing."
+
+**Medium Match:**
+- "While I don't engage in gossip per se, I have documented several correlations of potential interest: The victim and Lady Peacock exchanged 37 letters in the past month, a 312% increase from their 10-year average. Colonel Mustard's financial accounts show a pattern consistent with blackmail payments, with withdrawals of £500 occurring biweekly since March."
+- *[If asked for more]* "I've also noted that Dr. Green has purchased quantities of potassium cyanide sufficient for 17 lethal doses over the past six weeks. His research ostensibly involves silver nitrate photography, which would account for only 22% of the acquired volume."
+
+**High Match:**
+- "I've analyzed communication patterns, financial transactions, and behavioral anomalies to construct the following data set: The victim was engaged in systematic blackmail of four individuals in this house, evidenced by regular payments that correlate with the dates of arrival of letters from the victim's distinctive stationery. The four subjects demonstrate micro-expressions consistent with fear when in the victim's presence, particularly when near the writing desk. Furthermore, chemical analysis of the victim's evening tea showed traces of digitalis at approximately 0.42 mg/mL—non-lethal but sufficient to cause cardiac distress. This suggests a preliminary attempt preceding the actual murder."
+- *[If asked how they know about the digitalis]* "I maintain a portable spectroscopy kit for analyzing potentially hazardous substances. After observing Mrs. White handling the victim's teacup with latex gloves, I considered it prudent to obtain a sample from the dregs. I have the spectrographic data and comparison baseline if you'd care to review it."
+
+---
+
+## 5. SENSITIVE
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- *[Looking hurt]* "I'm not sure I should say... I don't want to cause trouble for anyone."
+- *[If pressed]* "Please don't push me. I'm feeling uncomfortable about all of this."
+
+**Medium Match:**
+- *[Concerned expression]* "There was such a strange atmosphere at dinner. I could feel the tension between the victim and Lady Scarlet—they barely looked at each other, but when they did... the coldness was heartbreaking."
+- *[If asked for details]* "It's hard to explain... it was the way they avoided each other's gaze, how Lady Scarlet's voice trembled slightly when passing the salt. Something had broken between them."
+
+**High Match:**
+- *[Voice quivering]* "I feel terrible sharing this, but I was in the garden taking some air—the emotions in this house were overwhelming me—and I saw the victim arguing with Professor Plum. The victim was crying, saying something like 'How could you betray me like this?' It was devastating to witness such raw pain."
+- *[If comforted]* "Thank you for understanding how difficult this is... There's more. After the argument, Professor Plum went to the tool shed and just... broke down. I've never seen someone so tormented by guilt. He was clutching a blue envelope and kept saying 'It has to be done.' The depth of his anguish has been haunting me all night."
+
+### Where were you during the evening?
+
+**Low Match:**
+- *[Eyes downcast]* "I spent most of the evening alone. Large gatherings can be so overwhelming sometimes."
+- *[If pressed]* "Please don't think badly of me. I just needed some quiet time."
+
+**Medium Match:**
+- *[Sighing]* "I started in the drawing room, but it became too much—everyone wearing their false smiles while harboring such complicated feelings. I retreated to the conservatory to be among the flowers instead. They're more honest than people sometimes."
+- *[If asked about timing]* "I lost track of time among the orchids. They seemed to understand my need for peace in a way humans rarely do. I think I heard the clock strike ten while I was there."
+
+**High Match:**
+- *[Speaking softly]* "I needed to find spaces where I could breathe. The hostility in the drawing room was suffocating—especially from Colonel Mustard. His anger, though hidden behind polite words, was palpable. I went to the library, then to the garden where I sat on the stone bench and watched the stars until I heard... her scream. It tore through the night like physical pain."
+- *[If asked about others]* "While in the garden, I saw shadows moving behind the study curtains—two figures in what looked like an embrace, but felt... wrong somehow. There was desperation in their movements. And later, I passed Mrs. White in the hallway. She tried to smile, but her eyes... they were hollow with fear. I wanted to reach out, but sometimes people need to carry their burdens alone."
+
+### Do you have any gossip to share?
+
+**Low Match:**
+- *[Looking uncomfortable]* "I don't like to talk about others. We all have our private struggles."
+- *[If pressed]* "It feels wrong to share what isn't mine to tell."
+
+**Medium Match:**
+- *[Conflicted expression]* "I try not to listen to gossip, but sometimes I sense things... like the profound sadness that follows Dr. Green wherever he goes. And yesterday, I found him staring at an old photograph, tears in his eyes. It showed him with the victim when they were younger."
+- *[If asked about their relationship]* "He never said directly, but there was such history in his eyes. Some bonds run so deep that even years of silence can't diminish them."
+
+**High Match:**
+- *[Almost whispering]* "I hesitate to share this because it feels like betraying a confidence, but... last night I couldn't sleep and went to the kitchen for some tea. I overheard the victim on the telephone in the hall. They were saying, 'I can't keep this secret anymore. It's destroying too many lives.' They sounded so tormented, like someone facing an impossible moral choice."
+- *[If encouraged gently]* "There's something else... something I've felt but haven't told anyone. There's a deep connection between Miss Scarlet and the victim—not romance, but something like family. The way she looks at them when she thinks no one is watching... it's the same expression my sister has when looking at old photos of our mother. I believe they might be related, and for some reason, it's been kept secret. The pain of denied kinship was written in every glance between them."
+
+---
+
+## 6. MANIPULATIVE
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- "Unusual? *[thoughtful pause]* I'm sure I could tell you quite a bit... if I felt we understood each other better."
+- *[If pressed]* "Trust works both ways, doesn't it? Perhaps we can help each other."
+
+**Medium Match:**
+- *[Leaning in confidentially]* "Between us, I noticed something odd about the candlestick in the library. It had been moved, and recently. Of course, I'm sure someone like you has already figured out its significance."
+- *[If asked for details]* "Well, I could elaborate... but I'm curious what you've learned about Lady Scarlet's whereabouts first. A fair exchange?"
+
+**High Match:**
+- *[Beckoning closer]* "I've been watching everyone carefully, and I saw something I don't think anyone else noticed. The victim met secretly with the Colonel in the garden at 9:30. They exchanged something—looked like a key. But here's what's interesting... I'm certain Lady Peacock was watching them from the terrace."
+- *[If asked why they're sharing this]* "I like you. And I think we could be... useful to each other. If I help you now, perhaps you'll remember me when you discover who the killer is? I'd rather be on the right side of this investigation. And I know much more than I've shared so far... including what happened after Lady Peacock saw them."
+
+### Where were you during the evening?
+
+**Low Match:**
+- "I was wherever I needed to be. *[smiles]* But I'm more interested in where you think I was."
+- *[If pressed]* "So suspicious! That hardly encourages me to be forthcoming."
+
+**Medium Match:**
+- "I spent most of the evening observing our fellow guests. People reveal so much when they think no one is watching. I was in the drawing room, then the library. But I'm curious—has the Professor shared his alibi with you yet? His story might be... illuminating."
+- *[If asked why they're deflecting]* "Not deflecting, simply prioritizing. My movements were inconsequential. But if you insist... I did step onto the terrace around the time of the murder. Pure coincidence, I assure you."
+
+**High Match:**
+- *[Touching investigator's arm lightly]* "I'll be completely honest with you, because I sense you're different from the others. I was following our host. Their behavior has been suspicious for days, and tonight they kept disappearing at odd moments. At 9:45, they went to the victim's room carrying a small box. They left without it ten minutes later, looking... relieved."
+- *[If asked why they were following the host]* "Let's just say they owe me something important, and I was ensuring they didn't leave before paying their debt. But now I wonder if I witnessed something far more valuable than money. I could tell you exactly what was in that box... but I'm curious what you might offer for such critical information."
+
+### Do you have any gossip to share?
+
+**Low Match:**
+- "Gossip? *[amused laugh]* I'm sure you didn't take me for the gossiping type. Though everyone has their price for information, don't they?"
+- *[If pressed]* "When you have something to offer in return, perhaps we can talk."
+
+**Medium Match:**
+- "I make it my business to know everyone's secrets. For instance, did you know our charming Doctor has been writing prescriptions for himself? Quite a lot of them, in fact. But what I find truly interesting is the letter I saw on the victim's desk, addressed to the Medical Board."
+- *[If asked for more]* "I could certainly tell you more... but I wonder, what have you learned about the will? Has it been read yet? That information would be a fair trade, I think."
+
+**High Match:**
+- *[Voice dropping to a whisper]* "You've impressed me, so I'll share something valuable. This house is a web of blackmail and secrets. The victim wasn't just collecting information—they were selling it. And I know exactly who bought the secrets about Lady Scarlet's past. It was our distinguished Colonel, who's been quietly obsessed with her for years."
+- *[If asked how they know]* "Because the victim tried to sell me those same secrets first. I declined—I prefer to discover secrets myself. But I did photograph their ledger of transactions while they were distracted. I could show you this evidence... but it would create a bond between us. One that would require your discretion about my methods and perhaps a favor in the future. Are you comfortable with such an arrangement?"
+
+---
+
+## 7. DEFENSIVE
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- "Nothing unusual at all. And I resent the implication that I might be hiding something."
+- *[If pressed]* "I don't appreciate this interrogation. I've told you what I know."
+
+**Medium Match:**
+- "Why do you keep asking everyone this same question? If you're looking for someone to blame, you should talk to Colonel Mustard. He was arguing with the victim before dinner."
+- *[If asked about the argument]* "Don't twist my words! I never said it was related to the murder. They argue all the time about politics."
+
+**High Match:**
+- "Look, I'm not the one you should be investigating. But since you're persistent—yes, I saw something. Professor Plum coming out of the victim's room just before the murder, looking flustered and putting something into his pocket."
+- *[If asked if they're sure]* "Of course I'm sure! Unlike some people here, I pay attention. And before you ask—no, I wasn't anywhere near that room afterward. Check with Miss Scarlet if you don't believe me. She saw me in the library at the time of the murder. We were together the whole time."
+
+### Where were you during the evening?
+
+**Low Match:**
+- "I was in the dining room, then the lounge. I didn't do anything wrong, so stop looking at me like that."
+- *[If pressed]* "What is this, a trial? I don't have to account for every minute!"
+
+**Medium Match:**
+- "Fine, if you must know. I was in the dining room until about 9:30. Then I went to the lounge to get away from Mrs. White's constant prying. Ask the butler if you don't believe me—he served me a brandy."
+- *[If asked about later]* "After that? I might have stepped out for some air on the terrace. It's not a crime to want a moment alone, is it? And no, I didn't see or hear anything related to the murder. I would have said so already."
+
+**High Match:**
+- "Since you're clearly determined to suspect me, I'll give you my exact movements. I was in the dining room until 9:27—yes, I checked my watch. I went to the lounge and had one brandy, which the butler can confirm. At 9:50, I stepped onto the terrace for air and saw Lady Peacock hurrying from the direction of the victim's room looking distressed."
+- *[If asked what they did next]* "I didn't do anything! It wasn't my business where she was going. Look, I know how this sounds, but I actually went back inside and directly to the billiard room after that, where I stayed until we heard the scream. Mr. Green was there—he can vouch for me. And before you ask, no, I didn't mention Lady Peacock to him. I'm not trying to cause trouble, I'm just telling you what I saw."
+
+### Do you have any gossip to share?
+
+**Low Match:**
+- "I don't participate in gossip. Unlike some people here, I respect privacy."
+- *[If pressed]* "There's nothing to tell. And I wouldn't tell you if there was."
+
+**Medium Match:**
+- "I'm not one to spread rumors, but if you're asking everyone, I suppose I should mention that the victim and Dr. Green had some kind of falling out recently. Not that it means anything."
+- *[If asked for details]* "Don't put words in my mouth! I never said it was serious. They disagreed about something medical—the victim was seeking a second opinion. That's all I know, and it's probably completely irrelevant anyway."
+
+**High Match:**
+- "I don't like being dragged into this, but since everyone else is probably telling you their theories... The victim was planning to change their will. I overheard them on the phone with their lawyer yesterday. Lady Scarlet was being cut out completely."
+- *[If asked how they know for sure]* "I know what I heard! They specifically mentioned Lady Scarlet by name and said 'she won't see a penny after what she did.' And look, I'm only telling you this because it might be relevant to your investigation, not because I want to cause trouble. But if Lady Scarlet found out about the will... well, that's a pretty strong motive, isn't it? Not that I'm accusing her—I'm just stating facts."
+
+---
+
+## 8. GOSSIPY
+
+### Have you seen anything unusual?
+
+**Low Match:**
+- "Unusual? Oh my, where to begin? This house is simply brimming with oddities! Did you hear about the missing silver? Though I suppose that's not related to our current predicament."
+- *[If pressed]* "Well, nothing specific to the murder, if that's what you're asking. But do let me know what the others have said!"
+
+**Medium Match:**
+- "Have I ever! I was just telling Lady Peacock—oh, but you didn't hear it from me—I distinctly saw Colonel Mustard entering the library with a candlestick about an hour before the dreadful event! The very same type of candlestick that's now mysteriously missing!"
+- *[If asked for details]* "He was so furtive about it, glancing over his shoulder! And the Colonel and the victim had that awful argument at the hunting lodge last month—everyone was talking about it. They say it was about gambling debts, simply enormous sums!"
+
+**High Match:**
+- "Oh my stars, where to begin! I've been keeping my eyes peeled, as one does. About 15 minutes before the unfortunate incident, I saw the victim passed a note to Mrs. White, who read it and turned absolutely pale! She crushed it in her hand and whispered something that looked like 'Tonight then.' And that's not all!"
+- *[If encouraged]* "You won't believe this—I happened to be passing the study earlier (not eavesdropping, naturally) when I overheard the victim say to someone, 'I know about Zurich and the missing funds.' There was the sound of breaking glass, and then silence! When I peeked in moments later, the victim was alone, staring at a broken brandy snifter, looking absolutely shaken. The other person must have slipped out through the garden door. And between us, I noticed fresh mud on Professor Plum's shoes at dinner!"
+
+### Where were you during the evening?
+
+**Low Match:**
+- "Oh, I was simply everywhere! You know me, never miss a thing. I flitted from room to room like a social butterfly. The real question is where wasn't I?"
+- *[If pressed]* "Well, let me think... mostly in the drawing room, I believe. Did you ask Mrs. Peacock where she was? Her story keeps changing!"
+
+**Medium Match:**
+- "I started in the drawing room with most everyone, then popped into the conservatory around 9 where I saw the most curious exchange between Dr. Green and Miss Scarlet—just whispers, but so intense! Then I was in the hallway outside the study for quite some time. Excellent acoustics in that spot, you know."
+- *[If asked what they heard]* "Well, the victim and our host were having words—something about 'paying what's owed' and 'running out of patience.' Then someone stormed out—couldn't see who—but they were wearing dark shoes. Very distinctive clicking on the parquet."
+
+**High Match:**
+- "I'll give you my precise itinerary—I have quite the memory for these things! From 8:30 to 9:15, I was in the drawing room, where Lady Peacock and the Colonel were having that tense conversation by the fireplace—all smiles but speaking through clenched teeth! At 9:20, I went to the powder room, passing the study where the victim was making a phone call—something about 'evidence' and 'tomorrow will be too late.'"
+-

@@ -9,6 +9,7 @@ namespace MurderMystery.Enums
         Motive,      
         Alibi,      
         Behavioral,  
-        Physical     
+        Physical,
+        Personal
     }
 }

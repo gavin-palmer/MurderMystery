@@ -129,7 +129,7 @@ namespace MurderMystery.Generators
             foreach (var clue in clues)
             {
                 // If the clue's location exists in the mansion, place it there
-                if (_mansion.ContainsKey(clue.Location))
+                if (clue.Location != null && _mansion.ContainsKey(clue.Location))
                 {
                     _mansion[clue.Location].Clues.Add(clue);
                 }

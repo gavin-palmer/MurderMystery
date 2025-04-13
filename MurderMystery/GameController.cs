@@ -212,10 +212,23 @@ namespace MurderMystery
                 {
                     var selectedPerson = peopleInRoom[personIndex - 1];
                     _state.InterviewPerson(selectedPerson);
+                    var playerDialogue = string.Empty;
+                    while (!String.IsNullOrEmpty(_state.Interviewing))
+                    {
+                        var npcStatement = selectedPerson.GenerateStatement(playerDialogue);
+                        var options =  selectedPerson.DialogueState.GeneratePlayerDialogueOptions(npcStatement);
+                        // Generate a statement based on what this person knows
+                        Console.WriteLine($"\n{selectedPerson.Name} says: \"{npcStatement}\"");
+                        var optionNo = 1;
+                        foreach(var option in options)
+                        {
+                            Console.WriteLine($"{optionNo}: {option}");
+                            optionNo++;
+                        }
+                        var choice = Console.ReadLine();
 
-                    // Generate a statement based on what this person knows
-                    string statement = GenerateStatement(selectedPerson);
-                    Console.WriteLine($"\n{selectedPerson.Name} says: \"{statement}\"");
+                    }
+
 
                     // If this is the murderer, they might seem suspicious
                     if (selectedPerson == _state.CurrentMystery.Murderer)
@@ -232,12 +245,6 @@ namespace MurderMystery
             {
                 Console.WriteLine("\nInvalid input.");
             }
-        }
-
-        private string GenerateStatement(Person speaker)
-        {
-            // This would use your existing statement generation code
-            return speaker.GenerateStatement();
         }
 
         private void SearchRoom()

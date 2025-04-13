@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MurderMystery.Models;
 using MurderMystery.Enums;
+using MurderMystery.Generators;
 
 namespace MurderMystery
 {
@@ -17,6 +18,7 @@ namespace MurderMystery
 
         // Player state
         public List<Clue> DiscoveredClues { get; private set; } = new List<Clue>();
+        public string Interviewing { get; private set; }
         public List<string> InterviewedPeople { get; private set; } = new List<string>();
 
         // Game progress
@@ -59,12 +61,21 @@ namespace MurderMystery
         // Interview a person
         public void InterviewPerson(Person person)
         {
+            Interviewing = person.Name;
             if (!InterviewedPeople.Contains(person.Name))
             {
                 InterviewedPeople.Add(person.Name);
+                if (person.DialogueState == null)
+                {
+                    person.DialogueState = new DialogueState(person.PersonalityType);
+                }
             }
 
             TurnCount++;
+        }
+        public void TerminateInterview(Person person)
+        {
+            Interviewing = string.Empty;
         }
 
         public void MoveToRoom(string roomName)

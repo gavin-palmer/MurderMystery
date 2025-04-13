@@ -33,7 +33,7 @@ namespace MurderMystery.Generators
 
             context.GenerateTimeline();
 
-            return new Mystery
+            var mystery = new Mystery
             {
                 Victim = victim,
                 Murderer = murderer,
@@ -44,6 +44,9 @@ namespace MurderMystery.Generators
                 Timeline = context.Events,
                 Clues = context.Clues
             };
+            SecretGenerator.AssignSecrets(mystery);
+            return mystery;
+
         }
     }
 }
