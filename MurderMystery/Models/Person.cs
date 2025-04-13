@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using MurderMystery.Enums;
 
 namespace MurderMystery.Models
@@ -13,10 +15,11 @@ namespace MurderMystery.Models
         public bool IsVictim { get; set; }
         public string CurrentRoom { get; set; }
         public Footwear Footwear { get; set; }
-
+        public List<TimelineEvent> TimelineEvents { get; set; } = new List<TimelineEvent>();
         public string GenerateStatement()
         {
-            return "Hello! I'm just a test at the moment and don't know anythinig :( ";
+            var statements = TimelineEvents.Where(x => x.IsLie || !x.IsSecret).Select(x => x.Description()).ToList();
+            return string.Join(Environment.NewLine, statements);
         }
     }
 

@@ -15,6 +15,10 @@ namespace MurderMystery.Models
 
         public bool HasProof => Proof != Proof.None;
 
+        public string Description()
+        {
+            return $"{Time}: I was in {Location}: {Action}";
+        }
 
 
     }

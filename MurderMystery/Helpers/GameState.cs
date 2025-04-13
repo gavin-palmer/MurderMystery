@@ -18,7 +18,6 @@ namespace MurderMystery
         // Player state
         public List<Clue> DiscoveredClues { get; private set; } = new List<Clue>();
         public List<string> InterviewedPeople { get; private set; } = new List<string>();
-        public Dictionary<string, List<string>> PlayerNotes { get; private set; } = new Dictionary<string, List<string>>();
 
         // Game progress
         public bool GameOver { get; set; } = false;
@@ -30,12 +29,6 @@ namespace MurderMystery
             CurrentMystery = mystery;
             Mansion = mansion;
 
-            // Initialize player notes categories
-            PlayerNotes["Suspects"] = new List<string>();
-            PlayerNotes["Weapons"] = new List<string>();
-            PlayerNotes["Rooms"] = new List<string>();
-            PlayerNotes["Motives"] = new List<string>();
-            PlayerNotes["General"] = new List<string>();
         }
 
         // Get people in the current room

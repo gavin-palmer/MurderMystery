@@ -58,6 +58,7 @@ namespace MurderMystery
                     Console.ReadKey(true);
                 }
             }
+            _state.CurrentMystery.PrintAll(true);
         }
 
         private void DisplayCurrentState()
@@ -236,6 +237,7 @@ namespace MurderMystery
 
         private string GenerateStatement(Person speaker)
         {
+            // This would use your existing statement generation code
             return speaker.GenerateStatement();
         }
 

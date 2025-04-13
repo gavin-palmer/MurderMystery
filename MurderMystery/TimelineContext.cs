@@ -246,7 +246,7 @@ namespace MurderMystery.MurderMystery.Generators
 
                 if (person == Murderer && IsAtMurder(time) && location == Room)
                 {
-                    Events.Add(new TimelineEvent
+                    var murderEvent = new TimelineEvent()
                     {
                         Time = time,
                         Person = person,
@@ -254,14 +254,16 @@ namespace MurderMystery.MurderMystery.Generators
                         Action = $"killed {Victim.Name} using the {Weapon}",
                         IsSecret = true,
                         IsLie = false
-                    }) ;
+                    };
+                    Events.Add(murderEvent);
+                    person.TimelineEvents.Add(murderEvent);
                     var availableRooms = DataProviderFactory.Rooms.GetAll().OrderBy(r => Guid.NewGuid()).Take(10).Select(r => r.Name).ToList();
 
                     var emptyRoom = availableRooms.FirstOrDefault(room => !LocationsByTime[time].Select(x => x.Value).Contains(room));
   
                     var actionData = actionProvider.GetRandomSoloAction();
                     var action = actionData.Description;
-                    Events.Add(new TimelineEvent
+                    var lieEvent = new TimelineEvent
                     {
                         Time = time,
                         Person = person,
@@ -269,7 +271,9 @@ namespace MurderMystery.MurderMystery.Generators
                         Action = action,
                         IsSecret = true,
                         IsLie = true
-                    });
+                    };
+                    Events.Add(lieEvent);
+                    person.TimelineEvents.Add(lieEvent);
                 }
                 else
                 {
@@ -297,8 +301,7 @@ namespace MurderMystery.MurderMystery.Generators
                             proof = GenerateProof(location, person, actionData);
                         }
                     }
-
-                    Events.Add(new TimelineEvent
+                    var timelineEvent = new TimelineEvent
                     {
                         Time = time,
                         Person = person,
@@ -307,7 +310,9 @@ namespace MurderMystery.MurderMystery.Generators
                         IsSecret = false,
                         IsLie = false,
                         Proof = proof
-                    });
+                    };
+                    Events.Add(timelineEvent);
+                    person.TimelineEvents.Add(timelineEvent);
                 }
             }
         }
