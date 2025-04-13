@@ -11,7 +11,7 @@ namespace MurderMystery.Generators
     public class MansionGenerator
     {
         private readonly new Dictionary<string, Room> _mansion = new Dictionary<string, Room>();
-        public Dictionary<string, Room> GenerateMansionLayout()
+        public Dictionary<string, Room> GenerateMansionLayout(Mystery mystery)
         {
             var nonePlayerRooms = DataProviderFactory.Rooms.LoadNonePlayerRooms();
             foreach (var room in nonePlayerRooms)
@@ -19,9 +19,9 @@ namespace MurderMystery.Generators
                 room.IsSpecialRoom = true;
                 _mansion.Add(room.Name, room);
             }
-            // Add 10 random rooms
+            var rooms = mystery.Timeline.Select(x => x.Location).Distinct().ToList();
             var randomRooms = DataProviderFactory.Rooms.GetAll()
-                .OrderBy(r => Guid.NewGuid())
+                .Where(x => rooms.Contains(x.Name))
                 .Take(10)
                 .Select(r => new Room(r.Name, r.Description))
                 .ToList();
@@ -31,7 +31,6 @@ namespace MurderMystery.Generators
                 _mansion.Add(room.Name, room);
             }
 
-            // Generate a coherent layout
             CreateConnections();
 
             return _mansion;
@@ -40,34 +39,75 @@ namespace MurderMystery.Generators
         private void CreateConnections()
         {
             var roomList = _mansion.Values.ToList();
-
-            var entranceHall = _mansion["Foyer"];
+            var foyer = _mansion["Foyer"];
             var securityRoom = _mansion["Security Room"];
 
-            entranceHall.Connections[Direction.North] = roomList[0].Name;
-            entranceHall.Connections[Direction.East] = roomList[1].Name;
-            entranceHall.Connections[Direction.West] = roomList[2].Name;
+            roomList.Remove(foyer);         // We'll insert it manually
+            roomList.Remove(securityRoom);  // Still random
 
-            securityRoom.Connections[Direction.South] = roomList[3].Name;
+            var rng = new Random();
+            roomList = roomList.OrderBy(_ => rng.Next()).ToList();
 
+            // Add Security Room back into a random spot
+            int secRoomIndex = rng.Next(roomList.Count + 1);
+            roomList.Insert(secRoomIndex, securityRoom);
 
-            for (int i = 0; i < roomList.Count; i++)
+            int totalRooms = roomList.Count + 1; // +1 for Foyer
+            int cols = 4;
+            int rows = (int)Math.Ceiling((double)totalRooms / cols);
+
+            var roomGrid = new Room[rows, cols];
+
+            // Choose a better spot for the Foyer (somewhere near center)
+            int foyerRow = Math.Min(1, rows - 1);
+            int foyerCol = Math.Min(1, cols - 1);
+            roomGrid[foyerRow, foyerCol] = foyer;
+
+            // Place the rest of the rooms into the grid, skipping foyer slot
+            int listIndex = 0;
+            for (int row = 0; row < rows; row++)
             {
-                if (roomList[i].IsSpecialRoom) continue;
-
-                if (i >= 4)
+                for (int col = 0; col < cols; col++)
                 {
-                    roomList[i].Connections[Direction.North] = roomList[i - 4].Name;
-                    roomList[i - 4].Connections[Direction.South] = roomList[i].Name;
-                }
+                    if (roomGrid[row, col] != null) continue; // already filled by foyer
 
-                if (i % 4 != 3 && i < roomList.Count - 1)
-                {
-                    roomList[i].Connections[Direction.East] = roomList[i + 1].Name;
-                    roomList[i + 1].Connections[Direction.West] = roomList[i].Name;
+                    if (listIndex < roomList.Count)
+                    {
+                        roomGrid[row, col] = roomList[listIndex++];
+                    }
                 }
             }
+
+            // Build connections
+            for (int row = 0; row < rows; row++)
+            {
+                for (int col = 0; col < cols; col++)
+                {
+                    var currentRoom = roomGrid[row, col];
+                    if (currentRoom == null) continue;
+
+                    if (row > 0 && roomGrid[row - 1, col] != null)
+                        currentRoom.Connections[Direction.North] = roomGrid[row - 1, col].Name;
+
+                    if (row < rows - 1 && roomGrid[row + 1, col] != null)
+                        currentRoom.Connections[Direction.South] = roomGrid[row + 1, col].Name;
+
+                    if (col > 0 && roomGrid[row, col - 1] != null)
+                        currentRoom.Connections[Direction.West] = roomGrid[row, col - 1].Name;
+
+                    if (col < cols - 1 && roomGrid[row, col + 1] != null)
+                        currentRoom.Connections[Direction.East] = roomGrid[row, col + 1].Name;
+                }
+            }
+
+            // Log Foyer & Security Room positions
+            Console.WriteLine($"Foyer placed at: ({foyerRow}, {foyerCol})");
+            var secIndex = roomList.IndexOf(securityRoom);
+            var secRow = (secIndex + (secIndex >= (foyerRow * cols + foyerCol) ? 1 : 0)) / cols;
+            var secCol = (secIndex + (secIndex >= (foyerRow * cols + foyerCol) ? 1 : 0)) % cols;
+            Console.WriteLine($"Security Room is hidden at ({secRow}, {secCol})");
         }
+
 
         public void ExploreRoom(string roomName)
         {
