@@ -9,6 +9,7 @@ namespace MurderMystery.Data.Providers
         private readonly int nameCount = 35;
         protected override List<string> LoadItems()
         {
+
             var names = new List<string>();
             for (var i = 0; i < nameCount; i++)
             {
@@ -60,10 +61,12 @@ namespace MurderMystery.Data.Providers
 
         private string GenerateName()
         {
+            var random = new Random();
+
             var firstName = RandomHelper.PickRandom(FirstNames);
             var lastName = RandomHelper.PickRandom(Surnames);
 
-            if (_random.NextDouble() < 0.1)
+            if (random.NextDouble() < 0.2)
             {
                 string secondLastName = DataProviderFactory.Names.GetRandom();
                 while (secondLastName == lastName || secondLastName == firstName)
@@ -72,7 +75,7 @@ namespace MurderMystery.Data.Providers
                 }
                 lastName = $"{lastName}-{secondLastName}";
 
-                if (_random.NextDouble() < 0.2)
+                if (random.NextDouble() < 0.2)
                 {
                     string thirdLastName = DataProviderFactory.Names.GetRandom();
                     while (thirdLastName == lastName.Split('-')[0] ||
@@ -84,13 +87,13 @@ namespace MurderMystery.Data.Providers
                     lastName = $"{lastName}-{thirdLastName}";
                 }
             }
-            if (_random.NextDouble() < 0.02)
+            if (random.NextDouble() < 0.05)
             {
                 string middleParticle = RandomHelper.PickRandom(MiddleParticles);
                 lastName = $"{middleParticle} {lastName}";
             }
 
-            if (_random.NextDouble() < 0.05)
+            if (random.NextDouble() < 0.1)
             {
                 if (!lastName.EndsWith("son", StringComparison.OrdinalIgnoreCase))
                 {

@@ -15,6 +15,7 @@ namespace MurderMystery.Models
         public bool IsVictim { get; set; }
         public string CurrentRoom { get; set; }
         public Footwear Footwear { get; set; }
+        public Occupation Occupation { get; set; }
         public List<TimelineEvent> TimelineEvents { get; set; } = new List<TimelineEvent>();
         public string GenerateStatement()
         {

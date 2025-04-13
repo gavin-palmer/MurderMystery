@@ -24,7 +24,6 @@ namespace MurderMystery
             Console.WriteLine("==================================");
             Console.WriteLine("🔍 MURDER AT THE MANOR 🔍");
             Console.WriteLine("==================================\n");
-
             Console.WriteLine($"Tragedy has struck! {_state.CurrentMystery.Victim.Name} has been found dead.");
             Console.WriteLine("As the detective, it's your job to solve this murder case.");
             Console.WriteLine("Find clues, interview suspects, and identify the killer.\n");
