@@ -44,7 +44,7 @@ namespace MurderMystery
         // Get visible clues in the current room
         public List<Clue> GetVisibleCluesInCurrentRoom()
         {
-            return Mansion[CurrentRoom].Clues
+            return Mansion[CurrentRoom].PhysicalClues
                 .Where(c => !c.IsHidden && !DiscoveredClues.Contains(c))
                 .ToList();
         }

@@ -13,6 +13,7 @@ namespace MurderMystery.Models
         public string Weapon { get; set; }
         public string Room { get; set; }
         public string Motive { get; set; }
+        public List<Room> Rooms { get; set; }
         public List<Person> People { get; set; }
         public List<TimelineEvent> Timeline { get; set; }
         public List<Clue> Clues { get; set; }

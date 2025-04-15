@@ -10,6 +10,8 @@ namespace MurderMystery.Enums
         Alibi,      
         Behavioral,  
         Physical,
-        Personal
+        Personal,
+        Testimony,
+        Security
     }
 }

@@ -13,20 +13,7 @@ namespace MurderMystery.Generators
         private readonly new Dictionary<string, Room> _mansion = new Dictionary<string, Room>();
         public Dictionary<string, Room> GenerateMansionLayout(Mystery mystery)
         {
-            var nonePlayerRooms = DataProviderFactory.Rooms.LoadNonePlayerRooms();
-            foreach (var room in nonePlayerRooms)
-            {
-                room.IsSpecialRoom = true;
-                _mansion.Add(room.Name, room);
-            }
-            var rooms = mystery.Timeline.Select(x => x.Location).Distinct().ToList();
-            var randomRooms = DataProviderFactory.Rooms.GetAll()
-                .Where(x => rooms.Contains(x.Name))
-                .Take(10)
-                .Select(r => new Room(r.Name, r.Description))
-                .ToList();
-
-            foreach (var room in randomRooms)
+            foreach (var room in mystery.Rooms)
             {
                 _mansion.Add(room.Name, room);
             }
@@ -123,49 +110,24 @@ namespace MurderMystery.Generators
 
             Console.WriteLine("\nWhich direction would you like to go?");
         }
-
-        public void DistributeClues(List<Clue> clues)
-        {
-            foreach (var clue in clues)
-            {
-                // If the clue's location exists in the mansion, place it there
-                if (clue.Location != null && _mansion.ContainsKey(clue.Location))
-                {
-                    _mansion[clue.Location].Clues.Add(clue);
-                }
-                else
-                {
-                    // Otherwise, place it in a random room
-                    var randomRoom = GetRandomRoom();
-                    clue.Location = randomRoom;
-                    _mansion[randomRoom].Clues.Add(clue);
-                }
-            }
-        }
-
         public void PlacePeople(List<Person> people, List<TimelineEvent> timeline)
         {
             var victim = people.FirstOrDefault(x => x.IsVictim);
-            // Get the last events of the timeline to determine final positions
             var lastTimeSlot = timeline.Select(e => e.Time).Max();
             var lastEvents = timeline.Where(e => e.Time == lastTimeSlot).ToList();
 
             foreach (var person in people)
             {
-                // Skip placing the victim
                 if (person == victim) continue;
 
-                // Find where this person ended up
                 var finalEvent = lastEvents.FirstOrDefault(e => e.Person == person);
                 string location = finalEvent?.Location ?? GetRandomRoom();
 
-                // Make sure the location exists in our mansion
                 if (!_mansion.ContainsKey(location))
                 {
                     location = GetRandomRoom();
                 }
-
-                // Add them to that room's list of people
+                
                 person.CurrentRoom = location;
             }
         }

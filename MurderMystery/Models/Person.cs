@@ -22,9 +22,15 @@ namespace MurderMystery.Models
         public int Fondness { get; set; } = 50; // how much they like the player (1-100);
         public List<TimelineEvent> TimelineEvents { get; set; } = new List<TimelineEvent>();
         public List<string> Secrets { get; set; } = new List<string>();
+        public List<Clue> KnownClues { get; set; } = new List<Clue>();
         public DialogueManager Dialogue { get; set; }
         public string GenerateStatement(DialogueOption question)
         {
+            var clues = KnownClues.Select(x => x.Description).ToList();
+            foreach (var clue in clues)
+            {
+                Console.WriteLine($"\n{clue}");
+            }
             var nextNode = question?.NextNodeID ?? question?.Variations?.FirstOrDefault().NextNodeID;
             if (question != null && question.Tone != null)
             {

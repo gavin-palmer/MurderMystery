@@ -18,14 +18,8 @@ namespace MysteryGame
             Console.ReadKey(true);
 
             // Start a new game
-            //StartNewGame();
+            StartNewGame();
 
-            LaunchDialogueViewer();
-        }
-
-        public static void LaunchDialogueViewer()
-        {
-            DialogueEditorLauncher.LaunchEditor();
         }
 
         static void StartNewGame()
@@ -38,7 +32,6 @@ namespace MysteryGame
             var mansion = mansionGenerator.GenerateMansionLayout(mystery);
 
             Console.WriteLine("Placing clues and characters...");
-            mansionGenerator.DistributeClues(mystery.Clues);
             mansionGenerator.PlacePeople(mystery.People, mystery.Timeline);
 
             var gameState = new GameState(mystery, mansion);
