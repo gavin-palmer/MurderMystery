@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MurderMystery.Data;
+using MurderMystery.Dialogue;
 using MurderMystery.Enums;
 using MurderMystery.Models;
 
@@ -212,21 +213,40 @@ namespace MurderMystery
                 {
                     var selectedPerson = peopleInRoom[personIndex - 1];
                     _state.InterviewPerson(selectedPerson);
-                    var playerDialogue = string.Empty;
+                    var playerDialogue = new DialogueOption();
+                    var progress = false;
                     while (!String.IsNullOrEmpty(_state.Interviewing))
                     {
+                        progress = false;
                         var npcStatement = selectedPerson.GenerateStatement(playerDialogue);
-                        var options =  selectedPerson.DialogueState.GeneratePlayerDialogueOptions(npcStatement);
-                        // Generate a statement based on what this person knows
+                        var options =  selectedPerson.Dialogue.GetPlayerTextOptions();
                         Console.WriteLine($"\n{selectedPerson.Name} says: \"{npcStatement}\"");
                         var optionNo = 1;
                         foreach(var option in options)
                         {
-                            Console.WriteLine($"{optionNo}: {option}");
+                            Console.WriteLine($"{optionNo}: {option.Text}");
                             optionNo++;
                         }
-                        var choice = Console.ReadLine();
-
+                        while (!progress)
+                        {
+                            var choice = Console.ReadLine();
+                            if (int.TryParse(choice, out var choiceNo))
+                            {
+                                playerDialogue = options[choiceNo];
+                                if (playerDialogue != null)
+                                {
+                                    progress = true;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Please enter a valid choice");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Please enter a valid choice");
+                            }
+                        }
                     }
 
 

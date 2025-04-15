@@ -364,17 +364,6 @@ Each question has responses based on the player's "match score" with the NPC's p
 
 **High Match:**
 - "I'll give you my precise itinerary—I have quite the memory for these things! From 8:30 to 9:15, I was in the drawing room, where Lady Peacock and the Colonel were having that tense conversation by the fireplace—all smiles but speaking through clenched teeth! At 9:20, I went to the powder room, passing the study where the victim was making a phone call—something about 'evidence' and 'tomorrow will be too late.'"
-
-# Murder Mystery Dialogue Trees by Personality Type
-
-## Dialogue Structure
-
-For each personality type, the dialogue is divided into three main questions:
-1. **Have you seen anything unusual?**
-2. **Where were you during the evening?**
-3. **Do you have any gossip to share?**
-
-Each question has responses based on the player's "match score" with the NPC's personality:
 - *[If encouraged]* "From 9:25 to 9:50, I positioned myself near the library—purely by chance, of course—where I observed Miss Scarlet removing a book from the shelf, taking something from inside it, and replacing it. So secretive! At 9:55, I was heading toward the dining room when I heard a thud from the victim's room, followed by footsteps hurrying away. When I peeked around the corner—being a concerned guest, naturally—I glimpsed someone in a dark jacket disappearing down the servants' stairs!"
 
 ### Do you have any gossip to share?

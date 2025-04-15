@@ -65,9 +65,9 @@ namespace MurderMystery
             if (!InterviewedPeople.Contains(person.Name))
             {
                 InterviewedPeople.Add(person.Name);
-                if (person.DialogueState == null)
+                if (person.Dialogue == null)
                 {
-                    person.DialogueState = new DialogueState(person.PersonalityType);
+                    person.Dialogue = new Dialogue.DialogueManager(person.PersonalityType);
                 }
             }
 
