@@ -18,7 +18,14 @@ namespace MysteryGame
             Console.ReadKey(true);
 
             // Start a new game
-            StartNewGame();
+            //StartNewGame();
+
+            LaunchDialogueViewer();
+        }
+
+        public static void LaunchDialogueViewer()
+        {
+            DialogueEditorLauncher.LaunchEditor();
         }
 
         static void StartNewGame()
