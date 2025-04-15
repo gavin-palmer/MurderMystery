@@ -7,6 +7,8 @@ namespace MurderMystery.Data.Providers
     public class NameProvider : BaseDataProvider<string>
     {
         private readonly int nameCount = 35;
+        private readonly Random random = new Random();
+
         protected override List<string> LoadItems()
         {
 
@@ -19,7 +21,7 @@ namespace MurderMystery.Data.Providers
 
         }
 
-        private List<string> FirstNames => new List<string>
+        private readonly List<string> FirstNames = new List<string>
         {
             "Arthur", "Agatha", "Hercule", "Jane", "Dorothy", "Sherlock", "Reginald", "Mabel",
             "Edmund", "Geoffrey", "Violet", "Clarence", "Edith", "Winston", "Beatrice", "Cecil",
@@ -37,7 +39,7 @@ namespace MurderMystery.Data.Providers
             "Georgiana", "Silas", "Evangeline", "Augustus", "Dahlia", "Prentice", "Matilda"
         };
 
-        private List<string> Surnames => new List<string>
+        private readonly List<string> Surnames = new List<string>
         {
             "Smith", "Jones", "Williams", "Brown", "Taylor", "Davies", "Wilson", "Evans",
             "Thomas", "Roberts", "Johnson", "Lewis", "Walker", "Robinson", "Wood", "Thompson",
@@ -54,14 +56,13 @@ namespace MurderMystery.Data.Providers
             "Chamberlain", "Talbot", "Farnsworth", "Buckingham", "Hartley", "Chesterfield", "Everett"
         };
 
-        private List<string> MiddleParticles => new List<string>
+        private readonly List<string> MiddleParticles = new List<string>
         {
             "von", "van", "van der", "de", "del", "della", "di", "da", "des", "du", "of", "le", "la"
         };
 
         private string GenerateName()
         {
-            var random = new Random();
 
             var firstName = RandomHelper.PickRandom(FirstNames);
             var lastName = RandomHelper.PickRandom(Surnames);

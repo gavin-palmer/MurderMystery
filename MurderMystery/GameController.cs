@@ -217,14 +217,17 @@ namespace MurderMystery
                     var progress = false;
                     while (!String.IsNullOrEmpty(_state.Interviewing))
                     {
-                        progress = false;
+                         progress = false;
                         var npcStatement = selectedPerson.GenerateStatement(playerDialogue);
                         var options =  selectedPerson.Dialogue.GetPlayerTextOptions();
                         Console.WriteLine($"\n{selectedPerson.Name} says: \"{npcStatement}\"");
                         var optionNo = 1;
-                        foreach(var option in options)
+                        Console.WriteLine("\nPlease select your response:");
+                        Console.WriteLine("=========================");
+
+                        foreach (var option in options)
                         {
-                            Console.WriteLine($"{optionNo}: {option.Text}");
+                            Console.WriteLine($"\n{optionNo}: {option.Text}");
                             optionNo++;
                         }
                         while (!progress)
@@ -232,7 +235,7 @@ namespace MurderMystery
                             var choice = Console.ReadLine();
                             if (int.TryParse(choice, out var choiceNo))
                             {
-                                playerDialogue = options[choiceNo];
+                                playerDialogue = options[choiceNo - 1];
                                 if (playerDialogue != null)
                                 {
                                     progress = true;

@@ -61,7 +61,7 @@ namespace MurderMystery.Dialogue
             var responses = GetRandomPlayerOptions(node);
             var correctResponse = GetPlayerOptionsByPersonality(node, _personalityType);
             responses.Add(correctResponse);
-            _currentNodeId = correctResponse.NextNodeID;
+            _currentNodeId = correctResponse.NextNodeID ?? correctResponse.Variations.FirstOrDefault().NextNodeID;
             return responses.OrderBy(x => random.Next()).ToList();
         }
 
@@ -107,6 +107,7 @@ namespace MurderMystery.Dialogue
 
         public DialogueOption GetPlayerOptionsByPersonality(DialogueNode node, PersonalityType personalityType)
         {
+
             foreach (var variation in node.PlayerOptions)
             {
                 if (variation.Tone == personalityType.ToString())
