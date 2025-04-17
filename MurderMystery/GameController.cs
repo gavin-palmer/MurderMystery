@@ -184,93 +184,133 @@ namespace MurderMystery
             }
         }
 
-        private void TalkToSomeone()
+private void TalkToSomeone()
+{
+    var peopleInRoom = _state.GetPeopleInCurrentRoom();
+
+    if (!peopleInRoom.Any())
+    {
+        Console.WriteLine("\nThere's no one here to talk to.");
+        return;
+    }
+
+    Console.WriteLine("\nWho would you like to talk to?");
+    for (int i = 0; i < peopleInRoom.Count; i++)
+    {
+        Console.WriteLine($"{i + 1}. {peopleInRoom[i].Name}");
+    }
+
+    Console.Write("\nEnter person number (or 0 to cancel): ");
+    if (int.TryParse(Console.ReadLine(), out int personIndex))
+    {
+        if (personIndex == 0)
         {
-            var peopleInRoom = _state.GetPeopleInCurrentRoom();
+            Console.WriteLine("\nConversation cancelled.");
+            return;
+        }
 
-            if (!peopleInRoom.Any())
+        if (personIndex >= 1 && personIndex <= peopleInRoom.Count)
+        {
+            var selectedPerson = peopleInRoom[personIndex - 1];
+            _state.InterviewPerson(selectedPerson);
+            var playerDialogue = new DialogueOption();
+            bool conversationActive = true;
+            
+            string npcStatement = selectedPerson.GenerateStatement(playerDialogue);
+            Console.WriteLine($"\n{selectedPerson.Name} says: \"{npcStatement}\"");
+            
+            while (conversationActive && !String.IsNullOrEmpty(_state.Interviewing))
             {
-                Console.WriteLine("\nThere's no one here to talk to.");
-                return;
-            }
-
-            Console.WriteLine("\nWho would you like to talk to?");
-            for (int i = 0; i < peopleInRoom.Count; i++)
-            {
-                Console.WriteLine($"{i + 1}. {peopleInRoom[i].Name}");
-            }
-
-            Console.Write("\nEnter person number (or 0 to cancel): ");
-            if (int.TryParse(Console.ReadLine(), out int personIndex))
-            {
-                if (personIndex == 0)
+                var options = selectedPerson.Dialogue.GetPlayerTextOptions();
+                
+                if (options == null)
                 {
-                    Console.WriteLine("\nConversation cancelled.");
-                    return;
+                    options = new List<DialogueOption>();
                 }
-
-                if (personIndex >= 1 && personIndex <= peopleInRoom.Count)
+                
+                options = options.Where(o => !string.IsNullOrEmpty(o.Text)).ToList();
+                
+                if (!options.Any())
                 {
-                    var selectedPerson = peopleInRoom[personIndex - 1];
-                    _state.InterviewPerson(selectedPerson);
-                    var playerDialogue = new DialogueOption();
-                    var progress = false;
-                    while (!String.IsNullOrEmpty(_state.Interviewing))
-                    {
-                         progress = false;
-                        var npcStatement = selectedPerson.GenerateStatement(playerDialogue);
-                        var options =  selectedPerson.Dialogue.GetPlayerTextOptions();
-                        Console.WriteLine($"\n{selectedPerson.Name} says: \"{npcStatement}\"");
-                        var optionNo = 1;
-                        Console.WriteLine("\nPlease select your response:");
-                        Console.WriteLine("=========================");
+                    Console.WriteLine("\nThe conversation has come to a natural end.");
+                    _state.TerminateInterview();
+                    break;
+                }
+                
+                var exitOption = new DialogueOption 
+                { 
+                    Text = $"Thank you for your time, {selectedPerson.Name}. I'll let you get back to your evening.", 
+                    NextNodeID = "exit" 
+                };
+                options.Add(exitOption);
+                
+                var optionNo = 1;
+                Console.WriteLine("\nPlease select your response:");
+                Console.WriteLine("=========================");
 
-                        foreach (var option in options)
+                foreach (var option in options)
+                {
+                    Console.WriteLine($"\n{optionNo}: {option.Text}");
+                    optionNo++;
+                }
+                
+                bool validChoice = false;
+                while (!validChoice)
+                {
+                    var choice = Console.ReadLine();
+                    
+                    if (int.TryParse(choice, out var choiceNo))
+                    {
+                        if (choiceNo > 0 && choiceNo <= options.Count)
                         {
-                            Console.WriteLine($"\n{optionNo}: {option.Text}");
-                            optionNo++;
-                        }
-                        while (!progress)
-                        {
-                            var choice = Console.ReadLine();
-                            if (int.TryParse(choice, out var choiceNo))
+                            playerDialogue = options[choiceNo - 1];
+                            validChoice = true;
+                            
+                            // Check if this is the exit option
+                            if (playerDialogue.NextNodeID == "exit" || 
+                                (playerDialogue.Variations != null && playerDialogue.Variations.Any() && 
+                                playerDialogue.Variations.First().NextNodeID == "exit"))
                             {
-                                playerDialogue = options[choiceNo - 1];
-                                if (playerDialogue != null)
-                                {
-                                    progress = true;
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Please enter a valid choice");
-                                }
+                                Console.WriteLine($"\nYou say: \"{playerDialogue.Text}\"");
+                                Console.WriteLine($"\n{selectedPerson.Name} nods and returns to their business.");
+                                conversationActive = false;
+                                        _state.TerminateInterview();
                             }
                             else
                             {
-                                Console.WriteLine("Please enter a valid choice");
+                                // Regular dialogue continues
+                                Console.WriteLine($"\nYou say: \"{playerDialogue.Text}\"");
+                                npcStatement = selectedPerson.GenerateStatement(playerDialogue);
+                                Console.WriteLine($"\n{selectedPerson.Name} says: \"{npcStatement}\"");
                             }
                         }
+                        else
+                        {
+                            Console.WriteLine("Please enter a valid choice");
+                        }
                     }
-
-
-                    // If this is the murderer, they might seem suspicious
-                    if (selectedPerson == _state.CurrentMystery.Murderer)
+                    else
                     {
-                        Console.WriteLine("\nYou notice they seem nervous while speaking.");
+                        Console.WriteLine("Please enter a valid choice");
                     }
-                }
-                else
-                {
-                    Console.WriteLine("\nInvalid person selection.");
                 }
             }
-            else
+
+            if (selectedPerson == _state.CurrentMystery.Murderer)
             {
-                Console.WriteLine("\nInvalid input.");
+                Console.WriteLine("\nYou notice they seem nervous while speaking.");
             }
         }
-
-        private void SearchRoom()
+        else
+        {
+            Console.WriteLine("\nInvalid person selection.");
+        }
+    }
+    else
+    {
+        Console.WriteLine("\nInvalid input.");
+    }
+}        private void SearchRoom()
         {
             Console.WriteLine("\nYou carefully search the room...");
 

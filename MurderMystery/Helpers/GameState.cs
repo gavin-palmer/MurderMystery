@@ -73,7 +73,7 @@ namespace MurderMystery
 
             TurnCount++;
         }
-        public void TerminateInterview(Person person)
+        public void TerminateInterview()
         {
             Interviewing = string.Empty;
         }

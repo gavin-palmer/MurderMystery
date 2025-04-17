@@ -548,94 +548,134 @@
             ],
             "playerOptions": [
                 {
-                    "personality": "Nervous",
-                    "textOptions": [
-                        "I know this must be stressful for you... was there anything that seemed off or made you uncomfortable this evening?",
-                        "Just between us, did anything happen that worried you? Even small details might help.",
-                        "I understand you might be scared to talk about it, but any little thing you noticed could be important..."
-                    ],
-                    "nextNodeID": "unusual_inquiry"
+                    "tone": "Nervous",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I know this must be stressful for you... was there anything that seemed off or made you uncomfortable this evening?",
+                                "Just between us, did anything happen that worried you? Even small details might help.",
+                                "I understand you might be scared to talk about it, but any little thing you noticed could be important..."
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
                 },
                 {
-                    "personality": "Suspicious",
-                    "textOptions": [
-                        "I've been asking everyone this question, but most people seem to be hiding something. What about you - notice anything off?",
-                        "Between us, I don't trust the information I'm getting from the others. Have you observed anything questionable?",
-                        "I need someone with a careful eye. Did you notice anyone acting strangely tonight?"
-                    ],
-                    "nextNodeID": "unusual_inquiry"
+                    "tone": "Suspicious",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I've been asking everyone this question, but most people seem to be hiding something. What about you - notice anything off?",
+                                "Between us, I don't trust the information I'm getting from the others. Have you observed anything questionable?",
+                                "I need someone with a careful eye. Did you notice anyone acting strangely tonight?"
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
                 },
                 {
-                    "personality": "Arrogant",
-                    "textOptions": [
-                        "Someone of your exceptional observational skills must have noticed something others missed. Anything unusual catch your attention?",
-                        "I could really use your unique perspective. What did you observe that these other, less perceptive guests might have missed?",
-                        "I imagine you've already figured out several key details that everyone else overlooked. Care to enlighten me?"
-                    ],
-                    "nextNodeID": "unusual_inquiry"
+                    "tone": "Arrogant",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Someone of your exceptional observational skills must have noticed something others missed. Anything unusual catch your attention?",
+                                "I could really use your unique perspective. What did you observe that these other, less perceptive guests might have missed?",
+                                "I imagine you've already figured out several key details that everyone else overlooked. Care to enlighten me?"
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
                 },
                 {
-                    "personality": "Analytical",
-                    "textOptions": [
-                        "Based on statistical norms for gatherings of this nature, what anomalies did you observe in behavior or events?",
-                        "I'm looking for objective observations that deviated from expected patterns tonight. Did you document any?",
-                        "From a purely analytical standpoint, what empirical irregularities did you notice in the timeframe of 7pm to the discovery of the body?"
-                    ],
-                    "nextNodeID": "unusual_inquiry"
+                    "tone": "Analytical",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Based on statistical norms for gatherings of this nature, what anomalies did you observe in behavior or events?",
+                                "I'm looking for objective observations that deviated from expected patterns tonight. Did you document any?",
+                                "From a purely analytical standpoint, what empirical irregularities did you notice in the timeframe of 7pm to the discovery of the body?"
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
                 },
                 {
-                    "personality": "Sensitive",
-                    "textOptions": [
-                        "I know this must be difficult... was there anything that felt wrong or out of place tonight?",
-                        "Sometimes we sense things that aren't quite right, even if we can't explain why. Did you experience anything like that?",
-                        "I can see you're affected by all this... was there a moment tonight when something felt different or changed?"
-                    ],
-                    "nextNodeID": "unusual_inquiry"
+                    "tone": "Sensitive",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I know this must be difficult... was there anything that felt wrong or out of place tonight?",
+                                "Sometimes we sense things that aren't quite right, even if we can't explain why. Did you experience anything like that?",
+                                "I can see you're affected by all this... was there a moment tonight when something felt different or changed?"
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
                 },
                 {
-                    "personality": "Manipulative",
-                    "textOptions": [
-                        "I've been very impressed with how observant you are. I could really use your help - did you notice anything unusual?",
-                        "Between us, I think you see more than you let on. Care to share what you've noticed? It could be valuable.",
-                        "I might be able to make this investigation worth your while if you have any special insights about tonight's events..."
-                    ],
-                    "nextNodeID": "unusual_inquiry"
+                    "tone": "Manipulative",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I've been very impressed with how observant you are. I could really use your help - did you notice anything unusual?",
+                                "Between us, I think you see more than you let on. Care to share what you've noticed? It could be valuable.",
+                                "I might be able to make this investigation worth your while if you have any special insights about tonight's events..."
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
                 },
                 {
-                    "personality": "Defensive",
-                    "textOptions": [
-                        "Before you think I'm singling you out - I'm asking everyone this same question. Anything unusual catch your eye?",
-                        "I'm not suggesting you're involved at all, but did you happen to notice anything out of the ordinary?",
-                        "Just to be clear, this is a routine question. Was there anything unusual that you, as an innocent bystander, might have noticed?"
-                    ],
-                    "nextNodeID": "unusual_inquiry"
+                    "tone": "Defensive",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Before you think I'm singling you out - I'm asking everyone this same question. Anything unusual catch your eye?",
+                                "I'm not suggesting you're involved at all, but did you happen to notice anything out of the ordinary?",
+                                "Just to be clear, this is a routine question. Was there anything unusual that you, as an innocent bystander, might have noticed?"
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
                 },
                 {
-                    "personality": "Gossipy",
-                    "textOptions": [
-                        "I bet you notice everything that happens around here! Any interesting or unusual sightings to share?",
-                        "You seem like someone who doesn't miss a trick - what juicy details did you observe tonight?",
-                        "I could really use someone with your keen eye for detail! What intriguing things did you notice this evening?"
-                    ],
-                    "nextNodeID": "unusual_inquiry"
+                    "tone": "Gossipy",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I bet you notice everything that happens around here! Any interesting or unusual sightings to share?",
+                                "You seem like someone who doesn't miss a trick - what juicy details did you observe tonight?",
+                                "I could really use someone with your keen eye for detail! What intriguing things did you notice this evening?"
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
                 },
                 {
-                    "personality": "Reserved",
-                    "textOptions": [
-                        "I won't take much of your time. Did you observe anything out of the ordinary this evening?",
-                        "I appreciate directness - did you notice anything of significance tonight?",
-                        "In your own time, and only what you're comfortable sharing - did you witness anything unusual?"
-                    ],
-                    "nextNodeID": "unusual_inquiry"
+                    "tone": "Reserved",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I won't take much of your time. Did you observe anything out of the ordinary this evening?",
+                                "I appreciate directness - did you notice anything of significance tonight?",
+                                "In your own time, and only what you're comfortable sharing - did you witness anything unusual?"
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
                 },
                 {
-                    "personality": "Flirtatious",
-                    "textOptions": [
-                        "Someone as captivating as you must attract all sorts of interesting situations... notice anything unusual tonight?",
-                        "I find myself drawn to your powers of observation... what intriguing things caught your eye this evening?",
-                        "I bet you see things others miss... care to share any unusual observations with me? I'm all ears."
-                    ],
-                    "nextNodeID": "unusual_inquiry"
+                    "tone": "Flirtatious",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Someone as captivating as you must attract all sorts of interesting situations... notice anything unusual tonight?",
+                                "I find myself drawn to your powers of observation... what intriguing things caught your eye this evening?",
+                                "I bet you see things others miss... care to share any unusual observations with me? I'm all ears."
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
                 }
             ]
         },

@@ -19,34 +19,48 @@ namespace MurderMystery.Models
         public PersonalityType PersonalityType { get; set; }
         public Footwear Footwear { get; set; }
         public Occupation Occupation { get; set; }
-        public int Fondness { get; set; } = 50; // how much they like the player (1-100);
+        public int Fondness { get; set; } = 50;
         public List<TimelineEvent> TimelineEvents { get; set; } = new List<TimelineEvent>();
         public List<string> Secrets { get; set; } = new List<string>();
         public List<Clue> KnownClues { get; set; } = new List<Clue>();
         public DialogueManager Dialogue { get; set; }
+
         public string GenerateStatement(DialogueOption question)
         {
-            var clues = KnownClues.Select(x => x.Description).ToList();
-            foreach (var clue in clues)
-            {
-                Console.WriteLine($"\n{clue}");
-            }
-            var nextNode = question?.NextNodeID ?? question?.Variations?.FirstOrDefault().NextNodeID;
-            if (question != null && question.Tone != null)
+            if (question != null && !string.IsNullOrEmpty(question.Tone))
             {
                 if (question.Tone == PersonalityType.ToString())
                 {
-                    Fondness += 20;
+                    Fondness = Math.Min(100, Fondness + 20);
                 }
                 else
                 {
-                    Fondness -= 20;
+                    Fondness = Math.Max(0, Fondness - 20);
                 }
             }
-                var test = Dialogue.GetCurrentNode();
-            return Dialogue.GetNPCTextResponse(nextNode, Fondness);
 
+            string nextNodeID = null;
+            if (question != null)
+            {
+                if (!string.IsNullOrEmpty(question.NextNodeID))
+                {
+                    nextNodeID = question.NextNodeID;
+                }
+                else if (question.Variations != null && question.Variations.Any() &&
+                         !string.IsNullOrEmpty(question.Variations.First().NextNodeID))
+                {
+                    nextNodeID = question.Variations.First().NextNodeID;
+                }
+            }
+
+            try
+            {
+                return Dialogue.GetNPCTextResponse(nextNodeID, Fondness);
+            }
+            catch (Exception ex)
+            {
+                return "I'm sorry, I don't have anything to say about that.";
+            }
         }
     }
-
 }

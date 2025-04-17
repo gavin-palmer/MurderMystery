@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using MurderMystery.Data.Providers;
 
 namespace MurderMystery.Data.Providers
 {
@@ -9,16 +8,19 @@ namespace MurderMystery.Data.Providers
         private readonly int nameCount = 35;
         private readonly Random random = new Random();
 
+        private List<string> _generatedNames;
+
         protected override List<string> LoadItems()
         {
-
-            var names = new List<string>();
-            for (var i = 0; i < nameCount; i++)
+            if (_generatedNames == null)
             {
-                names.Add(GenerateName());
+                _generatedNames = new List<string>();
+                for (var i = 0; i < nameCount; i++)
+                {
+                    _generatedNames.Add(GenerateName());
+                }
             }
-            return names;
-
+            return _generatedNames;
         }
 
         private readonly List<string> FirstNames = new List<string>
@@ -63,34 +65,33 @@ namespace MurderMystery.Data.Providers
 
         private string GenerateName()
         {
-
-            var firstName = RandomHelper.PickRandom(FirstNames);
-            var lastName = RandomHelper.PickRandom(Surnames);
+            var firstName = PickRandom(FirstNames);
+            var lastName = PickRandom(Surnames);
 
             if (random.NextDouble() < 0.2)
             {
-                string secondLastName = DataProviderFactory.Names.GetRandom();
-                while (secondLastName == lastName || secondLastName == firstName)
+                string secondLastName = PickRandom(Surnames);
+                while (secondLastName == lastName)
                 {
-                    secondLastName = DataProviderFactory.Names.GetRandom();
+                    secondLastName = PickRandom(Surnames);
                 }
                 lastName = $"{lastName}-{secondLastName}";
 
                 if (random.NextDouble() < 0.2)
                 {
-                    string thirdLastName = DataProviderFactory.Names.GetRandom();
+                    string thirdLastName = PickRandom(Surnames);
                     while (thirdLastName == lastName.Split('-')[0] ||
-                           thirdLastName == lastName.Split('-')[1] ||
-                           thirdLastName == firstName)
+                           thirdLastName == lastName.Split('-')[1])
                     {
-                        thirdLastName = DataProviderFactory.Names.GetRandom();
+                        thirdLastName = PickRandom(Surnames);
                     }
                     lastName = $"{lastName}-{thirdLastName}";
                 }
             }
+
             if (random.NextDouble() < 0.05)
             {
-                string middleParticle = RandomHelper.PickRandom(MiddleParticles);
+                string middleParticle = PickRandom(MiddleParticles);
                 lastName = $"{middleParticle} {lastName}";
             }
 
@@ -104,14 +105,18 @@ namespace MurderMystery.Data.Providers
 
             return $"{firstName} {lastName}";
         }
+
+        private T PickRandom<T>(List<T> items)
+        {
+            return items[random.Next(items.Count)];
+        }
+
         public List<string> GetRandomSelection(int count)
         {
             var allNames = GetAll();
 
-            // Make sure we don't request more names than available
             count = Math.Min(count, allNames.Count);
 
-            // Shuffle the list
             var shuffled = new List<string>(allNames);
             for (int i = shuffled.Count - 1; i > 0; i--)
             {
@@ -121,7 +126,6 @@ namespace MurderMystery.Data.Providers
                 shuffled[j] = temp;
             }
 
-            // Return the requested number of names
             return shuffled.GetRange(0, count);
         }
     }
