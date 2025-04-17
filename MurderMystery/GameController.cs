@@ -266,7 +266,6 @@ private void TalkToSomeone()
                             playerDialogue = options[choiceNo - 1];
                             validChoice = true;
                             
-                            // Check if this is the exit option
                             if (playerDialogue.NextNodeID == "exit" || 
                                 (playerDialogue.Variations != null && playerDialogue.Variations.Any() && 
                                 playerDialogue.Variations.First().NextNodeID == "exit"))
@@ -278,7 +277,6 @@ private void TalkToSomeone()
                             }
                             else
                             {
-                                // Regular dialogue continues
                                 Console.WriteLine($"\nYou say: \"{playerDialogue.Text}\"");
                                 npcStatement = selectedPerson.GenerateStatement(playerDialogue);
                                 Console.WriteLine($"\n{selectedPerson.Name} says: \"{npcStatement}\"");

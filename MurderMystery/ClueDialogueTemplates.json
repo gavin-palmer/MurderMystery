@@ -1,0 +1,269 @@
+{
+    "clue_dialogue_templates": {
+        "Physical": {
+            "Nervous": [
+                "I... um... I noticed something odd. There was {clue_description} I saw in the {location}. I'm not sure if it matters, but it seemed strange.",
+                "Oh! I almost forgot. When I was in the {location}, I accidentally saw {clue_description}. It made me really uncomfortable.",
+                "I don't know if this is important, but... well... there was {clue_description} in the {location}. I tried not to touch anything!"
+            ],
+            "Suspicious": [
+                "Keep this to yourself, but I saw {clue_description} in the {location}. Seems rather incriminating, don't you think?",
+                "Someone tried to hide {clue_description} in the {location}. I've been watching that spot carefully since then.",
+                "I don't trust anyone here, which is why I noticed {clue_description} in the {location}. Somebody was careless."
+            ],
+            "Arrogant": [
+                "My exceptional powers of observation revealed {clue_description} in the {location}. Something the average person would certainly have missed.",
+                "While others waste time with trivial matters, I discovered {clue_description} in the {location}. Quite significant, I assure you.",
+                "Only someone with my refined senses would have detected {clue_description} in the {location}. The implications are obvious to the educated mind."
+            ],
+            "Analytical": [
+                "I documented an anomaly at 21:47: {clue_description} present in the {location}, inconsistent with the room's normal state with 97.3% certainty.",
+                "My analysis indicates that {clue_description} in the {location} has a temporal displacement consistent with the estimated time of death.",
+                "Based on empirical observation, {clue_description} located in the {location} demonstrates characteristics inconsistent with its expected position."
+            ],
+            "Sensitive": [
+                "It felt wrong somehow... seeing {clue_description} in the {location}. Like it wasn't meant to be there, you know?",
+                "I was troubled when I noticed {clue_description} in the {location}. It had a sort of... heaviness about it. Does that make sense?",
+                "This might sound strange, but {clue_description} in the {location} gave me such an awful feeling. Like it was part of something terrible."
+            ],
+            "Manipulative": [
+                "I could tell you about {clue_description} I discovered in the {location}... though I wonder what that information might be worth to you?",
+                "Between us, I happened to notice {clue_description} in the {location}. Not everyone needs to know about this, of course.",
+                "It's amazing what people overlook, like {clue_description} in the {location}. Knowing these things can be... advantageous for us both."
+            ],
+            "Defensive": [
+                "I wasn't snooping, but I did see {clue_description} in the {location}. I didn't touch anything, if that's what you're implying.",
+                "Don't look at me like that. Yes, I noticed {clue_description} in the {location}, but that doesn't prove anything about me.",
+                "If you're suspecting me, don't. But I did see {clue_description} in the {location}. Make of that what you will."
+            ],
+            "Gossipy": [
+                "Oh my goodness, you won't believe what I found! {clue_description} just sitting there in the {location}! Can you imagine?",
+                "I simply must tell you! I was in the {location} and there it was: {clue_description}! I nearly fainted on the spot!",
+                "Wait until you hear this! I discovered {clue_description} in the {location}! Scandalous, isn't it? Who do you think it belongs to?"
+            ],
+            "Reserved": [
+                "I observed {clue_description} in the {location}. I mention it only because it seemed out of place.",
+                "During my time in the {location}, I noticed {clue_description}. I've told no one else.",
+                "Perhaps relevant to your inquiry: {clue_description} in the {location}. I leave you to draw your own conclusions."
+            ],
+            "Flirtatous": [
+                "While wandering about, I stumbled upon something quite... stimulating. {clue_description} in the {location}. Intriguing, wouldn't you say?",
+                "I have an eye for details, especially... intriguing ones. Like {clue_description} I noticed in the {location}. Care to investigate it together?",
+                "Sometimes the most exciting discoveries happen by accident. Like when I found {clue_description} in the {location}. Gives me chills just thinking about it."
+            ]
+        },
+
+        "Weapon": {
+            "Nervous": [
+                "I... I saw something that scared me. There was {clue_description}. I didn't touch it, I swear!",
+                "This is making me so anxious, but... I think I saw {clue_description}. It looked like it could have... hurt someone.",
+                "Oh god, I can barely say it... but I noticed {clue_description}. There were these... these stains on it."
+            ],
+            "Suspicious": [
+                "Someone was careless with their murder weapon. I found {clue_description}. I've been watching to see who comes looking for it.",
+                "Whoever did this wasn't very clever. They left {clue_description} where it could be found.",
+                "I've been keeping an eye out for anything unusual. That's how I noticed {clue_description}. Quite damning evidence, wouldn't you say?"
+            ],
+            "Arrogant": [
+                "My superior observational skills led me to discover {clue_description}. The murderer clearly lacked my intellect.",
+                "Only someone of my discernment would have detected {clue_description}. The killer's attempt to conceal it was pathetically inadequate.",
+                "I immediately recognized the significance of {clue_description} when I found it. The method of the murder was precisely as I had deduced."
+            ],
+            "Analytical": [
+                "The evidence suggests homicidal intent: {clue_description} with traces consistent with the victim's blood type, found at coordinates matching the {location}.",
+                "I documented {clue_description} at approximately 22:13. The object exhibited signs of recent use, with biological residue still in semi-liquid state.",
+                "Preliminary analysis indicates {clue_description} is statistically likely to be the implement used in the fatal incident, based on wound morphology."
+            ],
+            "Sensitive": [
+                "I feel terrible even talking about this... but I found {clue_description}. It made me physically ill thinking about what it was used for.",
+                "There was such a dark energy around it... {clue_description} just lying there. I could almost feel the violence it was part of.",
+                "This is so difficult to discuss... but I discovered {clue_description}. I sensed immediately that something terrible had happened."
+            ],
+            "Manipulative": [
+                "I know exactly what killed the victim. I found {clue_description}. I've been waiting for the right person to share this information with.",
+                "Finding {clue_description} puts me in a... delicate position. I wonder what someone might offer to keep such knowledge private?",
+                "Between us, I discovered {clue_description}. This information could be quite valuable to the right person, don't you think?"
+            ],
+            "Defensive": [
+                "Before you accuse me, yes, I found {clue_description}. But finding evidence doesn't make me guilty.",
+                "I wasn't looking for it, but I did discover {clue_description}. And no, I didn't touch it or move it.",
+                "Look, I'm just going to be straight with you. I saw {clue_description}. But that doesn't mean I had anything to do with it."
+            ],
+            "Gossipy": [
+                "Oh! The most shocking thing! I discovered {clue_description}! Can you believe it? Right there in the open!",
+                "Wait until you hear this! I was snooping—I mean, looking around—and found {clue_description}! So gruesome!",
+                "I simply must tell you what I found! {clue_description}! I recognized it immediately as the murder weapon! So thrilling!"
+            ],
+            "Reserved": [
+                "I should inform you that I located {clue_description}. I've told no one else about this discovery.",
+                "In the interest of justice, I must report finding {clue_description}. I left it undisturbed.",
+                "I believe this information may be significant: I discovered {clue_description}. I await your professional assessment."
+            ],
+            "Flirtatous": [
+                "I made quite the thrilling discovery: {clue_description}. It gave me such a rush finding something so... dangerous.",
+                "Some finds are more exciting than others. Like when I discovered {clue_description}. It sent shivers down my spine.",
+                "There's something so... intimate about finding a murder weapon. I discovered {clue_description}. Perhaps we could discuss it somewhere private?"
+            ]
+        },
+
+        "Testimony": {
+            "Nervous": [
+                "I'm probably not supposed to say this, but... {clue_description}. Please don't tell anyone I told you!",
+                "This makes me so anxious to talk about, but... I overheard {clue_description}. I wasn't eavesdropping, I swear!",
+                "Oh dear... I probably shouldn't mention this, but I witnessed {clue_description}. I've been worried sick about it."
+            ],
+            "Suspicious": [
+                "I make it my business to watch people. That's how I know {clue_description}. Make of that what you will.",
+                "People don't realize how much I see. For instance, I witnessed {clue_description}. Rather incriminating, wouldn't you say?",
+                "I don't trust coincidences. So when I observed {clue_description}, I knew it was significant."
+            ],
+            "Arrogant": [
+                "My extraordinary perception allowed me to witness {clue_description}. Most people would have missed its significance.",
+                "Given my superior intellect, I immediately recognized the importance when I observed {clue_description}.",
+                "Unlike the other dullards here, I was clever enough to take note when {clue_description}. The implications were obvious to someone of my acumen."
+            ],
+            "Analytical": [
+                "I documented an interaction at 20:42: {clue_description}. The emotional indicators suggested a 73.8% probability of pre-existing conflict.",
+                "Based on observed behavioral patterns, I can confirm {clue_description}. This represents a statistically significant deviation from their normal interactions.",
+                "My systematic observation of guest movements enabled me to verify that {clue_description}. This data point correlates with several other anomalies."
+            ],
+            "Sensitive": [
+                "I feel almost guilty sharing this, but... I sensed something was wrong when {clue_description}. The emotions in the room were so heavy.",
+                "It was heartbreaking to witness {clue_description}. You could feel the tension and pain between them.",
+                "I'm troubled by what I saw. {clue_description}. There was such a feeling of dread in that moment."
+            ],
+            "Manipulative": [
+                "I observe things others don't. For instance, I know that {clue_description}. Information like this can be... valuable to the right person.",
+                "Between us, I witnessed {clue_description}. I've been waiting for someone trustworthy to share this with... someone who might appreciate its worth.",
+                "I could tell you what I saw—{clue_description}—but I wonder what you might offer in exchange for such... pivotal information?"
+            ],
+            "Defensive": [
+                "I wasn't spying, but yes, I saw {clue_description}. That doesn't make me involved in any way.",
+                "Don't give me that look. I happened to witness {clue_description}, but that doesn't mean anything.",
+                "Fine. I'll tell you, but don't twist my words. I observed {clue_description}. That's all I know."
+            ],
+            "Gossipy": [
+                "You won't believe what I saw! {clue_description}! I was absolutely floored! Should I tell you what happened next?",
+                "Oh! I've been dying to tell someone! I witnessed {clue_description}! Scandalous, isn't it? Everyone will be talking about this!",
+                "Wait until you hear this juicy bit! I was passing by when {clue_description}! Can you imagine? I nearly dropped my drink!"
+            ],
+            "Reserved": [
+                "In the interest of truth, I must inform you that I witnessed {clue_description}. I have not shared this observation with others.",
+                "I observed, but did not interfere, when {clue_description}. I report this fact without embellishment.",
+                "It is perhaps relevant that I saw {clue_description}. I leave you to determine its significance."
+            ],
+            "Flirtatous": [
+                "I have a talent for being in the right place at the right time. Like when I witnessed {clue_description}. Exciting, isn't it?",
+                "Some of us notice things others miss. For instance, I saw {clue_description}. I find such... observational skills can be quite attractive.",
+                "Would you like to know a secret? I observed {clue_description}. Perhaps we could discuss the... implications somewhere more private?"
+            ]
+        },
+
+        "Alibi": {
+            "Nervous": [
+                "I'm sure it doesn't mean anything, but... {clue_description}. I just thought someone should know.",
+                "Oh! I just remembered—I saw {clue_description}. That means they couldn't have... you know... right?",
+                "This is probably nothing, but I noticed {clue_description}. Does that help at all? I'm trying to be helpful!"
+            ],
+            "Suspicious": [
+                "I keep track of everyone's movements. That's how I know {clue_description}. Though I wonder if they arranged to be seen there.",
+                "People think I don't notice them, but I do. For instance, {clue_description}. Whether that's the truth is another matter.",
+                "I observed {clue_description}. Though in my experience, people often create alibis before committing crimes."
+            ],
+            "Arrogant": [
+                "With my exceptional memory, I can confirm {clue_description}. I note these things automatically, you understand.",
+                "My precise internal clock allows me to state with certainty that {clue_description}. Few others here could provide such accurate testimony.",
+                "Given my highly developed attention to detail, I can verify {clue_description}. You may consider it definitive evidence."
+            ],
+            "Analytical": [
+                "I can confirm with 98.2% certainty that {clue_description}, as I was conducting simultaneous observations of the east wing during that time period.",
+                "My documented timeline shows that {clue_description}. This creates a temporal alibi with minimal margin of error.",
+                "Based on triangulated witness positions, I can verify that {clue_description}. The probability of error is less than 1.7%."
+            ],
+            "Sensitive": [
+                "I remember because it felt important somehow... {clue_description}. I notice people more than events, if that makes sense.",
+                "I'm sure about this because we connected briefly... {clue_description}. You can feel when someone is genuine.",
+                "It struck me at the time... {clue_description}. There was nothing unusual about their demeanor that would make me doubt it."
+            ],
+            "Manipulative": [
+                "I happen to know where everyone was. For instance, {clue_description}. Information like this could be valuable, wouldn't you say?",
+                "I could tell you with certainty that {clue_description}. Though I wonder why you're interested in their whereabouts specifically?",
+                "Between us, I can confirm {clue_description}. But I'm curious what you might share with me in return for such... exonerating information?"
+            ],
+            "Defensive": [
+                "I'm not getting involved, but yes, {clue_description}. Not that anyone asked me before now.",
+                "Since you're asking everyone, fine—{clue_description}. But don't expect me to testify or anything.",
+                "Look, I don't want any part of this, but I did notice {clue_description}. Take it or leave it."
+            ],
+            "Gossipy": [
+                "Oh! I know exactly where everyone was! For instance, {clue_description}! I notice everything that happens here!",
+                "You won't believe who I saw and where! {clue_description}! Isn't that fascinating timing?",
+                "I simply must tell you! I have the most perfect memory for these things—{clue_description}! That changes everything, doesn't it?"
+            ],
+            "Reserved": [
+                "I can state with certainty that {clue_description}. I mention this only because it appears relevant to your inquiry.",
+                "In the interest of accuracy, I should inform you that {clue_description}. I have no reason to provide false information.",
+                "It is a matter of fact that {clue_description}. I offer this observation without commentary."
+            ],
+            "Flirtatous": [
+                "I have a knack for remembering where everyone was... especially the interesting ones. Like how {clue_description}. Intriguing, isn't it?",
+                "People-watching is a favorite pastime of mine. That's how I know {clue_description}. I find observational skills can be quite... attractive.",
+                "I could tell you exactly who was where last night. For instance, {clue_description}. Perhaps we could discuss who else I saw... privately?"
+            ]
+        },
+        {
+            "Security": {
+                "Nervous": [
+                    "Um... I probably shouldn't know this, but the security room PIN code is {clue_description}. I wasn't trying to snoop, I promise!",
+                    "This makes me anxious to even mention, but I accidentally found out the PIN for the security room is {clue_description}. I'm not in trouble for knowing that, am I?",
+                    "Oh dear... I happened to see someone enter {clue_description} into the security room keypad. I wasn't trying to spy on anyone!"
+                ],
+                "Suspicious": [
+                    "I make it my business to know about security weaknesses. That's how I learned the security room code is {clue_description}. Knowledge is safety.",
+                    "Trust no one in a house like this. That's why I made sure to discover the PIN code {clue_description} for the security room. Always have access to information.",
+                    "The security room PIN is {clue_description}. Don't look surprised—only a fool wouldn't investigate such things in a situation like this."
+                ],
+                "Arrogant": [
+                    "My superior intellect naturally led me to deduce the security room PIN: {clue_description}. Their attempt at security is laughably inadequate.",
+                    "I determined the security room code {clue_description} within minutes of arriving. Such simple numeric sequences cannot hope to challenge minds like mine.",
+                    "Child's play, really. The security room's PIN code is {clue_description}. One would need far more sophisticated measures to keep me out."
+                ],
+                "Analytical": [
+                    "I mapped the security infrastructure and identified the primary access code: {clue_description}. This grants entry to the security monitoring station with 100% reliability.",
+                    "My system analysis revealed the security room PIN to be {clue_description}. The code appears to be changed on a 90-day rotation based on keypad wear patterns.",
+                    "Based on technical specifications, I can confirm the security room access code is {clue_description}. This represents a significant vulnerability given the sensitivity of data contained within."
+                ],
+                "Sensitive": [
+                    "It felt wrong to know this, but I saw someone enter {clue_description} into the security room door. It made me realize how vulnerable we all are here.",
+                    "There's something unsettling about knowing the security room PIN is {clue_description}. Like we're all just pretending to have privacy.",
+                    "I couldn't help but notice the code {clue_description} being entered into the security keypad. It gave me such an uneasy feeling... like someone had planned for all of this."
+                ],
+                "Manipulative": [
+                    "I've made it my business to learn the security room PIN is {clue_description}. Information like this... well, it can be valuable in the right hands.",
+                    "Between us, I know the code to access the security footage is {clue_description}. I could share what those cameras show... for the right consideration.",
+                    "Security is all about knowing things others don't. Like how the PIN code is {clue_description}. I wonder what such information might be worth to you?"
+                ],
+                "Defensive": [
+                    "Yes, I know the security room code is {clue_description}. That's not a crime. Anyone with sense would want to know who's watching them.",
+                    "Don't look at me like that. I discovered the PIN {clue_description} for my own protection, not for any nefarious purpose.",
+                    "If you're implying something, stop. I happened to learn the security room code is {clue_description}, but that doesn't mean I used that information."
+                ],
+                "Gossipy": [
+                    "Oh! You'll never believe what I discovered! The security room PIN is {clue_description}! Can you imagine choosing such an obvious code?",
+                    "I simply must tell you the most fascinating thing! I found out the code to all that security footage is {clue_description}! I wonder what secrets are on those tapes!",
+                    "Wait until you hear this! The PIN to the security room is {clue_description}! I was shocked! I told Lady Peacock and she was absolutely flabbergasted!"
+                ],
+                "Reserved": [
+                    "I believe you should be aware that the security room access code is {clue_description}. This information may be pertinent to your investigation.",
+                    "In the interest of thoroughness, I must inform you that the PIN for the security monitoring system is {clue_description}. I have told no one else.",
+                    "It may be relevant to note that {clue_description} is the numeric sequence required to access the security room. I leave you to determine the significance of this fact."
+                ],
+                "Flirtatous": [
+                    "I have a talent for... uncovering secrets. That's how I discovered the security room PIN is {clue_description}. Impressive, isn't it?",
+                    "I find locked doors so... inviting. Like the security room with its little PIN pad. The code is {clue_description}, by the way. Perhaps we could explore it together?",
+                    "Some codes are meant to be broken. Like the security room's PIN: {clue_description}. I find knowledge of such things can be quite... stimulating, don't you?"
+                ]
+            }
+        }
+    }
+}

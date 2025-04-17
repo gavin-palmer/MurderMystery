@@ -1,7 +1,4 @@
-﻿using System;
-using MurderMystery.MurderMystery.Generators;
-
-namespace MurderMystery.Interfaces
+﻿namespace MurderMystery.Interfaces
 {
     public interface ITimelineState
     {

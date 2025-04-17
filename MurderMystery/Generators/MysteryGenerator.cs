@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using MurderMystery.Data;
 using MurderMystery.Enums;
 using MurderMystery.Helpers.MurderMystery.Utilities;
 using MurderMystery.Models;
-using MurderMystery.MurderMystery.Generators;
 
 namespace MurderMystery.Generators
 {
@@ -50,7 +48,6 @@ namespace MurderMystery.Generators
                 Rooms = context.Rooms
             };
             SecretGenerator.AssignSecrets(mystery);
-            //PrintMysteryDetails(context);
             Console.ReadLine();
             return mystery;
 
