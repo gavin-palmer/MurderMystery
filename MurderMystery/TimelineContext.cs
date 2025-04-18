@@ -95,33 +95,26 @@ namespace MurderMystery
 
         public void GenerateTimeline()
         {
-            // Step 1: Initialize locations
             _locationGenerator.InitializeLocations();
 
-            // Step 2: Setup security systems
             _securityGenerator.SetupSecuritySystem();
 
-            // Step 3: Setup murder and related events
             _murderGenerator.SetupMurder();
             _murderGenerator.CreatePreMurderArgument();
             _murderGenerator.CreateFalseAccusation();
             _murderGenerator.CreateWeaponMovement();
             _murderGenerator.GenerateAlibis();
 
-            // Step 4: Create additional storylines
             int storylineCount = 2 + Random.Next(2);
             _storylineManager.ExecuteStorylines(this, storylineCount);
 
-            // Step 5: Fill remaining events
             _locationGenerator.FillRemainingEvents();
 
-            // Step 6: Generate and distribute clues
             _clueGenerator.GenerateClues();
             _clueGenerator.AddRedHerrings();
             _clueGenerator.DistributeClues();
         }
 
-        // Helper methods for storylines and generators to use
         public void AddEvent(TimelineEvent evt)
         {
             Events.Add(evt);

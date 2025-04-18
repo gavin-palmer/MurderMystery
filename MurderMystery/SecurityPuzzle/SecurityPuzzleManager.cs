@@ -6,9 +6,6 @@ using MurderMystery.Models;
 
 namespace MurderMystery.SecurityPuzzle
 {
-    /// <summary>
-    /// Manager class for security puzzles that selects and executes puzzle strategies
-    /// </summary>
     public class SecurityPuzzleManager
     {
         private readonly List<ISecurityPuzzleStrategy> _availablePuzzles;
@@ -19,13 +16,9 @@ namespace MurderMystery.SecurityPuzzle
             _random = random;
             _availablePuzzles = new List<ISecurityPuzzleStrategy>();
 
-            // Register default puzzle strategies
             RegisterDefaultPuzzles();
         }
 
-        /// <summary>
-        /// Register all default puzzle types
-        /// </summary>
         private void RegisterDefaultPuzzles()
         {
             _availablePuzzles.Add(new BirthYearPuzzleStrategy());
@@ -35,9 +28,6 @@ namespace MurderMystery.SecurityPuzzle
             _availablePuzzles.Add(new MusicNotesPuzzleStrategy());
         }
 
-        /// <summary>
-        /// Register a custom puzzle strategy
-        /// </summary>
         public void RegisterPuzzle(ISecurityPuzzleStrategy puzzle)
         {
             if (!_availablePuzzles.Any(p => p.Name == puzzle.Name))
@@ -45,18 +35,11 @@ namespace MurderMystery.SecurityPuzzle
                 _availablePuzzles.Add(puzzle);
             }
         }
-
-        /// <summary>
-        /// Get a specific puzzle strategy by name
-        /// </summary>
         public ISecurityPuzzleStrategy GetPuzzleByName(string name)
         {
             return _availablePuzzles.FirstOrDefault(p => p.Name == name);
         }
 
-        /// <summary>
-        /// Get a random puzzle strategy
-        /// </summary>
         public ISecurityPuzzleStrategy GetRandomPuzzle()
         {
             if (_availablePuzzles.Count == 0)
@@ -66,18 +49,12 @@ namespace MurderMystery.SecurityPuzzle
             return _availablePuzzles[index];
         }
 
-        /// <summary>
-        /// Generate a random puzzle
-        /// </summary>
         public SecurityInfo GenerateRandomPuzzle(TimelineContext context)
         {
             var strategy = GetRandomPuzzle();
             return strategy.GeneratePuzzle(_random, context);
         }
 
-        /// <summary>
-        /// Generate a specific puzzle by name
-        /// </summary>
         public SecurityInfo GeneratePuzzleByName(string name, TimelineContext context)
         {
             var strategy = GetPuzzleByName(name);

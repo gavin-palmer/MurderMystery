@@ -21,15 +21,12 @@ public class SafeCombinationPuzzleStrategy : ISecurityPuzzleStrategy
             PuzzleName = Name
         };
 
-        // Create a random 4-digit pin
         string pin = random.Next(1000, 10000).ToString("0000");
         securityInfo.PinCode = pin;
 
-        // Store the digit locations for reference
         var digitLocations = new List<string> { "Study", "Drawing Room", "Hallway", "Lounge" };
         securityInfo.StorePuzzleData("DigitLocations", digitLocations);
 
-        // Create clues for each digit
         var digit1Clue = new Clue($"The owner's favorite book is on page {pin[0]} of his personal journal", ClueType.Physical);
         digit1Clue.Location = digitLocations[0];
         context.AddClue(digit1Clue);

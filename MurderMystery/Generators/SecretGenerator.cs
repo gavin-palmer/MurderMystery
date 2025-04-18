@@ -11,10 +11,8 @@ namespace MurderMystery.Generators
     {
         private static Random _random = new Random();
 
-        // Template strings for each secret type
         private static readonly Dictionary<SecretType, List<string>> SecretTemplates = new Dictionary<SecretType, List<string>>
         {
-            // Financial Templates
             { SecretType.Debt, new List<string> {
                 "is deeply in debt to {0}",
                 "owes a large sum of money to {0}",
@@ -52,7 +50,6 @@ namespace MurderMystery.Generators
                 "forged {0}'s signature on insurance documents"
             }},
             
-            // Relationship Templates
             { SecretType.Affair, new List<string> {
                 "is having an affair with {0}",
                 "had a one-night stand with {0} at the last garden party",
@@ -90,7 +87,6 @@ namespace MurderMystery.Generators
                 "has a concerning collection of items belonging to {0}"
             }},
             
-            // Past Templates
             { SecretType.FakeIdentity, new List<string> {
                 "is living under a false identity unknown to {0}",
                 "has fraudulent credentials unknown to {0}",
@@ -122,7 +118,6 @@ namespace MurderMystery.Generators
                 "testified against {0} in a private inquiry"
             }},
             
-            // Knowledge Templates
             { SecretType.DarkSecret, new List<string> {
                 "knows about {0}'s involvement in a scandal",
                 "discovered {0}'s secret past",
@@ -148,7 +143,6 @@ namespace MurderMystery.Generators
                 "uncovered that {0}'s inheritance is based on fraud"
             }},
             
-            // Vices Templates
             { SecretType.Addiction, new List<string> {
                 "shares a substance habit with {0}",
                 "supplies {0} with prohibited substances",
@@ -168,7 +162,6 @@ namespace MurderMystery.Generators
                 "operates a smuggling ring that {0} discovered"
             }},
             
-            // Other Templates
             { SecretType.FalseCredentials, new List<string> {
                 "knows {0}'s credentials are fraudulent",
                 "helped {0} forge documents",
@@ -195,20 +188,15 @@ namespace MurderMystery.Generators
             }}
         };
 
-        // Generates a specific secret about someone else
         public static string GenerateSecret(Person person, Person about, SecretType secretType)
         {
-            // Get templates for this secret type
             var templates = SecretTemplates[secretType];
 
-            // Pick a random template
             string template = templates[_random.Next(templates.Count)];
 
-            // Format with the targeted person's name
             return string.Format(template, about.Name);
         }
 
-        // Generates a random secret about someone else
         public static string GenerateRandomSecret(Person person, Person about)
         {
             var secretTypes = Enum.GetValues(typeof(SecretType)).Cast<SecretType>().ToArray();
@@ -217,10 +205,8 @@ namespace MurderMystery.Generators
             return GenerateSecret(person, about, randomType);
         }
 
-        // Generates a motive-related secret (more targeted)
         public static string GenerateMotiveSecret(Person murderer, Person victim, string motive)
         {
-            // Map motives to appropriate secret types
             Dictionary<string, List<SecretType>> motiveSecretMap = new Dictionary<string, List<SecretType>>(StringComparer.OrdinalIgnoreCase)
             {
                 { "Revenge", new List<SecretType> { SecretType.Betrayal, SecretType.Blackmail, SecretType.PreviousCrime } },
@@ -232,7 +218,6 @@ namespace MurderMystery.Generators
                 { "Accident", new List<SecretType> { SecretType.WitnessedCrime, SecretType.Addiction, SecretType.IllHealth } }
             };
 
-            // Get appropriate secret types for this motive
             List<SecretType> appropriateSecrets;
             if (motiveSecretMap.ContainsKey(motive))
             {
@@ -240,26 +225,19 @@ namespace MurderMystery.Generators
             }
             else
             {
-                // Default to a few common types if motive isn't in our map
                 appropriateSecrets = new List<SecretType> {
                     SecretType.Blackmail, SecretType.Betrayal, SecretType.PreviousCrime,
                     SecretType.DarkSecret, SecretType.Affair
                 };
             }
 
-            // Select a secret type appropriate for the motive
             SecretType secretType = appropriateSecrets[_random.Next(appropriateSecrets.Count)];
 
             return GenerateSecret(murderer, victim, secretType);
         }
 
-        // Assign secrets to characters in the mystery
         public static void AssignSecrets(Mystery mystery)
         {
-            // Make sure we have a Person.Secrets property
-            // This assumes you've added a List<string> Secrets property to the Person class
-
-            // First, assign the motive-related secret to the murderer
             string motiveSecret = GenerateMotiveSecret(mystery.Murderer, mystery.Victim, mystery.Motive);
             mystery.Murderer.Secrets.Add(motiveSecret);
 
