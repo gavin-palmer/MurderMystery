@@ -17,5 +17,5 @@ public class Billboard : MonoBehaviour
         {
             transform.rotation = Quaternion.identity;
         }
-    }
+    } 
 }
