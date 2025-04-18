@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿
 using MurderMystery.Data;
 using MurderMystery.Enums;
 using MurderMystery.Helpers.MurderMystery.Utilities;
