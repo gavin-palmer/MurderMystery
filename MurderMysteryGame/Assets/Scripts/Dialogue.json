@@ -1,0 +1,1557 @@
+﻿{
+    "dialogue_templates": {
+        "intro": {
+            "nodeID": "intro",
+            "npcOptions": [
+                {
+                    "personality": "Nervous",
+                    "text": "Oh! H-hello there... I wasn't expecting to talk to anyone tonight. Is... is everything okay? You're not here about the... um... nevermind."
+                },
+                {
+                    "personality": "Suspicious",
+                    "text": "Hello... Who sent you? I don't recall seeing you around before. Are you taking notes on what everyone's saying?"
+                },
+                {
+                    "personality": "Arrogant",
+                    "text": "Well, I suppose I can spare a moment if you absolutely must speak with me. Though I doubt you'll ask anything I haven't heard before."
+                },
+                {
+                    "personality": "Analytical",
+                    "text": "Hello. Based on your approach and attire, I presume you're investigating the incident that occurred at approximately 9:42 PM in the east wing."
+                },
+                {
+                    "personality": "Sensitive",
+                    "text": "Hello... It's just awful what happened, isn't it? Everyone seems so shaken up. How are you holding up through all of this?"
+                },
+                {
+                    "personality": "Manipulative",
+                    "text": "Well hello there! What a pleasure to meet someone new during such unfortunate circumstances. I've been hoping to speak with someone who might understand my perspective on tonight's events."
+                },
+                {
+                    "personality": "Defensive",
+                    "text": "Hello. I've already told the others everything I know, which isn't much. I was nowhere near that part of the house."
+                },
+                {
+                    "personality": "Gossipy",
+                    "text": "Hello! Oh my goodness, can you believe what's happened? Everyone's talking about it! Did you see how pale Mrs. Whitmore looked? I heard from the butler that she and the victim had quite the argument last week over—oh, but you probably want to ask me something specific?"
+                },
+                {
+                    "personality": "Reserved",
+                    "text": "Good evening. I presume you wish to speak with me regarding the unfortunate events of this evening. I shall endeavor to be of assistance."
+                },
+                {
+                    "personality": "Flirtatous",
+                    "text": "Well hello there, detective. What a delightful surprise to be interviewed by someone with such... attentive eyes. Perhaps we could discuss this somewhere more comfortable?"
+                },
+                {
+                    "personality": "Default",
+                    "text": "Hello there. What can I help you with?"
+                }
+            ],
+            "playerOptions": [
+                {
+                    "tone": "Nervous",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I hate to add to your worries, but could you tell me where you were tonight? Just to rule you out as a witness.",
+                                "This must be overwhelming... would you mind telling me where you spent the evening? Take your time.",
+                                "I'm just trying to piece together everyone's movements... no pressure, but where were you tonight?"
+                            ],
+                            "nextNodeID": "alibi_inquiry"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Suspicious",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I need to verify everyone's whereabouts. Where exactly were you, and who might have seen you?",
+                                "For my records - your exact movements tonight? I'm cross-checking everyone's statements.",
+                                "I'm not accusing you of anything, but I need precise details about your whereabouts. The others' stories don't add up."
+                            ],
+                            "nextNodeID": "alibi_inquiry"
+                        }
+
+                    ]
+                },
+                {
+                    "tone": "Arrogant",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I'd value a precise account of your movements tonight - I'm sure yours will be more reliable than the vague stories I've been getting.",
+                                "For someone of your stature, I'm certain your movements tonight were purposeful. Where exactly were you?",
+                                "Your account of this evening will undoubtedly be more detailed than most. Would you share your whereabouts with me?"
+                            ],
+                            "nextNodeID": "alibi_inquiry"
+                        }
+
+                    ]
+                },
+                {
+                    "tone": "Analytical",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Could you provide a timeline with precise locations and durations for your movements this evening?",
+                                "For my data collection: your exact positions throughout the evening, with timestamps if possible?",
+                                "I'm mapping everyone's movements with temporal and spatial coordinates. Where were you at each hour increment?"
+                            ],
+                            "nextNodeID": "alibi_inquiry"
+                        }
+
+                    ]
+                },
+                {
+                    "tone": "Sensitive",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I hate having to ask everyone these questions... would you mind sharing where you found yourself tonight?",
+                                "How did you spend your evening? Sometimes even quiet moments can tell us something important.",
+                                "I understand if this feels intrusive... but could you share your journey through the evening with me?"
+                            ],
+                            "nextNodeID": "alibi_inquiry"
+                        }
+
+                    ]
+                },
+                {
+                    "tone": "Manipulative",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Just for my own understanding - your movements tonight? I might be able to clear your name quickly if we get this straight.",
+                                "I've heard several accounts of tonight, but I'm most interested in yours. Where were you?",
+                                "This is just between us for now... where exactly were you this evening? I may need an ally I can trust."
+                            ],
+                            "nextNodeID": "alibi_inquiry"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Defensive",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "For elimination purposes only, could you tell me your whereabouts tonight? It's just procedure.",
+                                "I need to account for everyone's location, not because they're suspects, but for thoroughness. Where were you?",
+                                "This isn't an accusation by any means, but could you share your movements tonight? It helps complete the picture."
+                            ],
+                            "nextNodeID": "alibi_inquiry"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Gossipy",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I'd love to hear about your evening - I bet you were in all the interesting places at just the right times!",
+                                "Someone as social as you must have been everywhere tonight! Where exactly did your evening take you?",
+                                "I'm dying to hear where you were all evening - I'm sure you have the most interesting account of tonight's events!"
+                            ],
+                            "nextNodeID": "alibi_inquiry"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Reserved",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I'll be brief - could you state your whereabouts during the evening?",
+                                "For clarity and completeness, could you indicate where you were tonight?",
+                                "I respect your privacy, but for the record, where did you spend your evening?"
+                            ],
+                            "nextNodeID": "alibi_inquiry"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Flirtatious",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I wish I'd been lucky enough to run into you earlier... where were you spending your time tonight?",
+                                "I'm fascinated to know how someone like you spent the evening... care to walk me through your night?",
+                                "If I had known where you were, I might have found a reason to be there too... where did the evening take you?"
+                            ],
+                            "nextNodeID": "alibi_inquiry"
+                        }
+                    ]
+                }
+            ]
+        },
+        "alibi_inquiry": {
+            "nodeID": "alibi_inquiry",
+            "npcOptions": [
+                {
+                    "personality": "Nervous",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "Me? I was in my room. Alone. Reading. All night. No one saw me, but I didn't do anything wrong!",
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "I was mostly in my room, but I did go to the kitchen for some tea around 9:30. Mrs. Jenkins saw me there. Then I went straight back upstairs."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "I hate to admit this, but I was having a panic attack in the bathroom for almost an hour after dinner. That's why no one saw me. I heard the grandfather clock strike ten while I was there."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Suspicious",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "I was where I was supposed to be. And I was keeping track of everyone else too.",
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "I was in the billiard room until 9, then moved to the conservatory to get away from certain people I don't trust. I stayed there until I heard the scream."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "I'll tell you exactly where I was, and who I was watching. I started in the drawing room, followed Professor Plum to the library because his behavior was suspicious, then observed from the hallway as he had a secretive conversation with Mrs. White."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Arrogant",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "I was precisely where someone of my stature should be—enjoying brandy in the study, contemplating matters beyond the comprehension of most here.",
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "I spent most of the evening in the dining room, where several people benefited from my insightful conversation. I later retired to the library, where my expertise was requested regarding a first edition in the collection."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "I'll give you a detailed account, which my exceptional memory allows me to provide with perfect accuracy. I was in the dining room until 9:13, then moved to the library at the victim's request to authenticate a rare manuscript. At 9:47, I heard an argument from the adjacent room. At 10:02, I left to investigate and saw Ms. Scarlet hurrying away from the scene."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Analytical",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "I was conducting various observations throughout the house in accordance with established patterns of movement and standard temporal intervals.",
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "I can provide my location with temporal precision: 7:00-8:23 PM in the dining room, 8:23-9:17 PM in the library cataloging the first-edition collection, 9:17-9:46 PM in the observatory tracking the unusual stellar formation visible tonight, and 9:46-10:30 PM in the east corridor conducting an acoustic analysis of the house's structural integrity."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "I maintained a detailed log: 7:00-8:23 PM: Dining room, seated between Lady Scarlet and Colonel Mustard, consuming precisely 247 calories. 8:23-9:17 PM: Library, organizing by Dewey Decimal System. 9:17-9:46 PM: Observatory, where I observed the victim and Mr. Green in the garden using the telescope—they transferred an object approximately 15 cubic centimeters in volume. 9:46-10:30 PM: East corridor, where I heard the distinctive sound pattern of the hidden door in the study opening at 10:12 PM, followed by two sets of footsteps and muffled conversation lasting 4 minutes and 37 seconds."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Sensitive",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "*[Eyes downcast]* I spent most of the evening alone. Large gatherings can be so overwhelming sometimes.",
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "*[Sighing]* I started in the drawing room, but it became too much—everyone wearing their false smiles while harboring such complicated feelings. I retreated to the conservatory to be among the flowers instead. They're more honest than people sometimes."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "*[Speaking softly]* I needed to find spaces where I could breathe. The hostility in the drawing room was suffocating—especially from Colonel Mustard. His anger, though hidden behind polite words, was palpable. I went to the library, then to the garden where I sat on the stone bench and watched the stars until I heard... her scream. It tore through the night like physical pain."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Manipulative",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "I was wherever I needed to be. *[smiles]* But I'm more interested in where you think I was.",
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "I spent most of the evening observing our fellow guests. People reveal so much when they think no one is watching. I was in the drawing room, then the library. But I'm curious—has the Professor shared his alibi with you yet? His story might be... illuminating."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "*[Touching investigator's arm lightly]* I'll be completely honest with you, because I sense you're different from the others. I was following our host. Their behavior has been suspicious for days, and tonight they kept disappearing at odd moments. At 9:45, they went to the victim's room carrying a small box. They left without it ten minutes later, looking... relieved."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Defensive",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "I was in the dining room, then the lounge. I didn't do anything wrong, so stop looking at me like that.",
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "Fine, if you must know. I was in the dining room until about 9:30. Then I went to the lounge to get away from Mrs. White's constant prying. Ask the butler if you don't believe me—he served me a brandy."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "Since you're clearly determined to suspect me, I'll give you my exact movements. I was in the dining room until 9:27—yes, I checked my watch. I went to the lounge and had one brandy, which the butler can confirm. At 9:50, I stepped onto the terrace for air and saw Lady Peacock hurrying from the direction of the victim's room looking distressed."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Gossipy",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "Oh, I was simply everywhere! You know me, never miss a thing. I flitted from room to room like a social butterfly. The real question is where wasn't I?",
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "I started in the drawing room with most everyone, then popped into the conservatory around 9 where I saw the most curious exchange between Dr. Green and Miss Scarlet—just whispers, but so intense! Then I was in the hallway outside the study for quite some time. Excellent acoustics in that spot, you know."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "I'll give you my precise itinerary—I have quite the memory for these things! From 8:30 to 9:15, I was in the drawing room, where Lady Peacock and the Colonel were having that tense conversation by the fireplace—all smiles but speaking through clenched teeth! At 9:20, I went to the powder room, passing the study where the victim was making a phone call—something about 'evidence' and 'tomorrow will be too late.'"
+                        }
+                    ]
+                },
+                {
+                    "personality": "Reserved",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "I was reading in the library for most of the evening.",
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "I spent the early evening in the library. Around nine, I moved to the conservatory for some quiet reflection. The library had become... crowded."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "I was in the library from 8 until 9:10. The Professor and Lady Scarlet arrived at 8:45, searching through the books on the east wall—legal volumes, primarily. At 9:10, I went to the conservatory, where I remained until 10. During that time, I saw Dr. Green and the victim walking in the garden. The doctor handed over what looked like medical documents. Their conversation seemed civil but tense."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Flirtatous",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "*[Playfully]* Here and there. Mostly looking for interesting company. It seems I've finally found it.",
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "*[Moving closer]* I started in the drawing room, making the rounds. Then I spent some time in the conservatory with Dr. Green—did you know he's a championship dancer? We may have practiced a few steps. After that, I needed some air and went to the terrace. That's where I saw Lady Peacock having what looked like a very serious conversation with the victim."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "*[Speaking intimately]* I do love a thorough investigation. I spent the early evening floating between admirers—the drawing room until 8:30, then the music room where I played a little something on the piano. Professor Plum joined me around 9—he has surprisingly nimble fingers for an academic. At 9:30, I stepped out to the terrace for air and witnessed quite the scene through the study window."
+                        }
+                    ]
+                }
+            ],
+            "playerOptions": [
+                {
+                    "tone": "Nervous",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "That's helpful... um, could you tell me a bit more? I'm trying to get a clearer picture of the evening.",
+                                "I appreciate that information. If you don't mind... could you remember anything else? Any small detail might help.",
+                                "Thank you for sharing that. I'm sorry to press, but is there anything else you recall? Even something that seems unimportant?"
+                            ],
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Suspicious",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Interesting. Your account differs from what others have told me. Care to elaborate on those details?",
+                                "I find it curious you didn't mention seeing anyone else. Are you certain about that timeline?",
+                                "That seems rather convenient. Can anyone actually verify where you were during the critical time period?"
+                            ],
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Arrogant",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "A somewhat adequate explanation, though I require more precision. Surely someone of your intellect can provide further details?",
+                                "While that's more comprehensive than most accounts I've heard, I need you to be more specific about the timing.",
+                                "Your recollection is better than most, naturally, but I'll need you to elaborate on those particulars if you would."
+                            ],
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Analytical",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Your account presents several temporal gaps that require clarification. Could you provide additional data points?",
+                                "I need to correlate your movements with other witness testimonies. Can you specify exact minutes rather than approximate times?",
+                                "For comprehensive analysis, I require more granular information about your spatial positioning during the specified time frame."
+                            ],
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Sensitive",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Thank you for sharing that. I can see this is difficult... would you feel comfortable telling me a bit more about what you experienced?",
+                                "I appreciate your openness. Sometimes the smallest details can carry emotional weight... was there anything else that affected you during the evening?",
+                                "You've been very helpful. I hate to ask, but did you notice anyone who seemed particularly troubled or upset tonight?"
+                            ],
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Manipulative",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I value your perspective more than most... I think you see things others miss. What else did you notice that you haven't mentioned?",
+                                "Between us, I think you're one of the few people here I can trust. Is there anything else you observed that might help me?",
+                                "You've clearly got a keen eye for detail. Perhaps we could help each other... was there anything else unusual you noticed?"
+                            ],
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Defensive",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I'm just gathering information from everyone, nothing personal. Could you add any more details to your statement?",
+                                "This is standard procedure—I'm asking everyone these questions. Any other details you can provide about your whereabouts?",
+                                "I'm not singling you out, just being thorough. Can you think of anything else relevant to your movements tonight?"
+                            ],
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Gossipy",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Oh, that's absolutely fascinating! Did you happen to notice anyone else behaving strangely while you were around?",
+                                "How intriguing! I bet with your powers of observation you noticed all sorts of interesting interactions. Do tell!",
+                                "That's such valuable information! Between us, did you spot any unusual exchanges or secret conversations during your evening?"
+                            ],
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Reserved",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Thank you. For completeness, I would appreciate any additional details you might recall.",
+                                "I see. If you don't mind, could you clarify one or two points about your statement?",
+                                "Noted. Are there any other observations you made during that time period that may be relevant?"
+                            ],
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Flirtatious",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I find your account absolutely captivating... just like you. Would you indulge me with a few more details?",
+                                "You paint such a vivid picture. I'd love to hear more about what you saw through those observant eyes of yours...",
+                                "How fascinating... I could listen to you all night. Tell me more about what else you noticed during your eventful evening?"
+                            ],
+                            "nextNodeID": "alibi_inquiry_pressed"
+                        }
+                    ]
+                }
+            ]
+        },
+        "alibi_inquiry_pressed": {
+            "nodeID": "alibi_inquiry_pressed",
+            "npcOptions": [
+                {
+                    "personality": "Nervous",
+                    "text": "Why are you questioning me like this? I told you where I was!"
+                },
+                {
+                    "personality": "Suspicious",
+                    "text": "That's all you need to know. I don't have to prove anything to you."
+                },
+                {
+                    "personality": "Arrogant",
+                    "text": "I don't need to account for my movements to you or anyone else."
+                },
+                {
+                    "personality": "Analytical",
+                    "text": "Your question presupposes that location is a singular construct, when in fact I occupied multiple spatial coordinates over the time period in question."
+                },
+                {
+                    "personality": "Sensitive",
+                    "text": "Please don't think badly of me. I just needed some quiet time."
+                },
+                {
+                    "personality": "Manipulative",
+                    "text": "So suspicious! That hardly encourages me to be forthcoming."
+                },
+                {
+                    "personality": "Defensive",
+                    "text": "What is this, a trial? I don't have to account for every minute!"
+                },
+                {
+                    "personality": "Gossipy",
+                    "text": "Well, let me think... mostly in the drawing room, I believe. Did you ask Mrs. Peacock where she was? Her story keeps changing!"
+                },
+                {
+                    "personality": "Reserved",
+                    "text": "I prefer my own company. I don't keep track of others."
+                },
+                {
+                    "personality": "Flirtatous",
+                    "text": "Must we focus on such boring details? I'm much more interested in where I might be later... perhaps with charming company? *[Raises eyebrow]*"
+                }
+            ],
+            "playerOptions": [
+                {
+                    "tone": "Nervous",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I know this must be stressful for you... was there anything that seemed off or made you uncomfortable this evening?",
+                                "Just between us, did anything happen that worried you? Even small details might help.",
+                                "I understand you might be scared to talk about it, but any little thing you noticed could be important..."
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Suspicious",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I've been asking everyone this question, but most people seem to be hiding something. What about you - notice anything off?",
+                                "Between us, I don't trust the information I'm getting from the others. Have you observed anything questionable?",
+                                "I need someone with a careful eye. Did you notice anyone acting strangely tonight?"
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Arrogant",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Someone of your exceptional observational skills must have noticed something others missed. Anything unusual catch your attention?",
+                                "I could really use your unique perspective. What did you observe that these other, less perceptive guests might have missed?",
+                                "I imagine you've already figured out several key details that everyone else overlooked. Care to enlighten me?"
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Analytical",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Based on statistical norms for gatherings of this nature, what anomalies did you observe in behavior or events?",
+                                "I'm looking for objective observations that deviated from expected patterns tonight. Did you document any?",
+                                "From a purely analytical standpoint, what empirical irregularities did you notice in the timeframe of 7pm to the discovery of the body?"
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Sensitive",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I know this must be difficult... was there anything that felt wrong or out of place tonight?",
+                                "Sometimes we sense things that aren't quite right, even if we can't explain why. Did you experience anything like that?",
+                                "I can see you're affected by all this... was there a moment tonight when something felt different or changed?"
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Manipulative",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I've been very impressed with how observant you are. I could really use your help - did you notice anything unusual?",
+                                "Between us, I think you see more than you let on. Care to share what you've noticed? It could be valuable.",
+                                "I might be able to make this investigation worth your while if you have any special insights about tonight's events..."
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Defensive",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Before you think I'm singling you out - I'm asking everyone this same question. Anything unusual catch your eye?",
+                                "I'm not suggesting you're involved at all, but did you happen to notice anything out of the ordinary?",
+                                "Just to be clear, this is a routine question. Was there anything unusual that you, as an innocent bystander, might have noticed?"
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Gossipy",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I bet you notice everything that happens around here! Any interesting or unusual sightings to share?",
+                                "You seem like someone who doesn't miss a trick - what juicy details did you observe tonight?",
+                                "I could really use someone with your keen eye for detail! What intriguing things did you notice this evening?"
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Reserved",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I won't take much of your time. Did you observe anything out of the ordinary this evening?",
+                                "I appreciate directness - did you notice anything of significance tonight?",
+                                "In your own time, and only what you're comfortable sharing - did you witness anything unusual?"
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Flirtatious",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Someone as captivating as you must attract all sorts of interesting situations... notice anything unusual tonight?",
+                                "I find myself drawn to your powers of observation... what intriguing things caught your eye this evening?",
+                                "I bet you see things others miss... care to share any unusual observations with me? I'm all ears."
+                            ],
+                            "nextNodeID": "unusual_inquiry"
+                        }
+                    ]
+                }
+            ]
+        },
+        "unusual_inquiry": {
+            "nodeID": "unusual_inquiry",
+            "npcOptions": [
+                {
+                    "personality": "Nervous",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "*[Eyes darting around]* Unusual? No, nothing. Everything's normal. Perfectly normal. Why? Did someone say something?",
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "*[Fidgeting]* Well, I don't know if it means anything, but I heard a loud noise from the library around 10. But it was probably nothing!"
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "*[Lowers voice]* I shouldn't be saying this, but I saw someone sneaking out of the victim's room about an hour before... you know. They were carrying something wrapped in cloth."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Suspicious",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "Why are you asking? Are you implying I saw something? Because I didn't.",
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "Define 'unusual.' In a house full of secrets like this one, everything seems suspicious to me."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "I don't trust anyone here, so I've been keeping my eyes open. I saw Miss Everett putting something in her purse after leaving the victim's room. She looked around to make sure no one was watching."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Arrogant",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "I hardly pay attention to the mundane goings-on in this house. My mind is occupied with far more important matters.",
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "With my exceptionally observant nature, I did notice the candlestick in the dining room was moved. Amateur mistake by whoever thought that wouldn't be noticed."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "Few things escape my attention. I observed our host having a particularly intense conversation with the victim in the garden around 8 PM. I could tell by their body language—which I'm exceptionally skilled at reading—that threats were exchanged."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Analytical",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "Defining 'unusual' requires a baseline of 'usual' behavior, which varies by individual and context. Your question lacks specificity.",
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "I observed three statistical anomalies this evening: the dining room candles burned down at different rates, suggesting they were lit at different times; the barometer reading dropped 3.2 points in 30 minutes, which is meteorologically improbable; and the victim checked their watch 17 times during dinner, 13.6 times more than the mean frequency."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "I've compiled a timeline of atypical occurrences with potential relevance: At 8:17 PM, the victim received a note that caused pupil dilation and increased respiratory rate, indicating stress. At 9:02 PM, I measured the displacement of the study rug at 3.7 centimeters from its usual position, suggesting a physical altercation. At 9:34 PM, the ambient temperature in the west corridor dropped by 4.2 degrees Celsius without corresponding window aperture—consistent with an exterior door opening for approximately 42 seconds."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Sensitive",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "*[Looking hurt]* I'm not sure I should say... I don't want to cause trouble for anyone.",
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "*[Concerned expression]* There was such a strange atmosphere at dinner. I could feel the tension between the victim and Lady Scarlet—they barely looked at each other, but when they did... the coldness was heartbreaking."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "*[Voice quivering]* I feel terrible sharing this, but I was in the garden taking some air—the emotions in this house were overwhelming me—and I saw the victim arguing with Professor Plum. The victim was crying, saying something like 'How could you betray me like this?' It was devastating to witness such raw pain."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Manipulative",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "Unusual? *[thoughtful pause]* I'm sure I could tell you quite a bit... if I felt we understood each other better.",
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "*[Leaning in confidentially]* Between us, I noticed something odd about the candlestick in the library. It had been moved, and recently. Of course, I'm sure someone like you has already figured out its significance."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "*[Beckoning closer]* I've been watching everyone carefully, and I saw something I don't think anyone else noticed. The victim met secretly with the Colonel in the garden at 9:30. They exchanged something—looked like a key. But here's what's interesting... I'm certain Lady Peacock was watching them from the terrace."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Defensive",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "Nothing unusual at all. And I resent the implication that I might be hiding something.",
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "Why do you keep asking everyone this same question? If you're looking for someone to blame, you should talk to Colonel Mustard. He was arguing with the victim before dinner."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "Look, I'm not the one you should be investigating. But since you're persistent—yes, I saw something. Professor Plum coming out of the victim's room just before the murder, looking flustered and putting something into his pocket."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Gossipy",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "Unusual? Oh my, where to begin? This house is simply brimming with oddities! Did you hear about the missing silver? Though I suppose that's not related to our current predicament.",
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "Have I ever! I was just telling Lady Peacock—oh, but you didn't hear it from me—I distinctly saw Colonel Mustard entering the library with a candlestick about an hour before the dreadful event! The very same type of candlestick that's now mysteriously missing!"
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "Oh my stars, where to begin! I've been keeping my eyes peeled, as one does. About 15 minutes before the unfortunate incident, I saw the victim passed a note to Mrs. White, who read it and turned absolutely pale! She crushed it in her hand and whispered something that looked like 'Tonight then.' And that's not all!"
+                        }
+                    ]
+                },
+                {
+                    "personality": "Reserved",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "*[Brief eye contact, then looking away]* No. Nothing unusual.",
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "*[Considering carefully]* I wouldn't call it unusual, necessarily, but the victim did receive a phone call during dinner. They seemed... disturbed afterward."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "*[Speaking quietly]* I observed the victim arguing with someone in the study around 9:30. The door was ajar, and I was passing by. I didn't intend to overhear, but the victim said, 'This ends tonight. I won't be threatened anymore.'"
+                        }
+                    ]
+                },
+                {
+                    "personality": "Flirtatous",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "*[Playful smile]* The only unusual thing I've seen is how long it took you to come talk to me. I was beginning to feel neglected.",
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "*[Leaning closer]* Well, I did see something that caught my eye. Our distinguished Colonel was slipping something into the victim's drink when they thought no one was watching. I have a talent for noticing things people try to hide. *[Winks]*"
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "*[Touching investigator's arm lightly]* Between us, I saw something quite intriguing. I was taking a little midnight stroll last night—I get so restless in strange beds—and I noticed our victim and Miss Everett having a rather... intimate moment in the garden. But it wasn't romance—she was passing them a small package, and they looked terribly serious."
+                        }
+                    ]
+                }
+            ],
+            "playerOptions": [
+                {
+                    "tone": "Nervous",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "That's, um, interesting. Could there be more to it than that? I don't mean to press, but anything else you noticed?",
+                                "Thank you for telling me that. I'm sorry to be a bother, but... any other details you might remember?",
+                                "I really appreciate you sharing this. It's just... well, I'm wondering if there's anything else that stood out to you?"
+                            ],
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Suspicious",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Interesting you should mention that. Several others have different accounts of what happened. Why should I believe your version?",
+                                "That contradicts information I've already gathered. Are you absolutely certain about what you claim to have seen?",
+                                "I notice you're being selective with details. What exactly are you trying to hide from me?"
+                            ],
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Arrogant",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "An astute observation, though most would have missed the significance. What other insights has your superior intellect gleaned?",
+                                "You've noticed what the common observer would overlook. I'd value any other discernments from someone of your perceptive capabilities.",
+                                "Yes, that aligns with my own deductions. I'd be curious to hear what else someone with your refined observational skills has noted."
+                            ],
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Analytical",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Your data points are intriguing. Can you provide statistical correlation between these anomalies and any behavioral patterns you observed?",
+                                "I'm calculating probabilities based on your observations. Are there any additional variables or outliers you documented that might affect my analysis?",
+                                "These observations suggest a 68% probability of premeditation. Did you record any other deviations from baseline behavior that might adjust this calculation?"
+                            ],
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Sensitive",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I can see how difficult this is for you to share. Take your time... was there anything else that felt wrong or out of place?",
+                                "Thank you for trusting me with this. I understand how deeply you feel things... was there more that troubled you this evening?",
+                                "It sounds like you picked up on the emotional undercurrents that others missed. Was there anything else that affected you in that way?"
+                            ],
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Manipulative",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I knew you'd be more observant than the others. I'm starting to think you and I could help each other in this investigation. Anything else you noticed?",
+                                "That's exactly the kind of insight I need. Between us, I think you're the only one here with the real story. What else have you been keeping to yourself?",
+                                "You see what others don't, don't you? I could make sure your cooperation is remembered favorably. What else did you observe that might help me?"
+                            ],
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Defensive",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I'm not suggesting you're involved, just gathering all possible information. Any other observations you can share?",
+                                "Everyone's being asked these same questions, nothing personal. Is there anything else you recall that might be relevant?",
+                                "This is helpful, and I appreciate your candor. For the sake of thoroughness, any other details you happened to notice?"
+                            ],
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Gossipy",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Oh my! That's absolutely scandalous! Do tell me more—what other juicy details have you noticed that others missed?",
+                                "You have such a talent for spotting the most interesting things! What other little secrets did you happen to discover tonight?",
+                                "How thrilling! I bet that's just the tip of the iceberg with this crowd. What other fascinating observations have you made?"
+                            ],
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Reserved",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Your observation is noted. Any other relevant details to add to your statement?",
+                                "I appreciate your discretion. For the record, did you observe any other noteworthy occurrences?",
+                                "Thank you for that information. Is there anything else of significance that you witnessed?"
+                            ],
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Flirtatious",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "How intriguing... someone with your powers of observation must have noticed other interesting things as well. Care to share with me?",
+                                "I find your perspective absolutely fascinating. What other secrets did those gorgeous eyes of yours happen to see?",
+                                "You notice all the little details, don't you? I'd love to hear what else caught your attention tonight... over drinks, perhaps?"
+                            ],
+                            "nextNodeID": "unusual_inquiry_pressed"
+                        }
+                    ]
+                }
+            ]
+        },
+        "unusual_inquiry_pressed": {
+            "nodeID": "unusual_inquiry_pressed",
+            "npcOptions": [
+                {
+                    "personality": "Nervous",
+                    "text": "I really don't know anything. Can we talk about something else?"
+                },
+                {
+                    "personality": "Suspicious",
+                    "text": "I'm not answering any more questions. This feels like an accusation."
+                },
+                {
+                    "personality": "Arrogant",
+                    "text": "If you must know, I noticed nothing. Now, shall we discuss something more worthy of my time?"
+                },
+                {
+                    "personality": "Analytical",
+                    "text": "Without parameters, I cannot provide a satisfactory answer."
+                },
+                {
+                    "personality": "Sensitive",
+                    "text": "Please don't push me. I'm feeling uncomfortable about all of this."
+                },
+                {
+                    "personality": "Manipulative",
+                    "text": "Trust works both ways, doesn't it? Perhaps we can help each other."
+                },
+                {
+                    "personality": "Defensive",
+                    "text": "I don't appreciate this interrogation. I've told you what I know."
+                },
+                {
+                    "personality": "Gossipy",
+                    "text": "Well, nothing specific to the murder, if that's what you're asking. But do let me know what the others have said!"
+                },
+                {
+                    "personality": "Reserved",
+                    "text": "I prefer not to speculate."
+                },
+                {
+                    "personality": "Flirtatous",
+                    "text": "Murder? Oh, that. So serious! Couldn't we discuss something more... pleasant?"
+                }
+            ],
+            "playerOptions": [
+                {
+                    "personality": "Nervous",
+                    "textOptions": [
+                        "Was there anything you overheard that might have seemed harmless at the time, but now feels important?",
+                        "Sometimes we notice things without realizing their importance... anything like that you can remember?",
+                        "I know you're observant... was there anything people were whispering about that scared you?"
+                    ],
+                    "nextNodeID": "gossip_inquiry"
+                },
+                {
+                    "personality": "Suspicious",
+                    "textOptions": [
+                        "Who do you think is lying about their relationship with the victim? I've heard several conflicting stories.",
+                        "Have you uncovered any secrets that others are desperately trying to hide?",
+                        "I suspect there's a lot more going on beneath the surface here. Have you noticed anything that confirms that?"
+                    ],
+                    "nextNodeID": "gossip_inquiry"
+                },
+                {
+                    "personality": "Arrogant",
+                    "textOptions": [
+                        "Beyond trivial gossip, what significant undercurrents have you detected among these people?",
+                        "Someone with your keen insight has surely noticed the power dynamics at play here. What have you deduced?",
+                        "These other guests have been sharing pedestrian observations, but I'm sure you've penetrated deeper into what's really happening. Care to illuminate me?"
+                    ],
+                    "nextNodeID": "gossip_inquiry"
+                },
+                {
+                    "personality": "Analytical",
+                    "textOptions": [
+                        "Have you identified any statistically significant correlations between individuals' behaviors that might suggest hidden connections?",
+                        "What patterns of unusual social interactions have you documented among the guests?",
+                        "I'm interested in data regarding interpersonal dynamics that may be relevant to motive. Have you observed any noteworthy interactions?"
+                    ],
+                    "nextNodeID": "gossip_inquiry"
+                },
+                {
+                    "personality": "Sensitive",
+                    "textOptions": [
+                        "Was there any interaction between people that felt meaningful to you? Even small gestures can reveal so much.",
+                        "Did you notice anyone who seemed to be carrying an emotional burden tonight?",
+                        "Beyond words, did you sense any undercurrents of feeling between any of the guests that struck you as important?"
+                    ],
+                    "nextNodeID": "gossip_inquiry"
+                },
+                {
+                    "personality": "Manipulative",
+                    "textOptions": [
+                        "I suspect you know things about these people that they don't even know about themselves. Anything relevant to our situation?",
+                        "Information is valuable currency tonight. Perhaps we could make an exchange? What do you know?",
+                        "I'm looking for someone to help me understand the real relationships here, not just what people pretend they are. Insights to share?"
+                    ],
+                    "nextNodeID": "gossip_inquiry"
+                },
+                {
+                    "personality": "Defensive",
+                    "textOptions": [
+                        "I'm not asking you to speak ill of anyone, but was there any interaction that might be relevant to understanding what happened?",
+                        "Without putting you on the spot, did you notice anything about the others that might help my investigation?",
+                        "I don't expect you to be the source of rumors, but is there anything about the relationships here I should know about?"
+                    ],
+                    "nextNodeID": "gossip_inquiry"
+                },
+                {
+                    "personality": "Gossipy",
+                    "textOptions": [
+                        "Between us, what's the real story about what's been happening in this house? I know you've got the inside scoop!",
+                        "I have a feeling you know all the secrets around here! Anything particularly scandalous I should know about?",
+                        "If anyone knows what's really going on with these people, it's you! Care to fill me in on the behind-the-scenes drama?"
+                    ],
+                    "nextNodeID": "gossip_inquiry"
+                },
+                {
+                    "personality": "Reserved",
+                    "textOptions": [
+                        "Beyond idle speculation, are there any factual interpersonal dynamics I should be aware of?",
+                        "I understand you're not one for gossip, but are there any relevant relationships or tensions I should know about?",
+                        "I value discretion, as I imagine you do. Is there anything meaningful about the connections between these people that might be pertinent?"
+                    ],
+                    "nextNodeID": "gossip_inquiry"
+                },
+                {
+                    "personality": "Flirtatious",
+                    "textOptions": [
+                        "Between just us two... what delicious secrets have you discovered about our fellow guests?",
+                        "I find myself wanting to know everything you know... any particularly intriguing whispers you've heard?",
+                        "I bet you have the most fascinating insights into everyone here... care to share something special with me?"
+                    ],
+                    "nextNodeID": "gossip_inquiry"
+                }
+            ]
+        },
+        "gossip_inquiry": {
+            "nodeID": "gossip_inquiry",
+            "npcOptions": [
+                {
+                    "personality": "Nervous",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "Gossip? No, I don't listen to that sort of thing. Too stressful.",
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "*[Glancing around]* Well, I did notice the victim and Lord Blackwood had a heated exchange during dinner. Something about 'keeping promises.'"
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "*[Almost whispering]* I probably shouldn't tell you this, but I found a torn-up letter in the fireplace of the study. I only glimpsed it before it burned, but it mentioned 'blackmail' and was signed with the initial 'D'."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Suspicious",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "I don't deal in gossip. Only facts. And the fact is, someone in this house is a murderer.",
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "I don't gossip, but I observe. The victim and Lady Scarlet had a falling-out recently. Something about a business deal gone wrong."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "Let me share what I've pieced together. Three people in this house had financial ties to the victim: Doctor Green, who's nearly bankrupt; Mrs. Peacock, whose charity the victim threatened to expose as fraudulent; and Mr. Boddy, who owed the victim a substantial gambling debt."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Arrogant",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "Gossip is beneath me. I deal in facts and intellectual discourse, not idle chatter.",
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "While I don't engage in gossip, I do make observations that others miss. For instance, our victim was clearly having financial troubles, evidenced by the quality of their attire—something only someone with my refined taste would notice."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "With my superior intuition and intellect, I've deduced several interesting facts. The victim was being blackmailed—that much is clear from their recent behavior and financial transactions, which I've been clever enough to track. And that blackmailer is undoubtedly someone in this very house."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Analytical",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "Gossip is an inefficient transmission of unverified data points with high error rates. I deal in empirical evidence.",
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "While I don't engage in gossip per se, I have documented several correlations of potential interest: The victim and Lady Peacock exchanged 37 letters in the past month, a 312% increase from their 10-year average. Colonel Mustard's financial accounts show a pattern consistent with blackmail payments, with withdrawals of £500 occurring biweekly since March."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "I've analyzed communication patterns, financial transactions, and behavioral anomalies to construct the following data set: The victim was engaged in systematic blackmail of four individuals in this house, evidenced by regular payments that correlate with the dates of arrival of letters from the victim's distinctive stationery. The four subjects demonstrate micro-expressions consistent with fear when in the victim's presence, particularly when near the writing desk."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Sensitive",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "*[Looking uncomfortable]* I don't like to talk about others. We all have our private struggles.",
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "*[Conflicted expression]* I try not to listen to gossip, but sometimes I sense things... like the profound sadness that follows Dr. Green wherever he goes. And yesterday, I found him staring at an old photograph, tears in his eyes. It showed him with the victim when they were younger."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "*[Almost whispering]* I hesitate to share this because it feels like betraying a confidence, but... last night I couldn't sleep and went to the kitchen for some tea. I overheard the victim on the telephone in the hall. They were saying, 'I can't keep this secret anymore. It's destroying too many lives.' They sounded so tormented, like someone facing an impossible moral choice."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Manipulative",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "Gossip? *[amused laugh]* I'm sure you didn't take me for the gossiping type. Though everyone has their price for information, don't they?",
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "I make it my business to know everyone's secrets. For instance, did you know our charming Doctor has been writing prescriptions for himself? Quite a lot of them, in fact. But what I find truly interesting is the letter I saw on the victim's desk, addressed to the Medical Board."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "*[Voice dropping to a whisper]* You've impressed me, so I'll share something valuable. This house is a web of blackmail and secrets. The victim wasn't just collecting information—they were selling it. And I know exactly who bought the secrets about Lady Scarlet's past. It was our distinguished Colonel, who's been quietly obsessed with her for years."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Defensive",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "I don't participate in gossip. Unlike some people here, I respect privacy.",
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "I'm not one to spread rumors, but if you're asking everyone, I suppose I should mention that the victim and Dr. Green had some kind of falling out recently. Not that it means anything."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "I don't like being dragged into this, but since everyone else is probably telling you their theories... The victim was planning to change their will. I overheard them on the phone with their lawyer yesterday. Lady Scarlet was being cut out completely."
+                        }
+                    ]
+                },
+                {
+                    "personality": "Gossipy",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "Gossip? Me? *[theatrical gasp]* Well, I suppose I've heard a thing or two. Did you know the butler and the cook are secretly related? Second cousins! Can you imagine?",
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "Well, since you asked! I happen to know that the victim and Professor Plum were seen arguing at the Blackwood Club last week. Something about research funding being withdrawn. The Professor was absolutely livid—pounding his fist on the table so hard that drinks spilled!"
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "Oh my, where to begin! Did you know the victim was blackmailing at least three people in this house? I have it on excellent authority! There's a hidden wall safe behind the painting in the study—I happened to glimpse inside when the victim was retrieving something, and it was full of folders with people's names!"
+                        }
+                    ]
+                },
+                {
+                    "personality": "Reserved",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "I don't engage in gossip.",
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "*[Slight frown]* I don't gossip, but I am observant. The victim and our host had some sort of financial arrangement. I noticed the victim passing a check during yesterday's luncheon."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "*[Speaking deliberately]* I don't spread idle talk, but there are facts you should know. Three days ago, I overheard the victim on the telephone in the study, saying: 'The documents prove everything. All the transfers to the Swiss account, all the missing funds. They'll all be exposed if anything happens to me.'"
+                        }
+                    ]
+                },
+                {
+                    "personality": "Flirtatous",
+                    "options": [
+                        {
+                            "fondness": 0,
+                            "text": "*[Playful laugh]* Darling, I know all the best gossip. Though I usually save it for... special friends.",
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        },
+                        {
+                            "fondness": 50,
+                            "text": "*[Conspiratorial whisper]* Well, since you ask so nicely... Our victim and Colonel Mustard had quite the entanglement. Financial and otherwise, if you take my meaning. The Colonel owes substantial gambling debts—I've seen the IOUs when the victim thought no one was looking."
+                        },
+                        {
+                            "fondness": 70,
+                            "text": "*[Moving very close]* For you? I'll share my very best secrets. Did you know our victim was having an affair? With someone in this very house. I know because I... accidentally opened a wrongly delivered love letter. Passionate stuff—all about 'our plan' and 'freedom once the money is secured.' It was signed simply 'M.'"
+                        }
+                    ]
+                }
+            ],
+            "playerOptions": [
+                {
+                    "tone": "Nervous",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Oh! That's... that's quite something. Um, is there anything else you happened to overhear? Even if it seems unimportant?",
+                                "I appreciate you sharing that with me. It must be stressful knowing these things. Is there... anything else that's been worrying you?",
+                                "Thank you for telling me. I'm sure it wasn't easy. Was there anything else that caught your attention, perhaps?"
+                            ],
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Suspicious",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "How convenient that you'd have access to such specific information. And why are you only mentioning this now?",
+                                "I find it interesting you know these details. How can I be sure you're not fabricating this to divert attention?",
+                                "If what you're saying is true, it raises questions about your own involvement. What exactly was your relationship with the victim?"
+                            ],
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Arrogant",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Your insights confirm several of my own deductions. I'd be interested to hear what else your superior powers of observation have uncovered.",
+                                "As I suspected. Someone of your discernment would naturally notice such things. Do share any other intellectual conclusions you've drawn.",
+                                "Most illuminating. Few others here have the mental capacity to piece together what you've observed. What other intelligent observations have you made?"
+                            ],
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Analytical",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "Your information provides significant statistical correlation with other gathered data points. Have you documented any additional patterns of social or financial interaction?",
+                                "This aligns with probability models I've been developing. Can you quantify any other relevant metrics regarding interpersonal dynamics among the guests?",
+                                "I calculate a 78.3% probability that your assessment is accurate. Do you have supplementary evidence that might increase the confidence interval of this hypothesis?"
+                            ],
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Sensitive",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I can see how sharing this weighs on you... thank you for trusting me. Have you sensed any other emotional undercurrents that troubled you?",
+                                "That must have been difficult to witness. I appreciate your compassion. Was there anything else that touched you in a similar way?",
+                                "You notice the hidden feelings others miss... that's a rare gift. Did you feel any other emotional tensions that seemed important?"
+                            ],
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Manipulative",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "That information could be extremely valuable to me. I'm sure we could make an arrangement that benefits us both if you have more to share...",
+                                "You clearly know how to obtain the kind of information others miss. I respect that. Is there more we could... trade?",
+                                "I can see you and I understand each other. This is just between us, of course. What other secrets might you be willing to share with the right... incentive?"
+                            ],
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Defensive",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I'm collecting information from everyone, not just you. Any additional observations you could share would be treated with the same discretion.",
+                                "This is standard procedure, nothing personal. Is there anything else you feel might be relevant to mention?",
+                                "I appreciate your candor. To be clear, I'm not accusing anyone at this stage. Any other details you feel comfortable sharing?"
+                            ],
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Gossipy",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "How absolutely delicious! I knew you'd have all the best information! Any other scandals you've noticed that the others might have missed?",
+                                "That's too perfect! Do tell me more—I bet you know all sorts of fascinating little secrets about everyone here!",
+                                "Oh my! How utterly scandalous! Between us, what other juicy details have you discovered about our distinguished companions?"
+                            ],
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Reserved",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "I appreciate your discretion. For completeness, are there any other pertinent facts you believe I should be aware of?",
+                                "Noted. Are there any additional observations of a similar nature that you wish to formally declare?",
+                                "Thank you for that information. In the interest of thoroughness, is there anything further you believe relevant to my inquiry?"
+                            ],
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        }
+                    ]
+                },
+                {
+                    "tone": "Flirtatious",
+                    "variations": [
+                        {
+                            "textOptions": [
+                                "How utterly fascinating... just like you. I'd love to hear what other secrets those perceptive eyes of yours have uncovered.",
+                                "You really do notice everything, don't you? I find that incredibly... attractive. What other enticing details might you share with me?",
+                                "I'm captivated by your insights... almost as much as I am by you. Perhaps you'd share more secrets with me somewhere more... private?",
+                                "You have such a talent for uncovering the most intriguing information. I wonder what other delightful revelations you might whisper in my ear?"
+                            ],
+                            "nextNodeID": "gossip_inquiry_pressed"
+                        }
+                    ]
+                }
+            ]
+        },
+        "gossip_inquiry_pressed": {
+            "nodeID": "gossip_inquiry_pressed",
+            "npcOptions": [
+                {
+                    "personality": "Nervous",
+                    "text": "People talk all the time. It doesn't mean anything!"
+                },
+                {
+                    "personality": "Suspicious",
+                    "text": "Anyone could have done it. Everyone had motive."
+                },
+                {
+                    "personality": "Arrogant",
+                    "text": "If you're so interested in trivial matters, perhaps ask someone more suited to such conversation."
+                },
+                {
+                    "personality": "Analytical",
+                    "text": "Anecdotal accounts without corroboration fall below my threshold for information sharing."
+                },
+                {
+                    "personality": "Sensitive",
+                    "text": "It feels wrong to share what isn't mine to tell."
+                },
+                {
+                    "personality": "Manipulative",
+                    "text": "When you have something to offer in return, perhaps we can talk."
+                },
+                {
+                    "personality": "Defensive",
+                    "text": "There's nothing to tell. And I wouldn't tell you if there was."
+                },
+                {
+                    "personality": "Gossipy",
+                    "text": "Oh, that. Well, nothing specific comes to mind. Though everyone has been acting rather suspicious, wouldn't you say?"
+                },
+                {
+                    "personality": "Reserved",
+                    "text": "Perhaps you should ask someone more socially inclined."
+                },
+                {
+                    "personality": "Flirtatous",
+                    "text": "You're so persistent! I like that. But really, nothing relevant to this dreary murder business."
+                }
+            ],
+            "playerOptions": [
+                {
+                    "text": "Thank you for your time. I may need to speak with you again later.",
+                    "nextNodeID": "conclusion"
+                }
+            ]
+        },
+        "conclusion": {
+            "nodeID": "conclusion",
+            "npcOptions": [
+                {
+                    "personality": "Nervous",
+                    "text": "Oh... okay. I-I'll be here. Just please remember I told you everything I know."
+                },
+                {
+                    "personality": "Suspicious",
+                    "text": "I'm sure you will. I'll be watching how your investigation progresses. Very carefully."
+                },
+                {
+                    "personality": "Arrogant",
+                    "text": "I suppose I can spare another moment of my valuable time if absolutely necessary. Most find my insights quite... illuminating."
+                },
+                {
+                    "personality": "Analytical",
+                    "text": "Understood. I will continue to collect relevant data in the interim. Statistical anomalies rarely occur in isolation."
+                },
+                {
+                    "personality": "Sensitive",
+                    "text": "Of course. This has all been so difficult for everyone. I hope you find the answers you're looking for... for all our sakes."
+                },
+                {
+                    "personality": "Manipulative",
+                    "text": "I do hope we'll speak again. I find our conversations... mutually beneficial. Remember what I've shared when you're deciding who to trust."
+                },
+                {
+                    "personality": "Defensive",
+                    "text": "Fine. But I've told you everything already. Don't expect anything different if you come back."
+                },
+                {
+                    "personality": "Gossipy",
+                    "text": "Oh, delightful! I'm sure I'll have even more to tell you by then! You simply wouldn't believe what Lady Peacock just whispered to the Colonel when you walked in—but that's a story for next time!"
+                },
+                {
+                    "personality": "Reserved",
+                    "text": "Very well. I shall be at your disposal should the need arise."
+                },
+                {
+                    "personality": "Flirtatous",
+                    "text": "I'll look forward to our next encounter. Perhaps somewhere more... private? I find these matters are best discussed in intimate settings."
+                }
+            ],
+            "playerOptions": [
+                {
+                    "text": "End conversation",
+                    "nextNodeID": "exit"
+                }
+            ]
+        }
+    }
+}
