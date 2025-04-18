@@ -1,150 +1,110 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using MurderMystery;
 using MurderMystery.Models;
 using MurderMystery.Generators;
-using MurderMystery.Dialogue;
+using System.Linq;
 
-namespace MurderMystery.Managers
+public class GameManager : MonoBehaviour
 {
-    public class GameManager : MonoBehaviour
+    [Header("Visualisation References")]
+    public RoomGenerator roomGenerator;
+    public CharacterVisualiser characterVisualiser;
+    public GameObject playerPrefab;
+
+    [Header("Game Settings")]
+    public bool autoGenerateOnStart = true;
+    public bool debugLog = true;
+
+    private Mystery currentMystery;
+    private GameState gameState;
+
+    void Start()
     {
-        [Header("Game Settings")]
-        public bool debugMode = true;
-
-        [Header("Game State")]
-        private GameState gameState;
-        private Mystery currentMystery;
-        private Dictionary<string, Room> mansion;
-
-        // References to other managers
-        private RoomManager roomManager;
-        private DialogueManagerUnity dialogueManager;
-        private NPCManager npcManager;
-
-        // Reference to the player
-        private PlayerController player;
-
-        void Awake()
+        if (autoGenerateOnStart)
         {
-            // Get references
-            roomManager = GetComponent<RoomManager>();
-            dialogueManager = GetComponent<DialogueManagerUnity>();
-            npcManager = GetComponent<NPCManager>();
-            player = FindObjectOfType<PlayerController>();
+            GenerateNewMystery();
+        }
+    }
 
-            if (debugMode)
-            {
-                Debug.Log("Game Manager initialized in debug mode");
-            }
+    public void GenerateNewMystery()
+    {
+        // Generate a new mystery
+        currentMystery = MysteryGenerator.CreateMystery();
+
+        // Setup mansion layout
+        var mansionGenerator = new MansionGenerator();
+        var mansion = mansionGenerator.GenerateMansionLayout(currentMystery);
+
+        // Place NPCs
+        mansionGenerator.PlacePeople(currentMystery.People, currentMystery.Timeline);
+
+        // Create game state
+        gameState = new GameState(currentMystery, mansion);
+
+        // Generate rooms in Unity
+        roomGenerator.GenerateRoomsFromMystery(currentMystery);
+
+        // Generate character visuals
+        characterVisualiser.VisualiseCharacters(currentMystery);
+
+        // Place player in starting room (usually "Foyer")
+        PlacePlayerInStartingRoom();
+
+        if (debugLog)
+        {
+            DebugPrintMysteryDetails();
+        }
+    }
+
+    private void PlacePlayerInStartingRoom()
+    {
+        string startingRoom = "Foyer";
+        if (!gameState.Mansion.ContainsKey(startingRoom))
+        {
+            startingRoom = gameState.Mansion.Keys.First();
         }
 
-        void Start()
+        Vector3 roomCenter = roomGenerator.GetRoomCenter(startingRoom);
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null && playerPrefab != null)
         {
-            StartNewGame();
+            player = Instantiate(playerPrefab, roomCenter, Quaternion.identity);
+            player.tag = "Player";
         }
-
-        public void StartNewGame()
+        else if (player != null)
         {
-            Debug.Log("Starting new game...");
+            player.transform.position = roomCenter;
+        }
+    }
 
-            // Generate a new mystery
-            currentMystery = MysteryGenerator.CreateMystery();
+    public void MoveToRoom(string roomName)
+    {
+        if (gameState != null)
+        {
+            gameState.MoveToRoom(roomName);
 
-            // Setup mansion layout
-            var mansionGenerator = new MansionGenerator();
-            mansion = mansionGenerator.GenerateMansionLayout(currentMystery);
-
-            // Place NPCs
-            mansionGenerator.PlacePeople(currentMystery.People, currentMystery.Timeline);
-
-            // Create game state
-            gameState = new GameState(currentMystery, mansion);
-
-            // Initialize the room layouts
-            roomManager.GenerateRooms(mansion);
-
-            // Setup NPCs
-            npcManager.SetupNPCs(currentMystery.People);
-
-            // Put player in starting room (usually "Foyer")
-            player.TeleportToRoom("Foyer");
-
-            if (debugMode)
+            // Move player 
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
             {
-                DebugPrintMysteryDetails();
+                player.transform.position = roomGenerator.GetRoomCenter(roomName);
             }
         }
+    }
 
-        // Used to move between rooms
-        public void MoveToRoom(string roomName)
+    private void DebugPrintMysteryDetails()
+    {
+        if (currentMystery != null)
         {
-            if (gameState != null)
-            {
-                gameState.MoveToRoom(roomName);
-                player.TeleportToRoom(roomName);
-                roomManager.ActivateRoom(roomName);
-            }
-        }
-
-        // Start a conversation with an NPC
-        public void InteractWithNPC(string npcName)
-        {
-            if (gameState != null)
-            {
-                Person person = currentMystery.People.Find(p => p.Name == npcName);
-                if (person != null)
-                {
-                    gameState.InterviewPerson(person);
-                    dialogueManager.StartDialogue(person);
-                }
-            }
-        }
-
-        // End the conversation with an NPC
-        public void EndInteraction()
-        {
-            if (gameState != null)
-            {
-                gameState.TerminateInterview();
-                dialogueManager.EndDialogue();
-            }
-        }
-
-        // Gets visible clues in current room
-        public List<Clue> GetVisibleCluesInCurrentRoom()
-        {
-            if (gameState != null)
-            {
-                return gameState.GetVisibleCluesInCurrentRoom();
-            }
-            return new List<Clue>();
-        }
-
-        // Gets NPCs in current room
-        public List<Person> GetPeopleInCurrentRoom()
-        {
-            if (gameState != null)
-            {
-                return gameState.GetPeopleInCurrentRoom();
-            }
-            return new List<Person>();
-        }
-
-        private void DebugPrintMysteryDetails()
-        {
-            if (currentMystery != null)
-            {
-                Debug.Log($"Murder mystery generated!");
-                Debug.Log($"Victim: {currentMystery.Victim.Name}");
-                Debug.Log($"Murderer: {currentMystery.Murderer.Name}");
-                Debug.Log($"Weapon: {currentMystery.Weapon}");
-                Debug.Log($"Room: {currentMystery.Room}");
-                Debug.Log($"Motive: {currentMystery.Motive}");
-                Debug.Log($"Number of rooms: {mansion.Count}");
-                Debug.Log($"Number of characters: {currentMystery.People.Count}");
-            }
+            Debug.Log($"Murder mystery generated!");
+            Debug.Log($"Victim: {currentMystery.Victim.Name}");
+            Debug.Log($"Murderer: {currentMystery.Murderer.Name}");
+            Debug.Log($"Weapon: {currentMystery.Weapon}");
+            Debug.Log($"Room: {currentMystery.Room}");
+            Debug.Log($"Motive: {currentMystery.Motive}");
+            Debug.Log($"Number of rooms: {currentMystery.Rooms.Count}");
+            Debug.Log($"Number of characters: {currentMystery.People.Count}");
         }
     }
 }

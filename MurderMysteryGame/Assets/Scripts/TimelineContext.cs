@@ -14,11 +14,11 @@ namespace MurderMystery
         public List<Person> People { get; private set; }
         public Person Victim { get; private set; }
         public Person Murderer { get; private set; }
-        public Person FalseAccused { get; set; }
+        public Person FalseAccused { get; set; } 
         public string Weapon { get; private set; }
         public string Room { get; private set; }
-        public string Motive { get; private set; }
-        public SecurityInfo SecurityInfo { get; set; }
+        public string Motive { get; private set; } 
+        public SecurityInfo SecurityInfo { get; set; } 
 
         public List<string> TimeSlots { get; private set; }
 

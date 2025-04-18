@@ -6,7 +6,7 @@ using UnityEngine;
 public class MinimalGameController : MonoBehaviour
 {
     [Header("References")]
-    public SimpleRoomGenerator roomGenerator;
+    public RoomGenerator roomGenerator;
     public SimplePlayerController playerController;
     public GameObject npcPrefab;
 
@@ -21,7 +21,7 @@ public class MinimalGameController : MonoBehaviour
         // Generate rooms
         if (roomGenerator != null)
         {
-            roomGenerator.CreateTestRooms();
+            //roomGenerator.CreateTestRooms();
             Debug.Log("Test rooms generated");
         }
 

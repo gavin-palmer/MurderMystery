@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using MurderMystery.Models;
+using UnityEngine.UIElements;
+    using MurderMystery.Models;
 
 namespace MurderMystery.Managers
 {
@@ -10,8 +10,8 @@ namespace MurderMystery.Managers
     {
         [Header("UI References")]
         public GameObject dialoguePanel;
-        public Text speakerNameText;
-        public Text dialogueText;
+        public string speakerNameText;
+        public string dialogueText;
         public RectTransform optionsPanel;
         public GameObject optionButtonPrefab; 
 
@@ -79,12 +79,12 @@ namespace MurderMystery.Managers
         {
             if (speakerNameText != null)
             {
-                speakerNameText.text = speakerName;
+                speakerNameText = speakerName;
             }
 
             if (dialogueText != null)
             {
-                dialogueText.text = text;
+                dialogueText = text;
             }
         }
 
@@ -134,18 +134,15 @@ namespace MurderMystery.Managers
             // Instantiate button
             GameObject buttonObj = Instantiate(optionButtonPrefab, optionsPanel);
             Button button = buttonObj.GetComponent<Button>();
-            Text buttonText = buttonObj.GetComponentInChildren<Text>();
-
-            // Set button text
-            if (buttonText != null)
+            if (button != null)
             {
-                buttonText.text = option.Text;
+                button.text = option.Text;
             }
 
             // Set button click handler
             if (button != null)
             {
-                button.onClick.AddListener(() => OnDialogueOptionClicked(option));
+                button.clicked += () => OnDialogueOptionClicked(option);
             }
         }
 
@@ -203,7 +200,7 @@ namespace MurderMystery.Managers
         {
             yield return new WaitForSeconds(delay);
             EndDialogue();
-            gameManager.EndInteraction();
+            //gameManager.EndInteraction();
         }
 
         private void DisablePlayerMovement()

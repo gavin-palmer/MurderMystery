@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
             NPCController npc = hit.collider.GetComponent<NPCController>();
             if (npc != null)
             {
-                gameManager.InteractWithNPC(npc.npcName);
+                //gameManager.InteractWithNPC(npc.npcName);
                 return;
             }
 
