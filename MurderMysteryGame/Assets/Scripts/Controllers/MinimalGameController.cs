@@ -73,7 +73,7 @@ public class MinimalGameController : MonoBehaviour
             npcObj.name = npcNames[i];
 
             // If NPC has a controller component, initialize it
-            BasicNPCController controller = npcObj.GetComponent<BasicNPCController>();
+            NPCController controller = npcObj.GetComponent<NPCController>();
             if (controller != null)
             {
                 controller.npcName = npcNames[i];

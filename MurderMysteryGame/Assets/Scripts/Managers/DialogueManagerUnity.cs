@@ -13,7 +13,7 @@ namespace MurderMystery.Managers
         public Text speakerNameText;
         public Text dialogueText;
         public RectTransform optionsPanel;
-        public GameObject optionButtonPrefab;
+        public GameObject optionButtonPrefab; 
 
         // Current dialogue state
         private Person currentSpeaker;

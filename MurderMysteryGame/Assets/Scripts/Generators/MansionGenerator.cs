@@ -10,7 +10,7 @@ namespace MurderMystery.Generators
 {
     public class MansionGenerator
     {
-        private readonly new Dictionary<string, Room> _mansion = new Dictionary<string, Room>();
+        private new Dictionary<string, Room> _mansion = new Dictionary<string, Room>();
         public Dictionary<string, Room> GenerateMansionLayout(Mystery mystery)
         {
             foreach (var room in mystery.Rooms)

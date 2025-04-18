@@ -13,3 +13,4 @@ public class DialogueNode
     [JsonProperty("playerOptions", NullValueHandling = NullValueHandling.Ignore)]
     public List<DialogueOption> PlayerOptions { get; set; }
 }
+ 

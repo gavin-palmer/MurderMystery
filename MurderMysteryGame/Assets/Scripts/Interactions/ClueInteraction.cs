@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MurderMystery.Models;
+using MurderMystery.Managers;
 
 public class ClueInteraction : MonoBehaviour
 {

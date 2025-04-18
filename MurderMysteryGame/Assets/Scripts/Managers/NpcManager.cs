@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using MurderMystery.Models;
+using MurderMystery.Enums;
 
 namespace MurderMystery.Managers
 {
